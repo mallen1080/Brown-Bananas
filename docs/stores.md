@@ -1,66 +1,19 @@
 # Flux Stores
 
-### NoteStore
+### AppStore
 
-Holds all persisted note data.
+Holds all persisted current user data
 
-##### Actions:
-- `receiveAllNotes`
-- `receiveSingleNote`
-- `removeNote`
+### MovieStore
 
-##### Listeners:
-- `NotesIndex` (passes to `NoteIndexItem` via props)
-- `NoteDetail`
-
-### NoteFormStore
-
-Holds un-persisted note data to send to the API.
-
-##### Actions:
-- `receiveNoteFormParams`
-
-##### Listeners:
-- `NoteForm`
-
-### NotebookStore
-
-Holds all persisted notebook data.
-
-##### Actions:
-- `receiveAllNotebooks`
-- `receiveSingleNotebook`
-- `removeNotebook`
-
-##### Listeners:
-- `NotebookIndex`
-
-### NotebookFormStore
-
-Holds un-persisted notebook data to send to the API.
-
-##### Actions:
-- `receiveNotebookFormParams`
-
-##### Listeners:
-- `NotebookForm`
-
-### SearchStore
-
-Holds search parameters to send to the API.
-
-##### Actions:
-- `receiveSearchParams`
-
-##### Listeners:
-- `SearchIndex`
+Holds all persisted movie data, including:
+  - `Newest in theaters`
+  - `Top box office`
+  - `New DVD release`
+  - `Top rentals`
+  - `Current movie`
+    - includes ratings
 
 ### SearchSuggestionStore
 
-Holds typeahead suggestions for search.
-
-##### Actions:
-- `receiveSearchSuggestions`
-
-##### Listeners:
-- `SearchSuggestions`
+Holds suggestions for search.
