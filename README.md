@@ -1,23 +1,22 @@
-# FresherNote
+# BrownBananas
 
-[Heroku link][heroku] **NB:** This should be a link to your production site
+[Heroku link][heroku]
 
 [heroku]: http://www.herokuapp.com
 
 ## Minimum Viable Product
 
-FresherNote is a web application inspired by Evernote built using Ruby on Rails
-and React.js. FresherNote allows users to:
+BrownBananas is a web application inspired by RottenTomatoes built using Ruby on Rails and React.js. BrownBananas allows users to:
 
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [ ] Create an account
 - [ ] Log in / Log out
-- [ ] Create, read, edit, and delete notes
-- [ ] Organize notes within Notebooks
-- [ ] Tag notes with multiple tags
-- [ ] Apply complex styling to notes while editing
+- [ ] View show page for any movie in the db
+- [ ] Add a rating to a movie, by applying an up/down vote and optional text
+- [ ] An admin user can create/edit/delete movies from the db
+- [ ] Browse movies and filter results based on genre, Banana Rating, release date, etc.(done last)
 
 ## Design Docs
 * [View Wireframes][views]
