@@ -11,6 +11,7 @@ Holds all persisted movie data, including:
   - `Top box office`
   - `New DVD release`
   - `Top rentals`
+  - `current HomePage box office show iterator`
   - `Current movie`
     - includes ratings
 

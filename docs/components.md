@@ -1,13 +1,25 @@
 ## Component Hierarchy
 
 * `App`
-  * `SearchIndex`
-  * `NotebooksIndex`
-    * `NotebookIndexItem`
-  * `NotebookForm`
-  * `NotesIndex`
-    * `NoteForm`
-    * `NoteIndexItem`
-  * `NoteDetail`
-    * `NoteTags`
-    * `NoteEditArea`
+  * `Navbar`
+
+  * `HomePage`
+    * `BoxOfficeIterator`
+    * `MovieIndex`
+      * `MovieList`
+        * `MovieListItem`
+    * `Recomendations`
+      * `MovieList`
+        * `MovieListItemPic`
+
+  * `MovieShowPage`
+    * `Sidebar`
+      * `MovieList`
+        * `MovieListItem`
+    * `Main`
+      * `Trailer`
+      * `BasicInfo`
+      * `MoreInfo`
+      * `Reviews`
+        * `ReviewItem`
+  * `Footer`

@@ -1,22 +1,22 @@
 # View Wireframes
 
-## New User
-![new-user]
+## Home
+![home]
 
-## New Session
-![new-session]
+## Movie Show
+![movie-show]
 
-## NotesIndex / NoteIndexItem / NoteForm
-![notes]
+## Create / Edit Movie
+![create]
 
-## NotebooksIndex / NotebookIndexItem
-![notebooks]
+## Navbar
+![navbar]
 
-## NotebookForm
-![notebook-form]
+## Login / Sign Up
+![login]
 
-[new-user]: ./wireframes/new_user.png
-[new-session]: ./wireframes/new_session.png
-[notes]: ./wireframes/root_notes.png
-[notebooks]: ./wireframes/root_notebooks.png
-[notebook-form]: ./wireframes/notebook_form.png
+[home]: ./wireframes/HomePage.jpg
+[movie-show]: ./wireframes/MovieShow.jpg
+[create]: ./wireframes/CreateMovie.jpg
+[navbar]: ./wireframes/Navbar.jpg
+[login]: ./wireframes/Login.jpg
