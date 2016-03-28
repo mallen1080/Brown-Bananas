@@ -40,96 +40,92 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [ ] create new project
 - [ ] create `User` model
 - [ ] authentication
-- [ ] user signup/signin pages
-- [ ] blank landing page after signin
 
-### Phase 2: Notes Model, API, and basic APIUtil (1.5 days)
+### Phase 2: Movie Model, API, and basic APIUtil (1 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
+**Objective:** Movies can be created, read, edited, indexed and destroyed through
 the API.
 
-- [ ] create `Note` model
+- [ ] create `Movie` model
 - [ ] seed the database with a small amount of test data
-- [ ] CRUD API for notes (`NotesController`)
-- [ ] jBuilder views for notes
+- [ ] CRUD API for movies (`MoviesController`)
+- [ ] jBuilder views for movies
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
-- [ ] test out API interaction in the console.
 
-### Phase 3: Flux Architecture and Router (1.5 days)
+### Phase 3: Flux Architecture and Router (0.5 days)
 
-**Objective:** Notes can be created, read, edited and destroyed with the
-user interface.
+**Objective:** Movies can be created and edited with the user interface.
 
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
-- implement each note component, building out the flux loop as needed.
-  - [ ] `NotesIndex`
-  - [ ] `NoteIndexItem`
-  - [ ] `NoteForm`
-- [ ] save Notes to the DB when the form loses focus or is left idle
-  after editing.
+- [ ] create MovieCreateForm component
+- [ ] saves movies to db after submitting form
+- [ ] basic styling on movie creation form
 
-### Phase 4: Start Styling (0.5 days)
+### Phase 4: Navbar / footer (0.5 days)
 
-**Objective:** Existing pages (including singup/signin) will look good.
+**Objective:** Create navbar / footer components.
 
-- [ ] create a basic style guide
-- [ ] position elements on the page
-- [ ] add basic colors & styles
+- [ ] searchbar dynamically shows movies matching search
+- [ ] create buttons for browse, log-in, and sign-up
+- [ ] Show button to create movie if current user is admin
 
-### Phase 5: Notebooks (1 day)
+### Phase 4: Log In / Sign Up (0.5 days)
 
-**Objective:** Notes belong to Notebooks, and can be viewed by notebook.
+**Objective:** Create log in / sign up form.
 
-- [ ] create `Notebook` model
+- [ ] signs a user in upon submission
+- [ ] basic styling
+
+### Phase 5: Home Page (1.5 day)
+
+**Objective:** Create all components for homepage.
+
 - build out API, Flux loop, and components for:
-  - [ ] Notebook CRUD
-  - [ ] adding notes requires a notebook
-  - [ ] moving notes to a different notebook
-  - [ ] viewing notes by notebook
-- Use CSS to style new views
+  - [ ] BoxOfficeIterator
+  - [ ] MovieListTable
+  - [ ] MovieListItem
+  - [ ] MovieListItemPic
+- [ ] Basic styling
 
-Phase 3 adds organization to the Notes. Notes belong to a Notebook,
-which has its own `Index` view.
 
-### Phase 6: Tags (1.5 days)
+### Phase 6: Movie Show Page (1.5 days)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Create all components for movie show page.
 
-- [ ] create `Tag` model and join table
 - build out API, Flux loop, and components for:
-  - [ ] fetching tags for notebook
-  - [ ] adding tags to notebook
-  - [ ] creating tags while adding to notebooks
-  - [ ] searching notebooks by tag
-- [ ] Style new elements
+  - [ ] Sidebar
+  - [ ] Trailer
+  - [ ] BasicInfo
+  - [ ] Detail Info
+  - [ ] Review List
+  - [ ] ReviewListItem
+  - [ ] ReviewInputForm
+  - [ ] Show button to edit / delete movie if current user is admin
+- [ ] Basic styling
 
-### Phase 7: Allow Complex Styling in Notes (0.5 days)
 
-**objective:** Enable complex styling of notes.
+### Phase 7: Detail Styling of Home Page (1 days)
 
-- [ ] Integrate `react-quill` (based on Quill.js).
-- [ ] Use Rails helpers to sanitize HTML before rendering.
-- [ ] Style the new Quill elements.
+- [ ] Iterator
+- [ ] MovieListTables
+- [ ] MovieListItems
+- [ ] RecommendationList
+- [ ] MovieListItemPic
 
-### Phase 8: Styling Cleanup and Seeding (1 day)
+### Phase 7: Detail Styling of Show Page (1 days)
 
-**objective:** Make the site feel more cohesive and awesome.
-
-- [ ] Get feedback on my UI from others
-- [ ] Refactor HTML classes & CSS rules
-- [ ] Add modals, transitions, and other styling flourishes.
+- [ ] Sidebar
+- [ ] Trailer
+- [ ] BasicInfo
+- [ ] Detail Info
+- [ ] Review List
+- [ ] ReviewListItem
+- [ ] ReviewInputForm
 
 ### Bonus Features (TBD)
-- [ ] Search through notes for blocks of text
-- [ ] Pagination / infinite scroll for Notes Index
-- [ ] Set reminders on notes
-- [ ] Changelogs for Notes
-- [ ] Multiple sessions
-
-[phase-one]: ./docs/phases/phase1.md
-[phase-two]: ./docs/phases/phase2.md
-[phase-three]: ./docs/phases/phase3.md
-[phase-four]: ./docs/phases/phase4.md
-[phase-five]: ./docs/phases/phase5.md
+- [ ] BROWSE PAGE!! (will be done)
+- [ ] Recommendation List becomes customized based on current users fav genre
+- [ ] Have actor and director names dynamically display upon input of create movie form
+- [ ] Ability to update user (change pw or fav genre)
