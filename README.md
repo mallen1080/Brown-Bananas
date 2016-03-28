@@ -37,7 +37,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 **Objective:** Functioning rails project with Authentication
 
-- [ ] create new project
+- [x] create new project
+- [ ] setup Heroku 
 - [ ] create `User` model
 - [ ] authentication
 
