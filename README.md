@@ -38,7 +38,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Functioning rails project with Authentication
 
 - [x] create new project
-- [ ] setup Heroku 
+- [ ] setup Heroku
 - [ ] create `User` model
 - [ ] authentication
 
@@ -134,6 +134,7 @@ the API.
 - [ ] Review List
 - [ ] ReviewListItem
 - [ ] ReviewInputForm
+
 
 ### Bonus Features (TBD)
 - [ ] BROWSE PAGE!! (will be done)
