@@ -49,21 +49,25 @@ the API.
 - [ ] create `Movie` model
 - [ ] seed the database with a small amount of test data
 - [ ] CRUD API for movies (`MoviesController`)
+- [ ] Movie Query methods for Movie#index, Movie#show
 - [ ] jBuilder views for movies
+
+### Phase 3: Frontend Architecture and Router (0.5 days)
+
 - [ ] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
+- [ ] setup the flux loop with skeleton files
+- [ ] setup React Router
 
-### Phase 3: Flux Architecture and Router (0.5 days)
+### Phase 4: Movie Create / Edit form (0.5 days)
 
 **Objective:** Movies can be created and edited with the user interface.
 
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
 - [ ] create MovieCreateForm component
 - [ ] saves movies to db after submitting form
 - [ ] basic styling on movie creation form
 
-### Phase 4: Navbar / footer (0.5 days)
+### Phase 5: Navbar / footer (0.5 days)
 
 **Objective:** Create navbar / footer components.
 
@@ -71,14 +75,14 @@ the API.
 - [ ] create buttons for browse, log-in, and sign-up
 - [ ] Show button to create movie if current user is admin
 
-### Phase 4: Log In / Sign Up (0.5 days)
+### Phase 6: Log In / Sign Up (0.5 days)
 
 **Objective:** Create log in / sign up form.
 
 - [ ] signs a user in upon submission
 - [ ] basic styling
 
-### Phase 5: Home Page (1.5 day)
+### Phase 7: Home Page (1.5 day)
 
 **Objective:** Create all components for homepage.
 
@@ -89,8 +93,7 @@ the API.
   - [ ] MovieListItemPic
 - [ ] Basic styling
 
-
-### Phase 6: Movie Show Page (1.5 days)
+### Phase 8: Movie Show Page (1.5 days)
 
 **Objective:** Create all components for movie show page.
 
@@ -105,8 +108,7 @@ the API.
   - [ ] Show button to edit / delete movie if current user is admin
 - [ ] Basic styling
 
-
-### Phase 7: Detail Styling of Home Page (1 days)
+### Phase 9: Detail Styling of Home Page (1 days)
 
 - [ ] Iterator
 - [ ] MovieListTables
@@ -114,7 +116,7 @@ the API.
 - [ ] RecommendationList
 - [ ] MovieListItemPic
 
-### Phase 7: Detail Styling of Show Page (1 days)
+### Phase 10: Detail Styling of Show Page (1 days)
 
 - [ ] Sidebar
 - [ ] Trailer
