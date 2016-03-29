@@ -18,7 +18,7 @@ User.create(username: "admin", password: "yellow")
 200.times do
   username = Faker::Internet.user_name
   password = Faker::Internet.password
-  genre = rand(5) #KEE PIN SNYC WITH GENRE LIST
+  genre = rand(5) + 1 #KEE PIN SNYC WITH GENRE LIST
   User.create(username: username, password: password, favorite_genre_id: genre)
 end
 
@@ -40,9 +40,9 @@ image = "http://media.ifccenter.com/images/films/pulp-fiction_592x299.jpg"
 
 def movie_generator
   { title: Faker::Book.title,
-    genre: rand(5), #KEEP IN SYNC WITH GENRE LIST
+    genre: rand(5) + 1, #KEEP IN SYNC WITH GENRE LIST
     theaters: Faker::Date.between(30.days.ago, Date.today),
-    director: rand(Director.all.length),
+    director: rand(Director.count) + 1,
     consensus: Faker::Hipster.sentence,
     description: Faker::Hipster.paragraph }
 end
@@ -78,6 +78,17 @@ end
 end
 
 Movie.all.each do |movie|
-  movie.castings.create(actor_id: rand(Actor.all.length))
-  movie.castings.create(actor_id: rand(Actor.all.length))
+  movie.castings.create(actor_id: rand(Actor.count) + 1)
+  movie.castings.create(actor_id: rand(Actor.count) + 1)
+end
+
+1000.times do
+  movie = Movie.find(rand(Movie.count) + 1)
+  user = rand(User.count) + 1
+  value = [true, false][rand(2)]
+  body = Faker::Hacker.say_something_smart
+  movie.reviews.create(
+    user_id: user,
+    value: value,
+    body: body)
 end

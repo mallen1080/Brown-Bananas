@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
   before_validation :ensure_session_token
   attr_reader :password
 
+  belongs_to :favorite_genre, class_name: "Genre", foreign_key: :favorite_genre_id
+  has_many :reviews
+
+
   def self.find_by_credentials(username, pw)
     @user = User.find_by_username(username)
     return nil if @user.nil?
