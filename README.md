@@ -49,7 +49,7 @@ the API.
 
 - [x] create `Movie` model
 - [x] seed the database with a small amount of test data
-- [ ] CRUD API for movies (`MoviesController`)
+- [x] CRUD API for movies (`MoviesController`)
 - [ ] Movie Query methods for Movie#index, Movie#show
 - [ ] jBuilder views for movies
 
