@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
-  validates :username, :password_digest, :session_token, presence: true
+  validates :username, :password_digest, :session_token,
+    :favorite_genre_id, presence: true
+  validates :password, length: { minimum: 6 }
+  validates :username, uniqueness: true
+
   before_validation :ensure_session_token
   attr_reader :password
 

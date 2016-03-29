@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
 
   def create
-    @user.create!(user_params)
+    @user = User.create!(user_params)
     render :show
   end
 
@@ -12,7 +12,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :favorite_genre_id)
   end
 
 end

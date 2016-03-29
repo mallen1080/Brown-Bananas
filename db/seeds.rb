@@ -18,7 +18,8 @@ User.create(username: "admin", password: "yellow")
 200.times do
   username = Faker::Internet.user_name
   password = Faker::Internet.password
-  User.create(username: username, password: password)
+  genre = rand(5) #KEE PIN SNYC WITH GENRE LIST
+  User.create(username: username, password: password, favorite_genre_id: genre)
 end
 
 200.times do
