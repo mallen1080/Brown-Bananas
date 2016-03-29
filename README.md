@@ -39,16 +39,16 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] create new project
 - [ ] setup Heroku
-- [ ] create `User` model
-- [ ] authentication
+- [x] create `User` model
+- [x] authentication
 
 ### Phase 2: Movie Model, API, and basic APIUtil (1 days)
 
 **Objective:** Movies can be created, read, edited, indexed and destroyed through
 the API.
 
-- [ ] create `Movie` model
-- [ ] seed the database with a small amount of test data
+- [x] create `Movie` model
+- [x] seed the database with a small amount of test data
 - [ ] CRUD API for movies (`MoviesController`)
 - [ ] Movie Query methods for Movie#index, Movie#show
 - [ ] jBuilder views for movies
