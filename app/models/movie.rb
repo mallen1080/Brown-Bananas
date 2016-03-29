@@ -23,11 +23,11 @@ class Movie < ActiveRecord::Base
   end
 
   def self.top_rated(release, count)
-    dvd_status = release == "theaters" ?
-    "on_dvd is NULL" : "on_dvd is NOT NULL"
-
-    Movie.includes(:reviews)
-    .where(dvd_status)
+    release_status = release == "theaters" ?
+    "on_release is NULL" : "on_dvd is NOT NULL"
+    #NEED TO ADD REVIEWW FILTER AND ADD TO JBUILDER
+    movies = Movie.includes(:reviews)
+    .where(release_status)
     .limit(count)
   end
 

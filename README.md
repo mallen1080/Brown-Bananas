@@ -38,7 +38,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 **Objective:** Functioning rails project with Authentication
 
 - [x] create new project
-- [ ] setup Heroku
+- [x] setup Heroku
 - [x] create `User` model
 - [x] authentication
 
@@ -57,8 +57,8 @@ the API.
 
 **Objective:** Reviews can be created and edited through the API.
 
-- [ ] create `Review` model
-- [ ] seed the database with a small amount of test data
+- [x] create `Review` model
+- [x] seed the database with a small amount of test data
 - [ ] CE API for reviews (`ReviewsController`)
 
 ### Phase 4: Frontend Architecture and Router (0.5 days)
