@@ -4,7 +4,7 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
-var MovieForm = require('./components/MovieForm');
+var MovieForm = require('./components/movieForm');
 ApiUtil = require('./util/apiUtil');
 
 var App = React.createClass({
