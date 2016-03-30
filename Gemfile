@@ -29,12 +29,12 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   gem 'pry-rails'
-  gem 'faker'
 end
 
 group :development do
@@ -47,5 +47,4 @@ end
 
 group :production do
   gem 'rails_12factor'
-  gem 'faker'
 end

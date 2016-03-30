@@ -20,11 +20,11 @@ var MovieForm = React.createClass({
       actor2: "",
       description: "",
       consensus: ""
-    }
+    };
   },
 
   componentDidMount: function () {
-    this.listener = MovieStore.addListener(this._onMovieFetch)
+    this.listener = MovieStore.addListener(this._onMovieFetch);
     if (this.props.params.movieId) {
       ApiUtil.fetchSingleMovie(this.props.params.movieId);
     }
@@ -53,10 +53,12 @@ var MovieForm = React.createClass({
       "Documentary", "Drama", "Horror", "Sci-Fi"];
 
     genres = genres.map(function (genre, i) {
-      return (<option key={i}>
-        {genre}
-        </option>);
-    })
+      return (
+        <option key={i}>
+          {genre}
+        </option>
+      );
+    });
     return genres;
   },
 
@@ -74,9 +76,9 @@ var MovieForm = React.createClass({
   },
 
   render: function () {
-    var heading = this.props.params.movieId ? "Edit Movie" : "Add a Movie"
-    var verb = this.props.params.movieId ? "PATCH" : "POST"
-    var id = this.props.params.movieId
+    var heading = this.props.params.movieId ? "Edit Movie" : "Add a Movie";
+    var verb = this.props.params.movieId ? "PATCH" : "POST";
+    var id = this.props.params.movieId;
 
     return(
       <form>
@@ -130,7 +132,7 @@ var MovieForm = React.createClass({
         <button onClick={this._submitForm.bind(this, verb, id)}>Add Movie</button>
 
       </form>
-    )
+    );
   }
 
 });
