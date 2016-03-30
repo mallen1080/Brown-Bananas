@@ -4,7 +4,7 @@
   json.genre movie.genre.name
   json.in_theaters movie.in_theaters
   json.on_dvd movie.on_dvd
-  json.director_id movie.director.name
+  json.director movie.director.name
   json.consensus movie.consensus
   json.description movie.description
   json.actors do

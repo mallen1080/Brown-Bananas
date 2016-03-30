@@ -1,6 +1,6 @@
 var MovieConstants = {
-
-
+  SINGLE_MOVIE_RECEIVED: "SINGLE_MOVIE_RECEIVED",
+  HOME_PAGE_MOVIES_RECEIVED: "HOME_PAGE_MOVIES_RECEIVED"
 };
 
 module.exports = MovieConstants;

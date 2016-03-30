@@ -6,7 +6,7 @@ class Actor < ActiveRecord::Base
   def self.find_or_create(name)
     actor = Actor.find_by_name(name)
     if actor
-      return actor.id
+      return actor
     else
       Actor.create!(name: name)
     end

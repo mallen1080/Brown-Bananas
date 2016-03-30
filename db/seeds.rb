@@ -32,7 +32,7 @@ end
   Director.create(name: name)
 end
 
-genres = ["Comedy", "Drama", "Action", "Sci-Fi", "Horror"]
+genres = ["Action", "Animation", "Comedy", "Documentary", "Drama", "Horror", "Sci-Fi"]
 genres.each { |genre| Genre.create(name: genre) }
 
 url = "https://www.youtube.com/embed/s7EdQ4Fqbh"

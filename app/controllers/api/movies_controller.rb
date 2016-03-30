@@ -4,7 +4,7 @@ class Api::MoviesController < ApplicationController
     @movie = Movie.new(movie_params)
     @movie.genre_id = Genre.find_by_name(params[:movie][:genre]).id
     @movie.director_id = Director.find_or_create(params[:movie][:director])
-    # @movie.in_theaters = Date.new(2015,5,6) --FOR TESTING--
+
     if @movie.save
       Casting.create_from_movie_form(params[:movie][:actors], @movie)
     end
@@ -26,8 +26,11 @@ class Api::MoviesController < ApplicationController
   end
 
   def update
-    @movie = Movie.find(params[:movie_id])
+    @movie = Movie.find(params[:id])
+    @movie.genre_id = Genre.find_by_name(params[:movie][:genre]).id
+    @movie.director_id = Director.find_or_create(params[:movie][:director])
     @movie.update(movie_params)
+    Casting.create_from_movie_form(params[:movie][:actors], @movie)
     render :show
   end
 

@@ -8,7 +8,9 @@ var ApiUtil = {
       method: "GET",
       url: "api/movies",
       dataType: "json",
-      success: function (movies) {console.log(movies)},
+      success: function (movies) {
+        MovieActions.homePageMoviesReceived(movies);
+      },
       error: function () {
         console.log("error in fetchHomePageMovies")
       }
@@ -21,25 +23,29 @@ var ApiUtil = {
       method: "GET",
       url: url,
       dataType: "json",
-      success: function (movie) {console.log(movie)},
+      success: function (movie) {
+        MovieActions.singleMovieReceived(movie);
+      },
       error: function () {
         console.log("error in fetchSingleMovie")
       }
-
     })
   },
 
-  createMovie: function (movie) {
+  createOrEditMovie: function (movie, method, MovieId) {
+    var id = MovieId || ""
+
     $.ajax({
-      method: "POST",
-      url: "api/movies",
+      method: method,
+      url: "api/movies/" + id,
       dataType: "json",
       data: movie,
-      success: function (movie) {console.log(movie)},
+      success: function (movie) {
+        MovieActions.singleMovieReceived(movie);
+      },
       error: function () {
-        console.log("error in createMovie")
+        console.log("error in createoreditMovie")
       }
-
     })
   },
 
@@ -53,7 +59,6 @@ var ApiUtil = {
       error: function () {
         console.log("error in createReview")
       }
-
     })
   }
 

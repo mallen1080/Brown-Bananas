@@ -64,7 +64,9 @@ the API.
 ### Phase 4: Frontend Architecture and Router (0.5 days)
 
 - [x] setup Webpack & Flux scaffold
-- [ ] setup `APIUtil` to interact with the API
+- [x] setup `APIUtil` for movies
+- [x] setup `APIUtil` for reviews
+- [ ] setup `APIUtil` for users/sessions
 - [x] setup the flux loop with skeleton files
 - [x] setup React Router
 
@@ -72,8 +74,8 @@ the API.
 
 **Objective:** Movies can be created and edited with the user interface.
 
-- [ ] create MovieCreateForm component
-- [ ] saves movies to db after submitting form
+- [x] create MovieCreateForm component
+- [x] saves movies to db after submitting form
 - [ ] basic styling on movie creation form
 
 ### Phase 6: Navbar / footer (0.5 days)
