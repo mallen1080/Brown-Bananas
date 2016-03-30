@@ -1,7 +1,14 @@
 class Api::MoviesController < ApplicationController
 
   def create
-    @movie = Movie.create!(movie_params)
+    @movie = Movie.new(movie_params)
+    @movie.genre_id = Genre.find_by_name(params[:movie][:genre]).id
+    @movie.director_id = Director.find_or_create(params[:movie][:director])
+    # @movie.in_theaters = Date.new(2015,5,6) --FOR TESTING--
+    if @movie.save
+      Casting.create_from_movie_form(params[:movie][:actors], @movie)
+    end
+
     render :show
   end
 
@@ -10,7 +17,6 @@ class Api::MoviesController < ApplicationController
   end
 
   def index
-    
   end
 
   def destroy
@@ -32,10 +38,8 @@ class Api::MoviesController < ApplicationController
       :title,
       :image_url,
       :trailer_url,
-      :genre_id,
-      :in_theatres,
+      :in_theaters,
       :on_dvd,
-      :director_id,
       :consensus,
       :description)
   end

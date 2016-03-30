@@ -50,8 +50,8 @@ the API.
 - [x] create `Movie` model
 - [x] seed the database with a small amount of test data
 - [x] CRUD API for movies (`MoviesController`)
-- [ ] Movie Query methods for Movie#index, Movie#show
-- [ ] jBuilder views for movies
+- [x] Movie Query methods for Movie#index, Movie#show
+- [x] jBuilder views for movies
 
 ### Phase 3: Review Model, API, and basic APIUtil (0.5 days)
 
