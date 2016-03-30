@@ -5,11 +5,7 @@ class Actor < ActiveRecord::Base
 
   def self.find_or_create(name)
     actor = Actor.find_by_name(name)
-    if actor
-      return actor
-    else
-      Actor.create!(name: name)
-    end
+    actor || Actor.create!(name: name)
   end
 
 end

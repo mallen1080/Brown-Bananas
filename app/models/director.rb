@@ -4,12 +4,10 @@ class Director < ActiveRecord::Base
 
   def self.find_or_create(name)
     director = Director.find_by_name(name)
-    if director
-      return director.id
-    else
-      new_director = Director.create!(name: name)
-      new_director.id
-    end
+    return director.id if director
+    
+    new_director = Director.create!(name: name)
+    new_director.id
   end
 
 end
