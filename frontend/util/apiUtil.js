@@ -12,13 +12,13 @@ var ApiUtil = {
         MovieActions.homePageMoviesReceived(movies);
       },
       error: function () {
-        console.log("error in fetchHomePageMovies")
+        console.log("error in fetchHomePageMovies");
       }
-    })
+    });
   },
 
   fetchSingleMovie: function (movieId) {
-    var url = "api/movies/" + movieId
+    var url = "api/movies/" + movieId;
     $.ajax({
       method: "GET",
       url: url,
@@ -27,13 +27,13 @@ var ApiUtil = {
         MovieActions.singleMovieReceived(movie);
       },
       error: function () {
-        console.log("error in fetchSingleMovie")
+        console.log("error in fetchSingleMovie");
       }
-    })
+    });
   },
 
   createOrEditMovie: function (movie, method, MovieId) {
-    var id = MovieId || ""
+    var id = MovieId || "";
 
     $.ajax({
       method: method,
@@ -44,9 +44,9 @@ var ApiUtil = {
         MovieActions.singleMovieReceived(movie);
       },
       error: function () {
-        console.log("error in createoreditMovie")
+        console.log("error in createoreditMovie");
       }
-    })
+    });
   },
 
   createReview: function () {
@@ -55,11 +55,11 @@ var ApiUtil = {
       url: "api/reviews",
       dataType: "json",
       data: movie,
-      success: function (reviews) {console.log(review)},
+      success: function (reviews) {console.log(review);},
       error: function () {
-        console.log("error in createReview")
+        console.log("error in createReview");
       }
-    })
+    });
   }
 
 };
