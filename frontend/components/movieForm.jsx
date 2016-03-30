@@ -1,7 +1,7 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var ApiUtil = require('../util/apiUtil');
-MovieStore = require('../stores/movieStore');
+var MovieStore = require('../stores/movieStore');
 
 var MovieForm = React.createClass({
   mixins: [LinkedStateMixin],
