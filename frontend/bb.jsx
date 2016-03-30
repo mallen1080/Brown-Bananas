@@ -13,7 +13,7 @@ var App = React.createClass({
       <div>
       {this.props.children}
       </div>
-    )
+    );
   }
 });
 
@@ -30,4 +30,4 @@ $(
   function () {
     ReactDOM.render(AppRoutes, document.getElementById("main"));
   }
-)
+);

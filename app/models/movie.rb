@@ -44,9 +44,9 @@ class Movie < ActiveRecord::Base
   end
 
   def review_counts
-    return { up: 0, down: 0, percentage: 0 } if self.reviews.count == 0
-    up = self.reviews.where(value: true).count
-    down = self.reviews.where(value: false).count
+    return { up: 0, down: 0, percentage: 0 } if self.reviews.length == 0
+    up = self.reviews.select { |r| (r.value == true) }.length
+    down = self.reviews.select { |r| (r.value == false) }.length
     percentage = (100 * (up / (up + down.to_f))).to_i
     { up: up, down: down, percentage: percentage }
   end
