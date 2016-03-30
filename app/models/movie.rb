@@ -26,7 +26,7 @@ class Movie < ActiveRecord::Base
     Movie.includes(:reviews)
     .where("on_dvd is NULL")
     .sort_by { |movie| movie.review_counts[:percentage] }
-    .reverse[0..count]
+    .reverse[0...count]
   end
 
   def self.top_rated_dvd(count)
@@ -34,7 +34,7 @@ class Movie < ActiveRecord::Base
     .where("on_dvd is NOT NULL")
     .where("on_dvd > ?", Date.new(2015, 4, 1))
     .sort_by { |movie| movie.review_counts[:percentage] }
-    .reverse[0..count]
+    .reverse[0...count]
   end
 
   def recent_reviews

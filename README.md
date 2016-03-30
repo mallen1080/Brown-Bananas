@@ -65,8 +65,8 @@ the API.
 
 - [x] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
-- [ ] setup the flux loop with skeleton files
-- [ ] setup React Router
+- [x] setup the flux loop with skeleton files
+- [x] setup React Router
 
 ### Phase 5: Movie Create / Edit form (0.5 days)
 
