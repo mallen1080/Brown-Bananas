@@ -59,11 +59,11 @@ the API.
 
 - [x] create `Review` model
 - [x] seed the database with a small amount of test data
-- [ ] CE API for reviews (`ReviewsController`)
+- [x] CE API for reviews (`ReviewsController`)
 
 ### Phase 4: Frontend Architecture and Router (0.5 days)
 
-- [ ] setup Webpack & Flux scaffold
+- [x] setup Webpack & Flux scaffold
 - [ ] setup `APIUtil` to interact with the API
 - [ ] setup the flux loop with skeleton files
 - [ ] setup React Router
