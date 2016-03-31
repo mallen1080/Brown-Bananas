@@ -7,6 +7,7 @@ var IndexRoute = ReactRouter.IndexRoute;
 var MovieForm = require('./components/movieForm');
 var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
+var SignInForm = require('./components/signInForm');
 ApiUtil = require('./util/apiUtil');
 
 var App = React.createClass({
@@ -14,6 +15,8 @@ var App = React.createClass({
     return(
       <div>
       <Navbar />
+      <SignUpForm />
+      <SignInForm />
       {this.props.children}
       </div>
     );
@@ -25,7 +28,6 @@ var AppRoutes = (
     <Route path="/" component={App}>
       <Route path="movies/new" component={MovieForm} />
       <Route path="movies/:movieId/edit" component={MovieForm} />
-      <Route path="users/new" component={SignUpForm} />
     </Route>
   </Router>
 );
@@ -35,3 +37,10 @@ $(
     ReactDOM.render(AppRoutes, document.getElementById("main"));
   }
 );
+
+
+
+
+
+// <Route path="users/new" component={SignUpForm} />
+// <Route path="session/new" component={SignInForm} />

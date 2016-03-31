@@ -1,3 +1,10 @@
-// Place all the styles related to the api/sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.session-page {
+  height: 800px;
+}
+
+.session-page > .new-session-form {
+  width: 600px;
+  margin: auto;
+  background-color: white;
+  height: 260px;
+}

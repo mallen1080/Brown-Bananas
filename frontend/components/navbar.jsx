@@ -1,6 +1,15 @@
 var React = require('react');
+var AppActions = require('../actions/appActions');
 
 var Navbar = React.createClass({
+
+  displaySignIn: function () {
+    AppActions.displaySignIn(true);
+  },
+
+  displaySignUp: function () {
+    AppActions.displaySignUp(true);
+  },
 
   render: function () {
     return (
@@ -26,12 +35,12 @@ var Navbar = React.createClass({
               </button>
             </li>
 
-            <li>
+            <li onClick={this.displaySignUp}>
               <button>SIGN UP
               </button>
             </li>
 
-            <li>
+            <li onClick={this.displaySignIn}>
               <button>SIGN IN
               </button>
             </li>

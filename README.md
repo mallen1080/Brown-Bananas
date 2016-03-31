@@ -91,7 +91,7 @@ the API.
 **Objective:** Create log in / sign up form.
 
 - [ ] signs a user in upon submission
-- [ ] basic styling
+- [x] basic styling
 
 ### Phase 8: Home Page (1.5 day)
 
