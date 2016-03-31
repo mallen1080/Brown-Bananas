@@ -5,12 +5,14 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var MovieForm = require('./components/movieForm');
+var Navbar = require('./components/navbar');
 ApiUtil = require('./util/apiUtil');
 
 var App = React.createClass({
   render: function () {
     return(
       <div>
+      <Navbar />
       {this.props.children}
       </div>
     );

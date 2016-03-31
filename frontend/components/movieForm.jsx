@@ -62,7 +62,7 @@ var MovieForm = React.createClass({
     return genres;
   },
 
-  _submitForm: function (verb, id) {
+  _submitForm: function (method, movieId) {
     var newMovie = { movie: $.extend(true, {}, this.state) };
 
     if (!newMovie.movie.on_dvd) {
@@ -72,7 +72,7 @@ var MovieForm = React.createClass({
     delete newMovie.movie.actor2;
     newMovie.movie.actors = [this.state.actor1, this.state.actor2];
 
-    ApiUtil.createOrEditMovie(newMovie, verb, id);
+    ApiUtil.createOrEditMovie(newMovie, method, movieId);
   },
 
   render: function () {

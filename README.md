@@ -76,7 +76,7 @@ the API.
 
 - [x] create MovieCreateForm component
 - [x] saves movies to db after submitting form
-- [ ] basic styling on movie creation form
+- [x] basic styling on movie creation form
 
 ### Phase 6: Navbar / footer (0.5 days)
 
