@@ -12,7 +12,7 @@ var MovieForm = React.createClass({
       title: "",
       image_url: "",
       trailer_url: "",
-      genre: "Action",
+      genre: "Action", //-----**CHANGE YOUTUBE URL IN CONTROLLER!!!!!**---
       in_theaters: "",
       on_dvd: "",
       director: "",
@@ -81,7 +81,7 @@ var MovieForm = React.createClass({
     var id = this.props.params.movieId;
 
     return(
-      <form>
+      <form className="movie-form">
         <h1>{heading}</h1>
         <label>Title: </label>
         <input type="text" valueLink={this.linkState('title')} />
@@ -129,7 +129,9 @@ var MovieForm = React.createClass({
         <textarea valueLink={this.linkState('description')} />
         <br />
 
-        <button onClick={this._submitForm.bind(this, verb, id)}>Add Movie</button>
+        <div className="movie-form-submit">
+          <button onClick={this._submitForm.bind(this, verb, id)}>Submit</button>
+        </div>
 
       </form>
     );
