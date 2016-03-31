@@ -81,59 +81,61 @@ var MovieForm = React.createClass({
     var id = this.props.params.movieId;
 
     return(
-      <form className="movie-form">
-        <h1>{heading}</h1>
-        <label>Title: </label>
-        <input type="text" valueLink={this.linkState('title')} />
-        <br />
+      <div className="movie-form-page">
+        <form className="movie-form-form">
+          <h1>{heading}</h1>
+          <label>Title: </label>
+          <input type="text" valueLink={this.linkState('title')} />
+          <br />
 
-        <label>Image URL: </label>
-        <input type="text" valueLink={this.linkState('image_url')} />
-        <br />
+          <label>Image URL: </label>
+          <input type="text" valueLink={this.linkState('image_url')} />
+          <br />
 
-        <label>Trailer URL: </label>
-        <input type="text" valueLink={this.linkState('trailer_url')} />
-        <br />
+          <label>Trailer URL: </label>
+          <input type="text" valueLink={this.linkState('trailer_url')} />
+          <br />
 
-        <label>Genre: </label>
-        <select valueLink={this.linkState('genre')}>
-          {this._genreOptions()}
-        </select>
-        <br />
+          <label>Genre: </label>
+          <select valueLink={this.linkState('genre')}>
+            {this._genreOptions()}
+          </select>
+          <br />
 
-        <label>Theater Release: </label>
-        <input type="date" valueLink={this.linkState('in_theaters')} />
-        <br />
+          <label>Theater Release: </label>
+          <input type="date" valueLink={this.linkState('in_theaters')} />
+          <br />
 
-        <label>DVD Release (optional): </label>
-        <input type="date" valueLink={this.linkState('on_dvd')} />
-        <br />
+          <label>DVD Release (optional): </label>
+          <input type="date" valueLink={this.linkState('on_dvd')} />
+          <br />
 
-        <label>Director: </label>
-        <input type="text" valueLink={this.linkState('director')} />
-        <br />
+          <label>Director: </label>
+          <input type="text" valueLink={this.linkState('director')} />
+          <br />
 
-        <label>Actor: </label>
-        <input type="text" valueLink={this.linkState('actor2')} />
-        <br />
+          <label>Actor: </label>
+          <input type="text" valueLink={this.linkState('actor2')} />
+          <br />
 
-        <label>Actor: </label>
-        <input type="text" valueLink={this.linkState('actor1')} />
-        <br />
+          <label>Actor: </label>
+          <input type="text" valueLink={this.linkState('actor1')} />
+          <br />
 
-        <label>Critics Consensus: </label>
-        <textarea valueLink={this.linkState('consensus')} />
-        <br />
+          <label>Critics Consensus: </label>
+          <textarea valueLink={this.linkState('consensus')} />
+          <br />
 
-        <label>Description: </label>
-        <textarea valueLink={this.linkState('description')} />
-        <br />
+          <label>Description: </label>
+          <textarea valueLink={this.linkState('description')} />
+          <br />
 
-        <div className="movie-form-submit">
-          <button onClick={this._submitForm.bind(this, verb, id)}>Submit</button>
-        </div>
+          <div className="movie-form-submit">
+            <button onClick={this._submitForm.bind(this, verb, id)}>Submit</button>
+          </div>
 
-      </form>
+        </form>
+      </div>
     );
   }
 

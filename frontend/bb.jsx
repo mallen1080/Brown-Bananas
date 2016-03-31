@@ -6,6 +6,7 @@ var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var MovieForm = require('./components/movieForm');
 var Navbar = require('./components/navbar');
+var SignUpForm = require('./components/signUpForm');
 ApiUtil = require('./util/apiUtil');
 
 var App = React.createClass({
@@ -24,6 +25,7 @@ var AppRoutes = (
     <Route path="/" component={App}>
       <Route path="movies/new" component={MovieForm} />
       <Route path="movies/:movieId/edit" component={MovieForm} />
+      <Route path="users/new" component={SignUpForm} />
     </Route>
   </Router>
 );

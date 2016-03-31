@@ -83,7 +83,7 @@ the API.
 **Objective:** Create navbar / footer components.
 
 - [ ] searchbar dynamically shows movies matching search
-- [ ] create buttons for browse, log-in, and sign-up
+- [x] create buttons for browse, log-in, and sign-up
 - [ ] Show button to create movie if current user is admin
 
 ### Phase 7: Log In / Sign Up (0.5 days)

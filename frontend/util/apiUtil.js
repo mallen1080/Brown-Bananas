@@ -54,10 +54,23 @@ var ApiUtil = {
       method: "POST",
       url: "api/reviews",
       dataType: "json",
-      data: movie,
+      data: data,
       success: function (reviews) {console.log(review);},
       error: function () {
         console.log("error in createReview");
+      }
+    });
+  },
+
+  createUser: function (user) {
+    $.ajax({
+      method: "POST",
+      url: "api/users",
+      dataType: "json",
+      data: user,
+      success: function (user) {console.log(user);},
+      error: function () {
+        console.log("error in createUser");
       }
     });
   }

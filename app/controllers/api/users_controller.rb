@@ -2,6 +2,7 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.favorite_genre_id = Genre.find_by_name(params[:user][:genre]).id
     if @user.save
       login!(@user)
       render :show
@@ -19,7 +20,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :favorite_genre_id)
+    params.require(:user).permit(:username, :password)
   end
 
 end

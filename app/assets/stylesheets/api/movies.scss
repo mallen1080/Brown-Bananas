@@ -1,13 +1,21 @@
-.movie-form {
+.movie-form-page {
   background-color: lightblue;
+  width: 1100px;
+  height: 900px;
+  margin: auto;
+}
+
+.movie-form-form {
+  background-color: white;
   width: 700px;
   margin: auto;
+  // margin-top: 50px; FIX
   padding: 10px;
   font-size: 15px;
 }
 
-.movie-form > input,
-.movie-form > textarea {
+.movie-form-form > input,
+.movie-form-form > textarea {
   width: 300px;
   margin-bottom: 10px;
   max-width: 400px;
@@ -16,11 +24,11 @@
   background-color: white;
 }
 
-.movie-form > textarea {
+.movie-form-form > textarea {
   height: 70px;
 }
 
-.movie-form > label {
+.movie-form-form > label {
   width: 200px;
   float: left;
   text-align: right;
@@ -28,11 +36,14 @@
   padding-right: 10px;
 }
 
-.movie-form > h1 {
+.movie-form-form > h1 {
   text-align: center;
   font-size: 36px;
   font-weight: bold;
-  margin: 10px;
+  margin: auto;
+  width: 350px;
+  margin-bottom: 10px;
+  background-color: yellow;
 }
 
 .movie-form-submit {
@@ -41,16 +52,15 @@
 }
 
 .movie-form-submit > button {
-  padding: 10px 20px;
-  background-color: yellow;
-  border: 1px solid black;
+  padding: 8px 16px;
+  background-color: #09689a;
+  color: white;
   border-radius: 5px;
-  font-weight: bold;
 }
 
-.movie-form > select {
+.movie-form-form > select {
   width: 310px;
   margin-bottom: 10px;
   border: 1px solid black;
-  height: 23px;
+  height: 30px;
 }
