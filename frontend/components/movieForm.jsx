@@ -84,53 +84,65 @@ var MovieForm = React.createClass({
       <div className="movie-form-page">
         <form className="movie-form-form">
           <h1>{heading}</h1>
+
+          <div className="form-input group">
           <label>Title: </label>
           <input type="text" valueLink={this.linkState('title')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Image URL: </label>
           <input type="text" valueLink={this.linkState('image_url')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Trailer URL: </label>
           <input type="text" valueLink={this.linkState('trailer_url')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Genre: </label>
           <select valueLink={this.linkState('genre')}>
             {this._genreOptions()}
           </select>
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Theater Release: </label>
           <input type="date" valueLink={this.linkState('in_theaters')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>DVD Release (optional): </label>
           <input type="date" valueLink={this.linkState('on_dvd')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Director: </label>
           <input type="text" valueLink={this.linkState('director')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Actor: </label>
           <input type="text" valueLink={this.linkState('actor2')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Actor: </label>
           <input type="text" valueLink={this.linkState('actor1')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Critics Consensus: </label>
           <textarea valueLink={this.linkState('consensus')} />
-          <br />
+          </div>
 
+          <div className="form-input group">
           <label>Description: </label>
           <textarea valueLink={this.linkState('description')} />
-          <br />
+          </div>
 
-          <div className="movie-form-submit">
+          <div className="form-submit">
             <button onClick={this._submitForm.bind(this, verb, id)}>Submit</button>
           </div>
 

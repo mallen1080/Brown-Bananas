@@ -35,34 +35,39 @@ var SignUpForm = React.createClass({
     return(
       <div className="new-user-page">
         <div className="new-user-form">
-          <div className="new-user-form-header">
+          <div className="form-header group">
             <h4>SIGN UP WITH USERNAME</h4>
             <button>x</button>
           </div>
 
-          <p>BROWN BANANAS</p>
+          <div className="form-main">
 
-          <form className="new-user-form">
+            <p className="logo">BROWN BANANAS</p>
 
-            <label>Username: </label>
-            <input type="text" valueLink={this.linkState('username')} />
-            <br />
+            <form>
+              <div className="form-input group">
+                <label>Username: </label>
+                <input type="text" placeholder="username" valueLink={this.linkState('username')} />
+              </div>
 
-            <label>Password: </label>
-            <input type="password" valueLink={this.linkState('password')} />
-            <br />
+              <div className="form-input group">
+              <label>Password: </label>
+              <input type="password" placeholder="password" valueLink={this.linkState('password')} />
+              </div>
 
-            <label>Favorite Genre: </label>
-            <select valueLink={this.linkState('genre')}>
-              {this._genreOptions()}
-            </select>
-            <br />
+              <div className="form-input group">
+              <label>Favorite Genre: </label>
+              <select valueLink={this.linkState('genre')}>
+                {this._genreOptions()}
+              </select>
+              </div>
 
-            <div className="new-user-form-submit">
-              <button onClick={this._submitForm}>Sign Up</button>
-            </div>
+              <div className="form-submit">
+                <button onClick={this._submitForm}>Sign Up</button>
+              </div>
 
-          </form>
+            </form>
+          </div>
         </div>
       </div>
     );

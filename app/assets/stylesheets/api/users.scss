@@ -1,3 +1,35 @@
-// Place all the styles related to the api/users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.new-user-page {
+  height: 800px;
+}
+
+.new-user-page > .new-user-form {
+  width: 750px;
+  margin: auto;
+  background-color: white;
+  height: 330px;
+}
+
+.form-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.form-main {
+  padding: 15px;
+}
+
+.form-header h4 {
+  float:left;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-header button {
+  float: right;
+  color: grey;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 10px;
+}

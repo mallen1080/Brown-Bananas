@@ -27,6 +27,7 @@ body {
 
 #main {
   background-color: #eee;
+  // background-color: blue;
 }
 
 button {
@@ -35,4 +36,48 @@ button {
 
 ul {
   list-style: none;
+}
+
+.form-input {
+  margin-bottom: 15px;
+}
+
+.form-input label {
+  float: left;
+  width: 25%;
+  text-align: right;
+  padding-top: 7px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.form-input input,
+.form-input select,
+.form-input textarea {
+  float: left;
+  width: 60%;
+  max-width: 70%;
+  padding-left: 10px;
+  border: 1px solid grey;
+  height: 34px;
+}
+
+.form-input textarea {
+    height: 70px;
+}
+
+.form-submit {
+  margin: auto;
+  text-align: center;
+}
+
+.form-submit > button {
+  padding: 8px 16px;
+  background-color: #0C89Ca;
+  color: white;
+  border-radius: 5px;
+}
+
+.form-submit > button:hover {
+  background-color: #09689a;
 }
