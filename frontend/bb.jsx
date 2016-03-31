@@ -14,10 +14,12 @@ var App = React.createClass({
   render: function () {
     return(
       <div>
-      <Navbar />
-      <SignUpForm />
-      <SignInForm />
-      {this.props.children}
+        <SignUpForm />
+        <SignInForm />
+        <div>
+          <Navbar />
+          {this.props.children}
+        </div>
       </div>
     );
   }
