@@ -9,11 +9,11 @@ var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
 ApiUtil = require('./util/apiUtil');
 
-<Navbar />;
 var App = React.createClass({
   render: function () {
     return(
       <div>
+      <Navbar />
       {this.props.children}
       </div>
     );
