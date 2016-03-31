@@ -28,8 +28,11 @@ var SignUpForm = React.createClass({
       this.setState({ hide: AppStore.signUpHide() });
     },
 
-    _hidePage: function () {
+    _hidePage: function (e) {
+      var klass = e.target.className;
+      if (klass === "user-page" || klass === "exit-button") {
       AppActions.displaySignUp(false);
+      }
     },
 
   _submitForm: function () {
@@ -54,11 +57,11 @@ var SignUpForm = React.createClass({
     var classNm = this.state.hide ? "user-page hide" : "user-page";
 
     return(
-      <div className={classNm}>
+      <div className={classNm} onClick={this._hidePage}>
         <div className="new-user-form">
           <div className="form-header group">
             <h4>SIGN UP WITH USERNAME</h4>
-            <button onClick={this._hidePage}>x</button>
+            <button className="exit-button" onClick={this._hidePage}>x</button>
           </div>
 
           <div className="form-main">

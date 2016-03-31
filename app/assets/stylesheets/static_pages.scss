@@ -85,3 +85,13 @@ ul {
 .hide {
   display: none;
 }
+
+.exit-button {
+  float: right;
+  color: grey;
+  font-weight: bold;
+}
+
+.exit-button:hover {
+  color: black;
+}

@@ -27,23 +27,28 @@ var SignInForm = React.createClass({
     this.setState({ hide: AppStore.signInHide() });
   },
 
-  _hidePage: function () {
+  _hidePage: function (e) {
+    var klass = e.target.className;
+    if (klass === "session-page" || klass === "exit-button") {
     AppActions.displaySignIn(false);
+    }
   },
 
   _submitForm: function () {
     // ApiUtil.createUser(this.state);
   },
 
+  _nothing: function () {},
+
   render: function () {
     var classNm = this.state.hide ? "session-page hide" : "session-page";
 
     return(
-      <div className={classNm}>
+      <div className={classNm} onClick={this._hidePage}>
         <div className="new-session-form">
           <div className="form-header group">
             <h4>SIGN IN</h4>
-            <button onClick={this._hidePage}>x</button>
+            <button className="exit-button" onClick={this._hidePage}>x</button>
           </div>
 
           <div className="form-main">
