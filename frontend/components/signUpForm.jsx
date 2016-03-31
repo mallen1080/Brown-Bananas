@@ -12,31 +12,37 @@ var SignUpForm = React.createClass({
       username: "",
       password: "",
       genre: "Action",
-      hide: true
+      hide: true,
+      errors: []
     };
   },
 
     componentDidMount: function () {
-      this.display = AppStore.addListener(this._changeDisplay);
+      this.display = AppStore.addListener(this._onChange);
     },
 
     componentWillUnmount: function () {
       this.display.remove();
     },
 
-    _changeDisplay: function () {
-      this.setState({ hide: AppStore.signUpHide() });
+    _onChange: function () {
+      this.setState({
+        hide: AppStore.signUpHide(),
+        errors: AppStore.errors()
+       });
+
     },
 
     _hidePage: function (e) {
       var klass = e.target.className;
       if (klass === "user-page" || klass === "exit-button") {
       AppActions.displaySignUp(false);
+      AppStore.resetErrors();
       }
     },
 
   _submitForm: function () {
-    ApiUtil.createUser(this.state);
+    ApiUtil.createUser({user: this.state });
   },
 
   _genreOptions: function () {
@@ -55,6 +61,9 @@ var SignUpForm = React.createClass({
 
   render: function () {
     var classNm = this.state.hide ? "user-page hide" : "user-page";
+    var errors = this.state.errors.map(function (error, i) {
+      return <p key={i}>{error}</p>;
+    });
 
     return(
       <div className={classNm} onClick={this._hidePage}>
@@ -69,6 +78,7 @@ var SignUpForm = React.createClass({
             <p className="logo">BROWN BANANAS</p>
 
             <form>
+              <div className="errors">{errors}</div>
               <div className="form-input group">
                 <label>Username: </label>
                 <input type="text" placeholder="username" valueLink={this.linkState('username')} />

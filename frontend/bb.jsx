@@ -8,7 +8,7 @@ var MovieForm = require('./components/movieForm');
 var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
 var SignInForm = require('./components/signInForm');
-ApiUtil = require('./util/apiUtil');
+ApiUtil = require('./util/apiUtil'); //FOR TESTING
 
 var App = React.createClass({
   render: function () {

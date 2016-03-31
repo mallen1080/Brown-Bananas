@@ -13,7 +13,7 @@ Genre.destroy_all
 Movie.destroy_all
 Casting.destroy_all
 
-User.create(username: "admin", password: "yellow")
+User.create(username: "admin", password: "yellow", favorite_genre_id: 1)
 
 200.times do
   username = Faker::Internet.user_name

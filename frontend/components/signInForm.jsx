@@ -11,37 +11,43 @@ var SignInForm = React.createClass({
     return {
       username: "",
       password: "",
-      hide: true
+      hide: true,
+      errors: []
     };
   },
 
   componentDidMount: function () {
-    this.display = AppStore.addListener(this._changeDisplay);
+    this.display = AppStore.addListener(this._onChange);
   },
 
   componentWillUnmount: function () {
     this.display.remove();
   },
 
-  _changeDisplay: function () {
-    this.setState({ hide: AppStore.signInHide() });
+  _onChange: function () {
+    this.setState({
+      hide: AppStore.signInHide(),
+      errors: AppStore.errors()
+   });
   },
 
   _hidePage: function (e) {
     var klass = e.target.className;
     if (klass === "session-page" || klass === "exit-button") {
     AppActions.displaySignIn(false);
+    AppStore.resetErrors();
     }
   },
 
   _submitForm: function () {
-    // ApiUtil.createUser(this.state);
+    ApiUtil.signInUser({ user: this.state });
   },
-
-  _nothing: function () {},
 
   render: function () {
     var classNm = this.state.hide ? "session-page hide" : "session-page";
+    var errors = this.state.errors.map(function (error, i) {
+      return <p key={i}>{error}</p>;
+    });
 
     return(
       <div className={classNm} onClick={this._hidePage}>
@@ -56,6 +62,8 @@ var SignInForm = React.createClass({
             <p className="logo">BROWN BANANAS</p>
 
             <form>
+
+              <div className="errors">{errors}</div>
               <div className="form-input group">
                 <label>Username: </label>
                 <input type="text" placeholder="username" valueLink={this.linkState('username')} />

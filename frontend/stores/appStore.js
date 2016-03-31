@@ -6,6 +6,7 @@ var AppStore = new Store(AppDispatcher);
 
 var _signUpHide = true;
 var _signInHide = true;
+var _errors = [];
 
 AppStore.signInHide = function () {
   return _signInHide;
@@ -13,6 +14,14 @@ AppStore.signInHide = function () {
 
 AppStore.signUpHide = function () {
   return _signUpHide;
+};
+
+AppStore.errors = function () {
+  return _errors;
+};
+
+AppStore.resetErrors = function () {
+  _errors = [];
 };
 
 AppStore.__onDispatch = function (payload) {
@@ -28,7 +37,11 @@ AppStore.__onDispatch = function (payload) {
       _signUpHide = !payload.display;
       this.__emitChange();
       }
-    break;
+      break;
+    case AppConstants.DISPLAY_ERRORS:
+      _errors = payload.errors;
+      this.__emitChange();
+      break;
   }
 };
 

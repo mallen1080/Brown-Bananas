@@ -17,6 +17,14 @@ var AppActions = {
       display: display
     };
     AppDispatcher.dispatch(action);
+  },
+
+  receiveErrors: function (errors) {
+    var action = {
+      actionType: AppConstants.DISPLAY_ERRORS,
+      errors: errors
+    };
+    AppDispatcher.dispatch(action);
   }
 };
 

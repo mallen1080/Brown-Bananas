@@ -1,5 +1,6 @@
 var MovieActions = require('../actions/movieActions');
 var ReviewActions = require('../actions/reviewActions');
+var AppActions = require('../actions/appActions');
 
 var ApiUtil = {
 
@@ -68,9 +69,34 @@ var ApiUtil = {
       url: "api/users",
       dataType: "json",
       data: user,
-      success: function (user) {console.log(user);},
+      success: function (user) {
+        if (user.errors) {
+          AppActions.receiveErrors(user.errors);
+        } else {
+          //SIGN IN
+        }
+      },
       error: function () {
         console.log("error in createUser");
+      }
+    });
+  },
+
+  signInUser: function (user) {
+    $.ajax({
+      method: "POST",
+      url: "api/session",
+      dataType: "json",
+      data: user,
+      success: function (user) {
+        if (user.errors) {
+          AppActions.receiveErrors(user.errors);
+        } else {
+          //SIGN IN
+        }
+      },
+      error: function () {
+        console.log("error in signInUser");
       }
     });
   }
