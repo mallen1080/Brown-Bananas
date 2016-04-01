@@ -33,7 +33,6 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ## Implementation Timeline
 
-- Add error handling to add / edit movie
 
 ### Phase 1: Backend setup and User Authentication (0.5 days)
 
@@ -68,7 +67,7 @@ the API.
 - [x] setup Webpack & Flux scaffold
 - [x] setup `APIUtil` for movies
 - [x] setup `APIUtil` for reviews
-- [ ] setup `APIUtil` for users/sessions
+- [x] setup `APIUtil` for users/sessions
 - [x] setup the flux loop with skeleton files
 - [x] setup React Router
 
@@ -92,7 +91,7 @@ the API.
 
 **Objective:** Create log in / sign up form.
 
-- [ ] signs a user in upon submission
+- [x] signs a user in upon submission
 - [x] basic styling
 
 ### Phase 8: Home Page (1.5 day)

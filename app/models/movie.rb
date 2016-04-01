@@ -1,4 +1,7 @@
 class Movie < ActiveRecord::Base
+  include PgSearch
+  pg_search_scope :search_by_title, against: :title
+  
   validates :title, :image_url, :trailer_url,
     :genre_id, :in_theaters, :director_id,
     :consensus, :description, presence: true

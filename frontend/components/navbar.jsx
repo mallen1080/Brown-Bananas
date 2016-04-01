@@ -33,10 +33,21 @@ var Navbar = React.createClass({
   },
 
   render: function () {
+    var message, button1Text, button2Text,
+      button1Action, button2Action, button2Class
+
     if (this._signedIn()) {
-    var message = "Welcome, " + this.state.currentUser.username;
+      message = "Welcome, " + this.state.currentUser.username;
+      button1Text = "";
+      button1Class = "new-hover";
+      button2Text = "Sign Out";
+      button2Action = ApiUtil.signOutUser;
     } else {
-    var message = "Sign Up to Leave Reviews on Hundreds of Movies!"
+      message = "Sign Up to Leave Reviews on Hundreds of Movies!"
+      button1Text = "Sign Up";
+      button1Action = this.displaySignUp;
+      button2Text = "Sign In";
+      button2Action = this.displaySignIn;
     }
     return (
       <div className="navbar group">
@@ -62,14 +73,12 @@ var Navbar = React.createClass({
               </button>
             </li>
 
-            <li onClick={this.displaySignUp}>
-              <button>SIGN UP
-              </button>
+            <li className={button1Class} onClick={button1Action}>
+              <button>{button1Text}</button>
             </li>
 
-            <li onClick={this.displaySignIn}>
-              <button>SIGN IN
-              </button>
+            <li onClick={button2Action}>
+              <button>{button2Text}</button>
             </li>
           </ul>
         </div>
