@@ -48,7 +48,21 @@
 .navbar-search-results {
   position: absolute;
   background-color: white;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
 }
+
+.navbar-search-results li {
+  border-bottom: 1px solid #eee;
+  padding: 7px;
+}
+
+.navbar-search-results li:hover {
+  background-color: lightgreen;
+  color: white;
+}
+
 .navbar-buttons li {
   float: left;
   color: white;
