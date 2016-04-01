@@ -8,11 +8,15 @@ var Navbar = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function () {
-    return { currentUser: AppStore.currentUser() };
+    return {
+      currentUser: AppStore.currentUser(),
+      movieSearchResults: []
+     };
   },
 
   componentDidMount: function () {
     this.changeUser = AppStore.addListener(this._onChange);
+    this.updateSearch = SearchStore.addListener(this._movieSearchChange);
   },
 
   componentWillUnmount: function () {
@@ -21,6 +25,10 @@ var Navbar = React.createClass({
 
   _onChange: function () {
     this.setState({ currentUser: AppStore.currentUser() })
+  },
+
+  _movieSearchChange: function () {
+    this.setState({ movieSearchResults: SearchStore.movieSearchResults() })
   },
 
   _signedIn: function () {
@@ -38,11 +46,13 @@ var Navbar = React.createClass({
   _search: function (e) {
     if (e.target.value.length > 2) {
       ApiUtil.searchMovies({ movie: e.target.value })
+    } else {
+      this.setState({ movieSearchResults: [] })
     }
   },
 
   _searchResultList: function () {
-    return SearchStore.movieSearchResults().map(function (movie) {
+    return this.state.movieSearchResults.map(function (movie) {
       return (
         <li key={ movie.id }>{movie.title}</li>
       )
@@ -79,7 +89,7 @@ var Navbar = React.createClass({
                 <input type="text"
                 onChange={this._search}
                 placeholder="Search movies..." />
-                <button>Search</button>
+                <ul className="navbar-search-results">{this._searchResultList()}</ul>
               </div>
             </div>
           </form>

@@ -45,10 +45,10 @@
   color: white;
 }
 
-.navbar-searchbox button:hover {
-  background-color: darkgreen;
+.navbar-search-results {
+  position: absolute;
+  background-color: white;
 }
-
 .navbar-buttons li {
   float: left;
   color: white;
@@ -59,7 +59,6 @@
   border-radius: 7px;
   font-weight: bold;
 }
-
 
 .navbar-buttons li:hover {
   background-color: white;
