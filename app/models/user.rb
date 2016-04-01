@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   belongs_to :favorite_genre, class_name: "Genre", foreign_key: :favorite_genre_id
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
 
   def self.find_by_credentials(username, pw)

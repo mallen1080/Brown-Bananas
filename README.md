@@ -33,6 +33,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 ## Implementation Timeline
 
+- Add error handling to add / edit movie
+
 ### Phase 1: Backend setup and User Authentication (0.5 days)
 
 **Objective:** Functioning rails project with Authentication

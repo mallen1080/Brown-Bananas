@@ -2,12 +2,13 @@ class Movie < ActiveRecord::Base
   validates :title, :image_url, :trailer_url,
     :genre_id, :in_theaters, :director_id,
     :consensus, :description, presence: true
+  validates :title, uniqueness: true
 
   belongs_to :director
   belongs_to :genre
-  has_many :castings
+  has_many :castings, dependent: :destroy
   has_many :actors, through: :castings, source: :actor
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
 
   def self.newest_in_theaters(count)
     Movie.includes(:genre, :director, :actors)
@@ -49,6 +50,12 @@ class Movie < ActiveRecord::Base
     down = self.reviews.select { |r| (r.value == false) }.length
     percentage = (100 * (up / (up + down.to_f))).to_i
     { up: up, down: down, percentage: percentage }
+  end
+
+  def parse_for_create_or_edit(params)
+    self.genre_id = Genre.find_by_name(params[:movie][:genre]).id
+    self.director_id = Director.find_or_create(params[:movie][:director])
+    self.trailer_url.sub!("watch?v=", "embed/")
   end
 
 end

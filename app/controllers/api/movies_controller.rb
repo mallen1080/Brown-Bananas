@@ -2,9 +2,7 @@ class Api::MoviesController < ApplicationController
 
   def create
     @movie = Movie.new(movie_params)
-    @movie.genre_id = Genre.find_by_name(params[:movie][:genre]).id
-    @movie.director_id = Director.find_or_create(params[:movie][:director])
-
+    @movie.parse_for_create_or_edit(params)
     if @movie.save
       Casting.create_from_movie_form(params[:movie][:actors], @movie)
     end
@@ -27,8 +25,7 @@ class Api::MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    @movie.genre_id = Genre.find_by_name(params[:movie][:genre]).id
-    @movie.director_id = Director.find_or_create(params[:movie][:director])
+    @movie.parse_for_create_or_edit(params)
     @movie.update(movie_params)
     Casting.create_from_movie_form(params[:movie][:actors], @movie)
     render :show
