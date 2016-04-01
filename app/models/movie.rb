@@ -2,7 +2,7 @@ class Movie < ActiveRecord::Base
   validates :title, :image_url, :trailer_url,
     :genre_id, :in_theaters, :director_id,
     :consensus, :description, presence: true
-  validates :title, uniqueness: true
+  validates :title, uniqueness: true, on: :create
 
   belongs_to :director
   belongs_to :genre
@@ -56,6 +56,7 @@ class Movie < ActiveRecord::Base
     self.genre_id = Genre.find_by_name(params[:movie][:genre]).id
     self.director_id = Director.find_or_create(params[:movie][:director])
     self.trailer_url.sub!("watch?v=", "embed/")
+    self.update_attribute(:on_dvd, nil) unless params[:movie][:on_dvd]
   end
 
 end

@@ -26,7 +26,7 @@ class Api::MoviesController < ApplicationController
   def update
     @movie = Movie.find(params[:id])
     @movie.parse_for_create_or_edit(params)
-    @movie.update(movie_params)
+    @movie.update!(movie_params)
     Casting.create_from_movie_form(params[:movie][:actors], @movie)
     render :show
   end
