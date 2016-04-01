@@ -34,7 +34,7 @@ var Navbar = React.createClass({
 
   render: function () {
     var message, button1Text, button2Text,
-      button1Action, button2Action, button2Class
+      button1Action, button2Action, button1Class
 
     if (this._signedIn()) {
       message = "Welcome, " + this.state.currentUser.username;
