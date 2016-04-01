@@ -14,6 +14,9 @@ MovieStore.__onDispatch = function (payload) {
       break;
     case MovieConstants.HOME_PAGE_MOVIES_RECEIVED:
       MovieStore.updateHomePageMovies(payload.movies);
+      break;
+    case MovieConstants.CLEAR_CURRENT_MOVIE:
+      MovieStore.updateCurrentMovie({});
   }
 };
 

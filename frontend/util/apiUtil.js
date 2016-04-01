@@ -73,7 +73,7 @@ var ApiUtil = {
         if (user.errors) {
           AppActions.receiveErrors(user.errors);
         } else {
-          //SIGN IN
+          AppActions.receiveCurrentUser(user.user);
         }
       },
       error: function () {
@@ -92,11 +92,44 @@ var ApiUtil = {
         if (user.errors) {
           AppActions.receiveErrors(user.errors);
         } else {
-          //SIGN IN
+          AppActions.receiveCurrentUser(user.user);
         }
       },
       error: function () {
         console.log("error in signInUser");
+      }
+    });
+  },
+
+  signOutUser: function () {
+    $.ajax({
+      method: "DELETE",
+      url: "api/session",
+      dataType: "json",
+      success: function () {
+        AppActions.signOutUser();
+      },
+      error: function () {
+        console.log("error in signOutUser");
+      }
+    });
+  },
+
+  fetchCurrentUser: function (completion) {
+    $.ajax({
+      method: "GET",
+      url: "api/session",
+      dataType: "json",
+      success: function (currentUser) {
+        if (currentUser.username) {
+          AppActions.receiveCurrentUser(currentUser);
+        }
+      },
+      complete: function () {
+        completion && completion();
+      },
+      error: function () {
+        console.log("error in signOutUser");
       }
     });
   }

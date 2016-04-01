@@ -8,9 +8,27 @@ var MovieForm = require('./components/movieForm');
 var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
 var SignInForm = require('./components/signInForm');
+var AppStore = require('./stores/appStore');
 ApiUtil = require('./util/apiUtil'); //FOR TESTING
 
 var App = React.createClass({
+
+  getInitialState: function () {
+    return { currentUser: {} };
+  },
+
+  componendDidMount: function () {
+    this.appStoreToken = AppStore.addListener(this._onChange);
+  },
+
+  componentWillUnmount: function () {
+    this.appStoreToken.remove();
+  },
+
+  _onChange: function () {
+    this.setState({ currentUser: AppStore.currentUser() });
+  },
+
   render: function () {
     return(
       <div>
@@ -25,9 +43,15 @@ var App = React.createClass({
   }
 });
 
+function _checkCurrentUser(nextState, replace, callback) {
+  if (!AppStore.signedIn()) {
+    ApiUtil.fetchCurrentUser(callback);
+  }
+}
+
 var AppRoutes = (
   <Router>
-    <Route path="/" component={App}>
+    <Route path="/" component={App} onEnter={_checkCurrentUser}>
       <Route path="movies/new" component={MovieForm} />
       <Route path="movies/:movieId/edit" component={MovieForm} />
     </Route>
@@ -39,10 +63,3 @@ $(
     ReactDOM.render(AppRoutes, document.getElementById("main"));
   }
 );
-
-
-
-
-
-// <Route path="users/new" component={SignUpForm} />
-// <Route path="session/new" component={SignInForm} />

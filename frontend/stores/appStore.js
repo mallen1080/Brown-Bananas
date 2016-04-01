@@ -7,6 +7,7 @@ var AppStore = new Store(AppDispatcher);
 var _signUpHide = true;
 var _signInHide = true;
 var _errors = [];
+var _currentUser = {};
 
 AppStore.signInHide = function () {
   return _signInHide;
@@ -22,6 +23,14 @@ AppStore.errors = function () {
 
 AppStore.resetErrors = function () {
   _errors = [];
+};
+
+AppStore.currentUser = function () {
+  return $.extend(true, {}, _currentUser);
+};
+
+AppStore.signedIn = function () {
+  return !!_currentUser.username;
 };
 
 AppStore.__onDispatch = function (payload) {
@@ -42,8 +51,18 @@ AppStore.__onDispatch = function (payload) {
       _errors = payload.errors;
       this.__emitChange();
       break;
-  }
-};
+    case AppConstants.CURRENT_USER_RECEIVED:
+      _currentUser = payload.user;
+      _signInHide = true;
+      _signUpHide = true;
+      this.__emitChange();
+      break;
+    case AppConstants.SIGN_OUT_USER:
+      _currentUser = null;
+      this.__emitChange();
+    }
+  };
+
 
 
 module.exports = AppStore;

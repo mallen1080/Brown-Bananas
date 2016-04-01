@@ -7,7 +7,7 @@ var MovieActions = {
       actionType: MovieConstants.SINGLE_MOVIE_RECEIVED,
       movie: movie
     };
-    
+
     AppDispatcher.dispatch(action);
   },
 
@@ -17,6 +17,13 @@ var MovieActions = {
       movies: movies
     };
 
+    AppDispatcher.dispatch(action);
+  },
+
+  clearCurrentMovie: function () {
+    var action = {
+      actionType: MovieConstants.CLEAR_CURRENT_MOVIE
+    };
     AppDispatcher.dispatch(action);
   }
 

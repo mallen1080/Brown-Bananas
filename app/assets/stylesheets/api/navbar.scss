@@ -54,7 +54,7 @@
   color: white;
   padding: 10px 5px;
   text-align: center;
-  margin-top: 20px;
+  margin-bottom: 5px;
   width: 30%;
   border-radius: 7px;
   font-weight: bold;
@@ -65,4 +65,11 @@
   background-color: white;
   color: black;
   cursor: pointer;
+}
+
+.welcome-message {
+  float: right;
+  font-size: 14px;
+  padding: 5px 20px;
+  color: white;
 }

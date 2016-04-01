@@ -25,6 +25,21 @@ var AppActions = {
       errors: errors
     };
     AppDispatcher.dispatch(action);
+  },
+
+  receiveCurrentUser: function (user) {
+    var action = {
+      actionType: AppConstants.CURRENT_USER_RECEIVED,
+      user: user
+    };
+    AppDispatcher.dispatch(action);
+  },
+
+  signOutUser: function () {
+    var action = {
+      actionType: AppConstants.SIGN_OUT_USER
+    };
+    AppDispatcher.dispatch(action);
   }
 };
 

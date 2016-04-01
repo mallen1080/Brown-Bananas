@@ -2,6 +2,7 @@ var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var ApiUtil = require('../util/apiUtil');
 var MovieStore = require('../stores/movieStore');
+var MovieActions = require('../actions/movieActions');
 
 var MovieForm = React.createClass({
   mixins: [LinkedStateMixin],
@@ -12,7 +13,7 @@ var MovieForm = React.createClass({
       title: "",
       image_url: "",
       trailer_url: "",
-      genre: "Action", //-----**CHANGE YOUTUBE URL IN CONTROLLER!!!!!**---
+      genre: "Action",
       in_theaters: "",
       on_dvd: "",
       director: "",
@@ -35,16 +36,22 @@ var MovieForm = React.createClass({
   },
 
   componentWillReceiveProps: function (newProps) {
+    if (newProps.params.movieId) {
       ApiUtil.fetchSingleMovie(newProps.params.movieId);
+    } else {
+      MovieActions.clearCurrentMovie();
+    }
   },
 
   _onMovieFetch: function () {
     var currentMovie = MovieStore.currentMovie();
-    currentMovie.actor1 = currentMovie.actors[0];
-    currentMovie.actor2 = currentMovie.actors[1];
-    delete currentMovie.actors;
-    delete currentMovie.reviewCounts;
-    delete currentMovie.reviews;
+    if (currentMovie.actors) {
+      currentMovie.actor1 = currentMovie.actors[0];
+      currentMovie.actor2 = currentMovie.actors[1];
+      delete currentMovie.actors;
+      delete currentMovie.reviewCounts;
+      delete currentMovie.reviews;
+    }
     this.setState(currentMovie);
   },
 
