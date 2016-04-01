@@ -1,8 +1,11 @@
 var React = require('react');
 var AppActions = require('../actions/appActions');
 var AppStore = require('../stores/appStore');
+var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var SearchStore = require('../stores/searchStore');
 
 var Navbar = React.createClass({
+  mixins: [LinkedStateMixin],
 
   getInitialState: function () {
     return { currentUser: AppStore.currentUser() };
@@ -32,6 +35,20 @@ var Navbar = React.createClass({
     AppActions.displaySignUp(true);
   },
 
+  _search: function (e) {
+    if (e.target.value.length > 2) {
+      ApiUtil.searchMovies({ movie: e.target.value })
+    }
+  },
+
+  _searchResultList: function () {
+    return SearchStore.movieSearchResults().map(function (movie) {
+      return (
+        <li key={ movie.id }>{movie.title}</li>
+      )
+    });
+  },
+
   render: function () {
     var message, button1Text, button2Text,
       button1Action, button2Action, button1Class
@@ -59,7 +76,9 @@ var Navbar = React.createClass({
           <form className="navbar-search-form group">
             <div className="navbar-searchbox">
               <div className="searchbar-input">
-                <input type="text" placeholder="Search movies..." />
+                <input type="text"
+                onChange={this._search}
+                placeholder="Search movies..." />
                 <button>Search</button>
               </div>
             </div>
@@ -69,8 +88,7 @@ var Navbar = React.createClass({
         <div className="navbar-buttons">
           <ul>
             <li>
-              <button>BROWSE
-              </button>
+              <button>BROWSE</button>
             </li>
 
             <li className={button1Class} onClick={button1Action}>

@@ -1,6 +1,7 @@
 var MovieActions = require('../actions/movieActions');
 var ReviewActions = require('../actions/reviewActions');
 var AppActions = require('../actions/appActions');
+var SearchActions = require('../actions/searchActions');
 
 var ApiUtil = {
 
@@ -132,7 +133,23 @@ var ApiUtil = {
         console.log("error in signOutUser");
       }
     });
+  },
+
+  searchMovies: function (params) {
+    $.ajax({
+      method: "GET",
+      url: "api/searches",
+      dataType: "json",
+      data: params,
+      success: function (movies) {
+        SearchActions.receiveMovieSearchResults(movies);
+      },
+      error: function () {
+        console.log("error in signOutUser");
+      }
+    });
   }
+
 
 };
 
