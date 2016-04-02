@@ -35,7 +35,10 @@
 }
 
 .middle-col {
-  width: 60%;
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .right-col {
