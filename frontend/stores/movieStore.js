@@ -2,7 +2,7 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher');
 var MovieConstants = require('../constants/movieConstants');
 
-var MovieStore = new Store(AppDispatcher);
+MovieStore = new Store(AppDispatcher);
 
 _currentMovie = {};
 _homePageMovies = {};
@@ -32,6 +32,10 @@ MovieStore.updateHomePageMovies = function (movies) {
 
 MovieStore.currentMovie = function () {
   return $.extend(true, {}, _currentMovie);
+};
+
+MovieStore.homePageMovies = function () {
+  return $.extend(true, {}, _homePageMovies);
 };
 
 module.exports = MovieStore;

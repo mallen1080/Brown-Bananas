@@ -18,6 +18,7 @@ class Movie < ActiveRecord::Base
 
   def self.newest_in_theaters(count)
     Movie.includes(:genre, :director, :actors)
+    .where("on_dvd is NULL")
     .order(in_theaters: :desc)
     .limit(count)
   end
@@ -63,6 +64,18 @@ class Movie < ActiveRecord::Base
     self.director_id = Director.find_or_create(params[:movie][:director])
     self.trailer_url.sub!("watch?v=", "embed/")
     self.update_attribute(:on_dvd, nil) unless params[:movie][:on_dvd]
+  end
+
+  def date_parse(release)
+    stringDate = ""
+    if release == "theaters"
+      stringDate += self.in_theaters.strftime("%b") + " "
+      stringDate += self.in_theaters.strftime("%d")
+    else
+      stringDate += self.on_dvd.strftime("%b") + " "
+      stringDate += self.on_dvd.strftime("%d")
+    end
+    stringDate
   end
 
 end

@@ -5,7 +5,7 @@ var SearchActions = require('../actions/searchActions');
 
 var ApiUtil = {
 
-  fetchHomePageMovies: function () {
+  fetchHomePageMovies: function (completion) {
     $.ajax({
       method: "GET",
       url: "api/movies",
@@ -15,6 +15,9 @@ var ApiUtil = {
       },
       error: function () {
         console.log("error in fetchHomePageMovies");
+      },
+      complete: function () {
+        completion && completion();
       }
     });
   },

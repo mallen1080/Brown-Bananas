@@ -8,6 +8,7 @@ var MovieForm = require('./components/movieForm');
 var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
 var SignInForm = require('./components/signInForm');
+var HomePage = require('./components/homePage');
 AppStore = require('./stores/appStore');
 ApiUtil = require('./util/apiUtil'); //FOR TESTING
 
@@ -49,9 +50,14 @@ function _checkCurrentUser(nextState, replace, callback) {
   }
 }
 
+function _getHomePageMovies(nextState, replace, callback) {
+  ApiUtil.fetchHomePageMovies(callback);
+}
+
 var AppRoutes = (
   <Router>
     <Route path="/" component={App} onEnter={_checkCurrentUser}>
+      <IndexRoute component={HomePage} onEnter={_getHomePageMovies}/>
       <Route path="movies/new" component={MovieForm} />
       <Route path="movies/:movieId/edit" component={MovieForm} />
     </Route>

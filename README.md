@@ -83,7 +83,7 @@ the API.
 
 **Objective:** Create navbar / footer components.
 
-- [ ] searchbar dynamically shows movies matching search
+- [x] searchbar dynamically shows movies matching search
 - [x] create buttons for browse, log-in, and sign-up
 - [ ] Show button to create movie if current user is admin
 

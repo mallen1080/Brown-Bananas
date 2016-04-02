@@ -16,7 +16,6 @@ var MovieActions = {
       actionType: MovieConstants.HOME_PAGE_MOVIES_RECEIVED,
       movies: movies
     };
-
     AppDispatcher.dispatch(action);
   },
 

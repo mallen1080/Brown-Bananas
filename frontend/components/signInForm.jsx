@@ -53,7 +53,7 @@ var SignInForm = React.createClass({
       <div className={classNm} onClick={this._hidePage}>
         <div className="new-session-form">
           <div className="form-header group">
-            <h4>SIGN IN</h4>
+            <h4>LOG IN</h4>
             <button className="exit-button" onClick={this._hidePage}>x</button>
           </div>
 
