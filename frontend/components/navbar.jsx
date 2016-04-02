@@ -67,13 +67,13 @@ var Navbar = React.createClass({
       message = "Welcome, " + this.state.currentUser.username;
       button1Text = "";
       button1Class = "new-hover";
-      button2Text = "Sign Out";
+      button2Text = "LOG OUT";
       button2Action = ApiUtil.signOutUser;
     } else {
       message = "Sign Up to Leave Reviews on Hundreds of Movies!"
-      button1Text = "Sign Up";
+      button1Text = "SIGN UP";
       button1Action = this.displaySignUp;
-      button2Text = "Sign In";
+      button2Text = "LOG IN";
       button2Action = this.displaySignIn;
     }
     return (
