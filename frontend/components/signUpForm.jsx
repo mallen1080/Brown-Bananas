@@ -28,7 +28,8 @@ var SignUpForm = React.createClass({
     _onChange: function () {
       this.setState({
         hide: AppStore.signUpHide(),
-        errors: AppStore.errors()
+        errors: AppStore.errors(),
+        password: ""
        });
 
     },
@@ -41,7 +42,8 @@ var SignUpForm = React.createClass({
       }
     },
 
-  _submitForm: function () {
+  _submitForm: function (e) {
+    e.preventDefault();
     ApiUtil.createUser({user: this.state });
   },
 

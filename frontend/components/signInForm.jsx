@@ -27,7 +27,8 @@ var SignInForm = React.createClass({
   _onChange: function () {
     this.setState({
       hide: AppStore.signInHide(),
-      errors: AppStore.errors()
+      errors: AppStore.errors(),
+      password: ""
    });
   },
 
@@ -39,7 +40,8 @@ var SignInForm = React.createClass({
     }
   },
 
-  _submitForm: function () {
+  _submitForm: function (e) {
+    e.preventDefault();
     ApiUtil.signInUser({ user: this.state });
   },
 
