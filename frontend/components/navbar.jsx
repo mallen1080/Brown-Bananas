@@ -54,7 +54,6 @@ var Navbar = React.createClass({
 
   _searchResultList: function () {
     return this.state.movieSearchResults.map(function (movie) {
-      debugger
       return (
         <li key={ movie.id }>{movie.title} ({movie.year})</li>
       )
