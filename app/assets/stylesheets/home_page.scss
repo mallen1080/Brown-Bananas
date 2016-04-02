@@ -8,6 +8,10 @@
 
 }
 
+.home-page-tables tr:hover {
+  color: #3399ff;
+}
+
 .home-page-tables-leftcol {
   float: left;
   width: 35%;
@@ -22,16 +26,21 @@
 
 .home-page-table table {
   width: 100%;
+  font-size: 15px;
 }
 
 .home-page-table h2 {
   margin: 20px 0 10px 0;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .left-col {
   width: 15%;
+}
+
+.left-col:after {
+  content: "%";
 }
 
 .middle-col {
@@ -45,4 +54,5 @@
 
 .right-col {
   width: 20%;
+  text-transform: uppercase;
 }
