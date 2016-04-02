@@ -75,7 +75,7 @@ var SignUpForm = React.createClass({
 
           <div className="form-main">
 
-            <p className="logo">BROWN BANANAS</p>
+            <p className="logo"><img src="logo.png" /></p>
 
             <form>
               <div className="errors">{errors}</div>

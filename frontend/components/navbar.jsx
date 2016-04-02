@@ -24,6 +24,7 @@ var Navbar = React.createClass({
   },
 
   _onChange: function () {
+    console.log(AppStore.currentUser());
     this.setState({ currentUser: AppStore.currentUser() })
   },
 

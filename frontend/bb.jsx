@@ -8,13 +8,13 @@ var MovieForm = require('./components/movieForm');
 var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
 var SignInForm = require('./components/signInForm');
-var AppStore = require('./stores/appStore');
+AppStore = require('./stores/appStore');
 ApiUtil = require('./util/apiUtil'); //FOR TESTING
 
 var App = React.createClass({
 
   getInitialState: function () {
-    return { currentUser: {} };
+    return { currentUser: AppStore.currentUser() };
   },
 
   componendDidMount: function () {
