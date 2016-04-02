@@ -63,13 +63,14 @@ end
 
 170.times do
   movie = movie_generator
-  dvd = Faker::Date.between(2.years.ago, Date.today)
+  in_theaters = Faker::Date.between(2.years.ago, Date.today)
+  dvd = in_theaters >> 3
   Movie.create(
   title: movie[:title],
   image_url: image,
   trailer_url: url,
   genre_id: movie[:genre],
-  in_theaters: movie[:theaters],
+  in_theaters: in_theaters,
   on_dvd: dvd,
   director_id: movie[:director],
   consensus: movie[:consensus],
@@ -91,4 +92,13 @@ end
     user_id: user,
     value: value,
     body: body)
+end
+
+1000.times do
+  movie = Movie.find(rand(Movie.count) + 1)
+  user = rand(User.count) + 1
+  value = [true, false][rand(2)]
+  movie.reviews.create(
+    user_id: user,
+    value: value)
 end
