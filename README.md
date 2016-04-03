@@ -11,11 +11,11 @@ BrownBananas is a web application inspired by RottenTomatoes built using Ruby on
 <!-- This is a Markdown checklist. Use it to keep track of your
 progress. Put an x between the brackets for a checkmark: [x] -->
 
-- [ ] Create an account
-- [ ] Log in / Log out
+- [x] Create an account
+- [x] Log in / Log out
 - [ ] View show page for any movie in the db
 - [ ] Add a rating to a movie, by applying an up/down vote and optional text
-- [ ] An admin user can create/edit/delete movies from the db
+- [x] An admin user can create/edit/delete movies from the db
 - [ ] Browse movies and filter results based on genre, Banana Rating, release date, etc.(done last)
 
 ## Design Docs
@@ -99,11 +99,11 @@ the API.
 **Objective:** Create all components for homepage.
 
 - build out API, Flux loop, and components for:
-  - [ ] BoxOfficeIterator
-  - [ ] MovieListTable
-  - [ ] MovieListItem
-  - [ ] MovieListItemPic
-- [ ] Basic styling
+  - [x] BoxOfficeIterator
+  - [x] MovieListTable
+  - [x] MovieListItem
+  - [x] MovieListItemPic
+- [x] Basic styling
 
 ### Phase 9: Movie Show Page (1.5 days)
 
@@ -122,11 +122,11 @@ the API.
 
 ### Phase 10: Detail Styling of Home Page (1 days)
 
-- [ ] Iterator
-- [ ] MovieListTables
-- [ ] MovieListItems
-- [ ] RecommendationList
-- [ ] MovieListItemPic
+- [x] Iterator
+- [x] MovieListTables
+- [x] MovieListItems
+- [x] RecommendationList
+- [x] MovieListItemPic
 
 ### Phase 11: Detail Styling of Show Page (1 days)
 

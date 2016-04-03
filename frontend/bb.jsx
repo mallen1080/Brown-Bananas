@@ -9,6 +9,7 @@ var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
 var SignInForm = require('./components/signInForm');
 var HomePage = require('./components/homePage');
+var Footer = require('./components/footer');
 AppStore = require('./stores/appStore');
 ApiUtil = require('./util/apiUtil'); //FOR TESTING
 
@@ -38,6 +39,7 @@ var App = React.createClass({
         <div>
           <Navbar />
           {this.props.children}
+          <Footer />
         </div>
       </div>
     );
