@@ -32,6 +32,9 @@ var HomePageRecommended = React.createClass({
         <h1>CERTIFIED FRESH PICKS</h1>
         <div className="recommended-panel group">
           <div className="recommended-logo">
+            <div className="rec-logo-container">
+              <img src="fresh_banana.png" />
+            </div>
             <p>Movies are Certified Fresh based on their reviews since their theater release.
             Fresh Bananas are those that receive a rating of 50% or higher. The following
             movies are the top rated in theaters an on DVD.</p>
