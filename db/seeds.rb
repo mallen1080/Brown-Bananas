@@ -36,7 +36,7 @@ genres = ["Action", "Animation", "Comedy", "Documentary", "Drama", "Horror", "Sc
 genres.each { |genre| Genre.create(name: genre) }
 
 url = "https://www.youtube.com/embed/s7EdQ4Fqbh"
-image = "http://media.ifccenter.com/images/films/pulp-fiction_592x299.jpg"
+image = "http://cdn.miramax.com/media/assets/Pulp-Fiction1.png"
 
 def movie_generator
   { title: Faker::Book.title,
@@ -63,7 +63,7 @@ end
 
 170.times do
   movie = movie_generator
-  in_theaters = Faker::Date.between(2.years.ago, Date.today)
+  in_theaters = Faker::Date.between(2.years.ago, 3.months.ago)
   dvd = in_theaters >> 3
   Movie.create(
   title: movie[:title],

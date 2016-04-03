@@ -1,6 +1,7 @@
 var React = require('react');
 var MovieStore = require('../stores/movieStore');
 var HomePageTableGroup = require('./homePageTableGroup');
+var HomePageRecommended = require('./homePageRecommended');
 
 var HomePage = React.createClass({
 
@@ -8,6 +9,7 @@ var HomePage = React.createClass({
     return (
       <div className="home-page-content">
         <HomePageTableGroup />
+        <HomePageRecommended />
       </div>
     );
   }

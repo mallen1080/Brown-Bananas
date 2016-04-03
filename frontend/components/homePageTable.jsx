@@ -5,7 +5,7 @@ var HomePageTable = React.createClass({
 
   tableRow: function (movie) {
     var link = "#/movies/" + movie.id;
-    var date = movie.on_dvd || movie.in_theaters;
+    var date = movie.on_dvd_parse || movie.in_theaters_parse;
     return (
       <tr key={movie.id}>
         <td className="left-col"><span>{movie.rating.percentage}</span></td>

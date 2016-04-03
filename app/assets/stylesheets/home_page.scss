@@ -2,6 +2,7 @@
   width: 1100px;
   margin: auto;
   background-color: white;
+  font-size: 15px;
 }
 
 .home-page-tables {
@@ -28,7 +29,6 @@
 
 .home-page-table table {
   width: 100%;
-  font-size: 15px;
 }
 
 .home-page-table h2 {
@@ -57,4 +57,55 @@
 .right-col {
   width: 20%;
   text-transform: uppercase;
+}
+
+.recommended {
+
+}
+
+.recommended > h1 {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 22px;
+  background-color: #ff9933;
+  float: left;
+  font-weight: 900;
+}
+
+.recommended-panel {
+  clear: both;
+  padding: 15px;
+}
+
+.recommended-logo {
+  width: 20%;
+  float: left;
+  padding: 0 10px;
+}
+
+.recommended-list {
+  float: right;
+  width: 75%;
+  padding: 0 10px;
+}
+
+.rec-list-item {
+  float: left;
+  width: 17%;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.rec-list-item span:after {
+  content: "%";
+}
+
+.rec-img-container {
+  height: 200px;
+  text-align: center;
+}
+
+.rec-img-container > img {
+  height: 100%;
+  width: 100%;
 }
