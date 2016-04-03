@@ -51,6 +51,7 @@
 
 .navbar-search-results {
   position: absolute;
+  z-index: 50;
   background-color: white;
   border-left: 1px solid #eee;
   border-right: 1px solid #eee;
