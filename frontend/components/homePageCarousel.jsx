@@ -11,7 +11,10 @@ var HomePageCarousel = React.createClass({
     var movie2 = MovieStore.homePageMovies().top_rated_theaters[1];
 
     var settings = {
-      dots: true
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 4000,
+      speed: 1000
     };
     return (
       <div className='carousel-container group'>

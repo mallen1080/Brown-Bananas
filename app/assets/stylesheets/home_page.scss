@@ -23,6 +23,30 @@
   margin-bottom: 0;
 }
 
+.slick-prev {
+  left: 0;
+  top: 10px;;
+  height: 280px;
+  width: 50px;
+}
+
+.slick-prev:before  {
+  color: black;
+}
+
+.slick-next {
+  right: 0;
+  top: 10px;;
+  height: 280px;
+  width: 50px;
+}
+
+.slick-next:before {
+  position: relative;
+  color: black;
+  right: -25px;
+}
+
 .carousel-movie {
   height: 300px;
   width: 600px;
