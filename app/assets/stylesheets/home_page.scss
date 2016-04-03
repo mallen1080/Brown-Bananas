@@ -42,10 +42,6 @@
   width: 15%;
 }
 
-.left-col:after {
-  content: "%";
-}
-
 .rating-img img {
   height: 18px;
   width: auto;
@@ -114,10 +110,6 @@
 .rec-list-item p:first-child {
   font-weight: bold;
   font-size: 14px;
-}
-
-.rec-list-item span:after {
-  content: "%";
 }
 
 .rec-img-container {

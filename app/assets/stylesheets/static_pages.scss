@@ -99,3 +99,7 @@ ul {
   margin-bottom: 20px;
   color: red;
 }
+
+.percentage:after {
+  content: "%";
+}

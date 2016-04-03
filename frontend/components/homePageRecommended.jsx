@@ -12,6 +12,7 @@ var HomePageRecommended = React.createClass({
       list.map(function (movie, i) {
         var link = "#/movies/" + movie.id;
         var heading = i < 2 ? "IN THEATERS" : "ON DVD";
+        var banana = movie.rating.percentage > 59 ? "fresh_banana.png" : "brown_banana.png";
         return (
           <div className="rec-list-item" key={movie.id}>
             <a href={link}>
@@ -19,9 +20,10 @@ var HomePageRecommended = React.createClass({
               <div className="rec-img-container">
                 <img src={movie.image_url} />
                 </div>
-                <div>
-                <span>{movie.rating.percentage}</span>
-                </div>
+                <span>
+                  <span className="rating-img"><img src={banana} /></span>
+                  <span className="percentage">{movie.rating.percentage}</span>
+                </span>
                 <p>{movie.title}</p>
             </a>
           </div>
@@ -41,7 +43,7 @@ var HomePageRecommended = React.createClass({
             </div>
             <p>Movies are Certified Fresh based on their reviews since their theater release.
             Fresh Bananas are those that receive a rating of 60% or higher. The following
-            movies are the top rated in theaters an on DVD.</p>
+            movies are the top rated in theaters an on DVD in the last year.</p>
           </div>
           <div className="recommended-list group">
             {this.recommendedList()}

@@ -13,7 +13,7 @@ var HomePageTable = React.createClass({
         <td className="left-col">
             <span>
               <span className="rating-img"><img src={banana} /></span>
-              <span>{movie.rating.percentage}</span>
+              <span className="percentage">{movie.rating.percentage}</span>
             </span>
         </td>
         <td className="middle-col"><a href={link}>{movie.title}</a></td>
