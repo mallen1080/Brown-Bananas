@@ -1,9 +1,91 @@
+// HOMEPAGE
+
 .home-page-content {
   width: 1100px;
   margin: auto;
   background-color: white;
   font-size: 15px;
 }
+
+
+// CAROUSEL
+
+.carousel-movie {
+  height: 300px;
+  width: 600px;
+}
+
+.carousel-movie-desc {
+  height: 70%;
+  padding: 20px 20px 0 20px;
+}
+
+.carousel-movie-cons {
+  height: 23%;
+  background-color: #343434;
+}
+
+.carousel-movie-cons h3 {
+  background-color: #ff9933;
+  width: 30%;
+  text-align: center;
+}
+.carousel-movie-cons p {
+  padding: 10px;
+  color: white;
+}
+
+.carousel-img-container {
+  float: left;
+  height: 90%;
+  width: 23%;
+  // margin-top: 20px;
+}
+
+.carousel-img-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.carousel-movie-info {
+  float: right;
+  padding: 0 10px 10px 10px;
+  width: 70%;
+}
+
+.carousel-movie-info h2 {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.carousel-movie-info-rating {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.carousel-movie-info-rating img {
+  height: 100px;
+  width: auto;
+}
+
+.carousel-movie-info-table {
+  float: right;
+  width: 80%;
+}
+
+.carousel-movie-info-table table {
+  width: 100%;
+}
+
+.carousel-movie-info-table tr td:first-child {
+  text-align: right;
+  padding-right: 20px;
+}
+
+// TABLES
 
 .home-page-tables {
   border-bottom: 1px solid #eee;
@@ -63,6 +145,8 @@
   width: 20%;
   text-transform: uppercase;
 }
+
+// RECOMMENDED
 
 .recommended > h1 {
   padding: 10px 20px;
