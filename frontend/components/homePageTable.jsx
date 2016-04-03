@@ -6,9 +6,16 @@ var HomePageTable = React.createClass({
   tableRow: function (movie) {
     var link = "#/movies/" + movie.id;
     var date = movie.on_dvd_parse || movie.in_theaters_parse;
+    var banana = movie.rating.percentage > 59 ? "fresh_banana.png" : "brown_banana.png";
+
     return (
       <tr key={movie.id}>
-        <td className="left-col"><span>{movie.rating.percentage}</span></td>
+        <td className="left-col">
+            <span>
+              <span className="rating-img"><img src={banana} /></span>
+              <span>{movie.rating.percentage}</span>
+            </span>
+        </td>
         <td className="middle-col"><a href={link}>{movie.title}</a></td>
         <td className="right-col">{date}</td>
       </tr>
