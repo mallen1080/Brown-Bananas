@@ -7,8 +7,10 @@ var Slider = require('react-slick');
 var HomePageCarousel = React.createClass({
 
   render: function () {
-    var movie = MovieStore.homePageMovies().top_rated_theaters[0];
-    var movie2 = MovieStore.homePageMovies().top_rated_theaters[1];
+    var movies = MovieStore.homePageMovies().top_rated_theaters.slice(0,7);
+    var carMovies = movies.map(function (movie) {
+      return <CarouselMovie movie={movie} />;
+    });
 
     var settings = {
       dots: true,
@@ -19,20 +21,12 @@ var HomePageCarousel = React.createClass({
     return (
       <div className='carousel-container group'>
         <Slider {...settings}>
-        <CarouselMovie movie={movie} />
-        <CarouselMovie movie={movie2} />
+          {carMovies}
         </Slider>
       </div>
     );
   }
 
 });
-
-// <Slider {...settings}>
-//
-// <img src='http://placekitten.com/g/400/200' />
-//   <img src='http://placekitten.com/g/400/200' />
-// </Slider>
-
 
 module.exports = HomePageCarousel;
