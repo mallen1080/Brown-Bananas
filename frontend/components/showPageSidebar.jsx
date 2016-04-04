@@ -40,16 +40,22 @@ var ShowPageSidebar = React.createClass({
       </div>
     ];
 
-
+    var leftKlass = "sidebar-left-button";
+    var rightKlass = "sidebar-right-button";
+    if (this.state.selected === 0) {
+      leftKlass += " selected";
+    } else {
+      rightKlass += " selected";
+    }
 
     return (
       <div className="showpage-sidebar-content">
         <div className="sidebar-buttons group">
-          <div className="sidebar-left-button selected"
+          <div className={leftKlass}
             onClick={this._buttonClick.bind(this, 0)}>
             <p>IN THEATERS</p>
           </div>
-          <div className="sidebar-right-button"
+          <div className={rightKlass}
             onClick={this._buttonClick.bind(this, 1)}>
             <p>DVD</p>
           </div>

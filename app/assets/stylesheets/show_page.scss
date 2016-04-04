@@ -21,12 +21,12 @@
 // SIDEBAR
 
 .showpage-sidebar {
-  border-right: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+
 }
 
 .showpage-sidebar-content {
   width: 100%;
+  border: 1px solid #eee;
 }
 
 .sidebar-buttons div {
@@ -34,16 +34,24 @@
   height: 35px;
   width: 150px;
   text-align: center;
+  font-weight: bold;
+  color: #898989;
   padding-top: 15px;
-  background-color: lightblue;
+  background-color: #eee;
+  cursor: pointer;
 }
 
 .sidebar-buttons .selected {
   background-color: white;
+  color: black;
 }
 
 .showpage-sidebar-content {
   font-size: 13px;
+}
+
+.showpage-table {
+  padding: 5px;
 }
 
 .showpage-table .left-col {
@@ -51,14 +59,16 @@
 }
 
 .showpage-table .middle-col {
-  width: 60%;
+  min-width: 174px;
+  max-width: 174px;
+  padding-right: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .showpage-table .right-col {
-  width: 15%;
+  width: 18%;
 }
 
 .showpage-table h2 {
