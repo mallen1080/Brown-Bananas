@@ -60,6 +60,11 @@ var Navbar = React.createClass({
     });
   },
 
+  _browse: function (e) {
+    e.preventDefault();
+    alert("Coming soon!");
+  },
+
   render: function () {
     var message, button1Text, button2Text,
       button1Action, button2Action, button1Class
@@ -99,7 +104,7 @@ var Navbar = React.createClass({
         <div className="navbar-buttons">
           <ul>
             <li>
-              <button>BROWSE</button>
+              <button onClick={this._browse}>BROWSE</button>
             </li>
 
             <li className={button1Class} onClick={button1Action}>
