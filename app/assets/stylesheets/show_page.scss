@@ -110,4 +110,29 @@
 
 // MORE INFO
 
+.movie-show-moreinfo {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.movie-show-moreinfo h2 {
+  font-size: 22px;
+  background-color: #ff9933;
+  font-weight: 900;
+  padding: 10px 20px;
+  width: 120px;
+}
+
+.movie-show-moreinfo h4 {
+  margin-top: 10px;
+  font-weight: bold;
+  padding: 0 20px;
+  }
+
+.movie-show-moreinfo p {
+  padding: 0 20px;
+}
+
 // REVIEWS

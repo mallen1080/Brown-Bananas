@@ -4,7 +4,7 @@ var ApiUtil = require('../util/apiUtil');
 var ShowPageSidebar = require('./showPageSidebar');
 var ShowPageTrailer = require('./showPageTrailer');
 var ShowPageInfo = require('./showPageInfo');
-// var ShowPageMoreInfo = require('./showPageMoreInfo');
+var ShowPageMoreInfo = require('./showPageMoreInfo');
 // var ShowPageReviewList = require('./showPageReviewList');
 
 var ShowPage = React.createClass({
@@ -24,6 +24,7 @@ var ShowPage = React.createClass({
       <div className="showpage-main">
         <ShowPageTrailer />
         <ShowPageInfo />
+        <ShowPageMoreInfo />
       </div>
 
     </div>

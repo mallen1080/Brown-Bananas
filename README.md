@@ -111,9 +111,9 @@ the API.
 
 - build out API, Flux loop, and components for:
   - [ ] Sidebar
-  - [ ] Trailer
-  - [ ] BasicInfo
-  - [ ] Detail Info
+  - [x] Trailer
+  - [x] BasicInfo
+  - [x] Detail Info
   - [ ] Review List
   - [ ] ReviewListItem
   - [ ] ReviewInputForm
