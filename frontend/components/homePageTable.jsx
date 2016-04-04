@@ -29,7 +29,7 @@ var HomePageTable = React.createClass({
     });
 
     return (
-      <div className="home-page-table">
+      <div className={this.props.klass}>
         <h2>{this.props.title}</h2>
         <table>
           <tbody>

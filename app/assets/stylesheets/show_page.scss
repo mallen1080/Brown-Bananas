@@ -9,7 +9,7 @@
 .showpage-sidebar {
   width: 300px;
   float: left;
-  padding: 10px;
+  padding: 10px 9px 10px 10px;
 }
 
 .showpage-main {
@@ -19,6 +19,11 @@
 }
 
 // SIDEBAR
+
+.showpage-sidebar {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
 
 .showpage-sidebar-content {
   width: 100%;
@@ -33,12 +38,32 @@
   background-color: lightblue;
 }
 
+.sidebar-buttons .selected {
+  background-color: white;
+}
+
 .showpage-sidebar-content {
   font-size: 13px;
 }
 
-.show-img-content tr .left-col {
+.showpage-table .left-col {
   width: 20%;
+}
+
+.showpage-table .middle-col {
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.showpage-table .right-col {
+  width: 15%;
+}
+
+.showpage-table h2 {
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 
@@ -50,6 +75,7 @@
 .movie-info {
   height: 270px;
   width: 100%;
+  margin-top: 5px;
 }
 
 .show-img-container {
@@ -135,7 +161,7 @@
 // MORE INFO
 
 .movie-show-moreinfo {
-  width: 75%;
+  // width: 75%;
   margin-top: 10px;
   border-top: 1px solid #eee;
   border-left: 1px solid #eee;
@@ -158,6 +184,7 @@
 
 .movie-show-moreinfo p {
   padding: 0 20px;
+  width: 75%;
 }
 
 // REVIEWS

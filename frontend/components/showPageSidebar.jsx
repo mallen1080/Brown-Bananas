@@ -17,29 +17,35 @@ var ShowPageSidebar = React.createClass({
     var tables = [
       <div className="sidebar-tables-theaters">
         <HomePageTable
+        klass="showpage-table"
         title="NEW TO THEATERS"
         movies={MovieStore.homePageMovies().newest_in_theaters} />
 
         <HomePageTable
+        klass="showpage-table"
         title="TOP BOX OFFICE"
         movies={MovieStore.homePageMovies().top_rated_theaters} />
       </div>,
 
       <div className="sidebar-tables-dvd">
         <HomePageTable
+        klass="showpage-table"
         title="RECENT DVD RELEASE"
         movies={MovieStore.homePageMovies().newest_on_dvd} />
 
         <HomePageTable
+        klass="showpage-table"
         title="TOP RENTALS"
         movies={MovieStore.homePageMovies().top_rated_dvd} />
       </div>
     ];
 
+
+
     return (
       <div className="showpage-sidebar-content">
         <div className="sidebar-buttons group">
-          <div className="sidebar-left-button"
+          <div className="sidebar-left-button selected"
             onClick={this._buttonClick.bind(this, 0)}>
             <p>IN THEATERS</p>
           </div>
