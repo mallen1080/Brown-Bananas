@@ -57,6 +57,11 @@ function _getHomePageMovies(nextState, replace, callback) {
   ApiUtil.fetchHomePageMovies(callback);
 }
 
+function _getSingleMovie(nextState, replace, callback) {
+  ApiUtil.fetchHomePageMovies(callback);
+  // ApiUtil.fetchSingleMovie(callback);
+}
+
 var AppRoutes = (
   <Router>
     <Route path="/" component={App} onEnter={_checkCurrentUser}>

@@ -1,3 +1,96 @@
-.show-page-sidebar {
-  width: 30%;
+// SHOW PAGE
+
+.showpage-content {
+  width: 1100px;
+  margin: auto;
+  background-color: white;
 }
+
+.showpage-sidebar {
+  width: 300px;
+  float: left;
+  padding: 10px;
+}
+
+.showpage-main {
+  width: 760px;
+  float: left;
+  padding: 10px;
+}
+
+// TRAILER
+
+
+// INFO
+
+.movie-info {
+
+}
+
+.show-img-container {
+  float: left;
+  height: 100%;
+  width: 23%;
+}
+
+.show-img-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.show-info-info {
+  background-color: #ffe6cc;
+  float: right;
+  padding: 10px;
+  // margin: 25px;
+  height: 90%;
+  width: 65%;
+}
+
+.show-rating {
+  float: left;
+  width: 40%;
+}
+
+.show-rating h4 {
+  text-align: center;
+  padding: 0 10px 10px 10px;
+}
+
+.show-rating-rating {
+  width: 80%;
+  margin: auto;
+}
+
+.show-rating-rating span {
+  float: left;
+}
+
+.show-rating-rating p {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.show-rating-rating img {
+  margin: auto;
+  height: 75px;
+  width: auto;
+}
+
+.show-rating-counts {
+  width: 80%;
+  margin: auto;
+}
+
+.show-cons {
+  padding-top: 60px;
+  margin-left: 50px;
+  float: left;
+  width: 40%;
+}
+
+// MORE INFO
+
+// REVIEWS

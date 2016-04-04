@@ -34,6 +34,9 @@ var ApiUtil = {
       error: function () {
         console.log("error in fetchSingleMovie");
       }
+      // complete: function () {
+      //   completion && completion();
+      // }
     });
   },
 

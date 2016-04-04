@@ -37,7 +37,7 @@ var ShowPageSidebar = React.createClass({
     ];
 
     return (
-      <div className="sidebar-container">
+      <div className="showpage-sidebar-content">
         <div className="sidebar-buttons">
           <div className="sidebar-left-button"
             onClick={this._buttonClick.bind(this, 0)}>
