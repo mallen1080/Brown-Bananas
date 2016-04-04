@@ -10,13 +10,22 @@
 
 // CAROUSEL
 
+.top {
+    background-color: lightgrey;
+}
+
 .carousel-container {
   width: 600px;
   color: #333;
 }
 
 .slick-dots {
-  bottom: 0;
+  bottom: 50px;
+  right: -190px;
+}
+
+.slick-dots li button:before {
+  color: white;
 }
 
 .slick-slider {
@@ -26,7 +35,7 @@
 .slick-prev {
   left: 0;
   top: 10px;;
-  height: 280px;
+  height: 225px;
   width: 50px;
 }
 
@@ -37,7 +46,7 @@
 .slick-next {
   right: 0;
   top: 10px;;
-  height: 280px;
+  height: 225px;
   width: 50px;
 }
 
@@ -54,13 +63,13 @@
 }
 
 .carousel-movie-desc {
-  height: 70%;
+  height: 75%;
   padding: 20px 20px 0 20px;
   background: white;
 }
 
 .carousel-movie-cons {
-  height: 23%;
+  height: 25%;
   background-color: #343434;
 }
 
@@ -102,6 +111,7 @@
   float: left;
   width: 20%;
   text-align: center;
+  font-weight: bold;
 }
 
 .carousel-movie-info-rating img {
@@ -123,13 +133,6 @@
   padding-right: 20px;
 }
 
-.slider-container {
-  padding: 20px;
-  width: 600px;
-  height: 300px;
-  color: #333;
-  background: #419be0;
-}
 
 
 // TABLES
