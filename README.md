@@ -110,7 +110,7 @@ the API.
 **Objective:** Create all components for movie show page.
 
 - build out API, Flux loop, and components for:
-  - [ ] Sidebar
+  - [x] Sidebar
   - [x] Trailer
   - [x] BasicInfo
   - [x] Detail Info
@@ -130,10 +130,10 @@ the API.
 
 ### Phase 11: Detail Styling of Show Page (1 days)
 
-- [ ] Sidebar
-- [ ] Trailer
-- [ ] BasicInfo
-- [ ] Detail Info
+- [x] Sidebar
+- [x] Trailer
+- [x] BasicInfo
+- [x] Detail Info
 - [ ] Review List
 - [ ] ReviewListItem
 - [ ] ReviewInputForm
