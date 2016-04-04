@@ -23,7 +23,7 @@ var ShowPageTrailer = React.createClass({
     return (
       <div className="movie-trailer-container">
         <iframe src={this.state.currentMovie.trailer_url}
-        width="640" height="360"></iframe>
+        width="760" height="425"></iframe>
       </div>
     );
   }

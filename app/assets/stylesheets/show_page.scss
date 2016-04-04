@@ -24,13 +24,14 @@
 // INFO
 
 .movie-info {
-
+  height: 270px;
+  width: 100%;
 }
 
 .show-img-container {
   float: left;
   height: 100%;
-  width: 23%;
+  width: 175px;
 }
 
 .show-img-container img {
@@ -40,11 +41,10 @@
 
 .show-info-info {
   background-color: #ffe6cc;
-  float: right;
+  float: left;
   padding: 10px;
-  // margin: 25px;
-  height: 90%;
-  width: 65%;
+  height: 250px;
+  width: 565px;
 }
 
 .show-rating {
@@ -84,11 +84,26 @@
   margin: auto;
 }
 
-.show-cons {
-  padding-top: 60px;
-  margin-left: 50px;
-  float: left;
-  width: 40%;
+.show-rating-counts p {
+  font-size: 14px;
+}
+
+.show-info-titletable {
+  float: right;
+  width: 60%;
+}
+
+.show-info-titletable h3 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.show-info-table tr td:first-child {
+  text-align: right;
+  padding-right: 20px;
 }
 
 // MORE INFO
