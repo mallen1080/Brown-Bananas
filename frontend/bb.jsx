@@ -9,6 +9,7 @@ var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
 var SignInForm = require('./components/signInForm');
 var HomePage = require('./components/homePage');
+var ShowPage = require('./components/showPage');
 var Footer = require('./components/footer');
 AppStore = require('./stores/appStore');
 ApiUtil = require('./util/apiUtil'); //FOR TESTING
@@ -60,6 +61,7 @@ var AppRoutes = (
   <Router>
     <Route path="/" component={App} onEnter={_checkCurrentUser}>
       <IndexRoute component={HomePage} onEnter={_getHomePageMovies}/>
+      <Route path="movies/:movieId" component={ShowPage} onEnter={_getHomePageMovies}/>
       <Route path="movies/new" component={MovieForm} />
       <Route path="movies/:movieId/edit" component={MovieForm} />
     </Route>

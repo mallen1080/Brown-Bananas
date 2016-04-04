@@ -21,11 +21,16 @@
 
 .slick-dots {
   bottom: 50px;
-  right: -190px;
+  right: -210px;
+}
+
+.slick-dots li {
+  margin: 0 1px;
 }
 
 .slick-dots li button:before {
   color: white;
+  font-size: 12px;
 }
 
 .slick-slider {
