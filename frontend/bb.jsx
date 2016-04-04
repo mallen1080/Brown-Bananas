@@ -4,6 +4,7 @@ var ReactRouter = require('react-router');
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
+var HashHistory = ReactRouter.hashHistory;
 var MovieForm = require('./components/movieForm');
 var Navbar = require('./components/navbar');
 var SignUpForm = require('./components/signUpForm');
@@ -63,7 +64,7 @@ function _getSingleMovie(nextState, replace, callback) {
 }
 
 var AppRoutes = (
-  <Router>
+  <Router history={HashHistory}>
     <Route path="/" component={App} onEnter={_checkCurrentUser}>
       <IndexRoute component={HomePage} onEnter={_getHomePageMovies}/>
       <Route path="movies/:movieId" component={ShowPage} onEnter={_getHomePageMovies}/>

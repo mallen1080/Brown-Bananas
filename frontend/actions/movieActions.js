@@ -24,6 +24,14 @@ var MovieActions = {
       actionType: MovieConstants.CLEAR_CURRENT_MOVIE
     };
     AppDispatcher.dispatch(action);
+  },
+
+  randomMovieReceived: function (movie) {
+    var action = {
+      actionType: MovieConstants.RANDOM_MOVIE_RECEIVED,
+      movie: movie
+    };
+    AppDispatcher.dispatch(action);
   }
 
 };

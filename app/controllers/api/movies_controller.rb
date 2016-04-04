@@ -11,7 +11,11 @@ class Api::MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    if params[:id] == "random"
+      @movie = Movie.get_random
+    else
+      @movie = Movie.find(params[:id])
+    end
   end
 
   def index
@@ -30,6 +34,11 @@ class Api::MoviesController < ApplicationController
     Casting.create_from_movie_form(params[:movie][:actors], @movie)
     render :show
   end
+
+  # def random
+  #   @movie = Movie.get_random
+  #   render :show
+  # end
 
   private
 

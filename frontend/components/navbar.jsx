@@ -3,9 +3,13 @@ var AppActions = require('../actions/appActions');
 var AppStore = require('../stores/appStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SearchStore = require('../stores/searchStore');
+var PropTypes = React.PropTypes;
 
 var Navbar = React.createClass({
   mixins: [LinkedStateMixin],
+  contextTypes: {
+    router: PropTypes.object.isRequired
+  },
 
   getInitialState: function () {
     return {
@@ -44,6 +48,13 @@ var Navbar = React.createClass({
     AppActions.displaySignUp(true);
   },
 
+  getRandom: function () {
+    var router = this.context.router;
+    ApiUtil.fetchRandomMovie(function (id) {
+      router.push("/movies/" + id);
+    });
+  },
+
   _search: function (e) {
     if (e.target.value.length > 2) {
       ApiUtil.searchMovies({ movie: e.target.value })
@@ -74,8 +85,8 @@ var Navbar = React.createClass({
 
     if (this._signedIn()) {
       message = "Welcome, " + this.state.currentUser.username;
-      button1Text = "";
-      button1Class = "new-hover";
+      button1Text = "RANDOM";
+      button1Action = this.getRandom;
       button2Text = "LOG OUT";
       button2Action = ApiUtil.signOutUser;
     } else {

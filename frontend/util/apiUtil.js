@@ -34,9 +34,23 @@ var ApiUtil = {
       error: function () {
         console.log("error in fetchSingleMovie");
       }
-      // complete: function () {
-      //   completion && completion();
-      // }
+    });
+  },
+
+  fetchRandomMovie: function (callback) {
+    $.ajax({
+      method: "GET",
+      url: "api/movies/random",
+      dataType: "json",
+      success: function (movie) {
+        MovieActions.randomMovieReceived(movie);
+      },
+      error: function () {
+        console.log("error in fetchRandomMovie");
+      },
+      complete: function (response) {
+        callback(response.responseJSON.id);
+      }
     });
   },
 

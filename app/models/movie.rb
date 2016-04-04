@@ -45,6 +45,11 @@ class Movie < ActiveRecord::Base
     .reverse[0...count]
   end
 
+  def self.get_random
+    random = rand(Movie.all.length)
+    Movie.all[random]
+  end
+
   def recent_reviews
     self.reviews
     .order(created_at: :desc)
