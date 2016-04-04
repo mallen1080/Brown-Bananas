@@ -111,7 +111,19 @@ images = [
   "http://moviefiles.alphacoders.com/300/poster-30.jpg",
   "http://onesheetdesign.com/wp-content/uploads/American_History_X.jpg",
   "http://www.wichitaorpheum.com/wp-content/uploads/2013/12/Forrest-Gump-Poster.jpg",
-  "http://www.collider.com/wp-content/uploads/Inception-movie-poster-7.jpg"
+  "http://www.collider.com/wp-content/uploads/Inception-movie-poster-7.jpg",
+  "http://i703.photobucket.com/albums/ww40/aonjung2009/Pirnt%20Matter%203%202012/GLADIATOR-2.jpg",
+  "https://letusnerd.files.wordpress.com/2013/02/die-hard.jpg",
+  "https://scribehardonfilm.files.wordpress.com/2013/09/top-gun-poster.jpg",
+  "https://www.movieposter.com/posters/archive/main/56/MPW-28466",
+  "https://www.movieposter.com/posters/archive/main/92/MPW-46251",
+  "http://cdn.pcwallart.com/images/step-brothers-poster-wallpaper-1.jpg",
+  "http://s.ecrater.com/stores/233341/4ed01f711e52f_233341b.jpg",
+  "https://dykewriter.files.wordpress.com/2015/11/breakfast-club-poster.jpg",
+  "http://www.joblo.com/newsimages1/hangover-poster-jm.jpg",
+  "http://news.doddleme.com/wp-content/uploads/2013/02/memento-movie-poster.jpg",
+  "http://www.dvdsreleasedates.com/posters/800/A/American-Gangster-movie-poster.jpg",
+  "https://upload.wikimedia.org/wikipedia/en/b/b3/Training_Day_Poster.jpg"
 ]
 
 trailers = [
@@ -129,7 +141,19 @@ trailers = [
   "https://www.youtube.com/watch?v=6hB3S9bIaco",
   "https://www.youtube.com/watch?v=JsPW6Fj3BUI",
   "https://www.youtube.com/watch?v=bLvqoHBptjg",
-  "https://www.youtube.com/watch?v=8hP9D6kZseM"
+  "https://www.youtube.com/watch?v=8hP9D6kZseM",
+  "https://www.youtube.com/watch?v=ol67qo3WhJk",
+  "https://www.youtube.com/watch?v=2TQ-pOvI6Xo",
+  "https://www.youtube.com/watch?v=qAfbp3YX9F0",
+  "https://www.youtube.com/watch?v=rCCaTPY-z4Q",
+  "https://www.youtube.com/watch?v=RN7sKvaHDlA",
+  "https://www.youtube.com/watch?v=V6Z7PEvedHQ",
+  "https://www.youtube.com/watch?v=zrTqenN1SqQ",
+  "https://www.youtube.com/watch?v=ZXzlCpHK3-I",
+  "https://www.youtube.com/watch?v=tcdUhdOlz9M",
+  "https://www.youtube.com/watch?v=0vS0E9bBSL0",
+  "https://www.youtube.com/watch?v=BV_nssS6Zkg",
+  "https://www.youtube.com/watch?v=DXPJqRtkDP0"
 ]
 
 Movie.all.each do |movie|
