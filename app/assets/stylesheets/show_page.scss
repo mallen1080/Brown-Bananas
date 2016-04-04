@@ -42,14 +42,15 @@
 .show-info-info {
   background-color: #ffe6cc;
   float: left;
-  padding: 10px;
-  height: 250px;
+  padding: 20px 10px 10px 10px;
+  height: 240px;
   width: 565px;
 }
 
 .show-rating {
   float: left;
   width: 40%;
+  height: 100%;
 }
 
 .show-rating h4 {
@@ -75,18 +76,19 @@
 
 .show-rating-rating img {
   margin: auto;
-  height: 75px;
+  height: 90px;
   width: auto;
 }
 
 .show-rating-counts {
   width: 80%;
-  margin: auto;
+  height: 138px;
+  margin: 10px 0 0 20px;
 }
 
-.show-rating-counts p {
-  font-size: 14px;
-}
+// .show-rating-counts p {
+//   font-size: 14px;
+// }
 
 .show-info-titletable {
   float: right;

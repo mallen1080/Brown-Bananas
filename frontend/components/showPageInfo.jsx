@@ -48,7 +48,6 @@ var ShowPageInfo = React.createClass({
                 <p>Reviews Counted: {total}</p>
                 <p>Fresh: {movie.rating.up}</p>
                 <p>Brown: {movie.rating.down}</p>
-                <p>Critics Consensus: {movie.consensus}</p>
               </div>
             </div>
 
