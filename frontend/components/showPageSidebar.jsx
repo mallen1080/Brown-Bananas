@@ -38,7 +38,7 @@ var ShowPageSidebar = React.createClass({
 
     return (
       <div className="showpage-sidebar-content">
-        <div className="sidebar-buttons">
+        <div className="sidebar-buttons group">
           <div className="sidebar-left-button"
             onClick={this._buttonClick.bind(this, 0)}>
             <p>IN THEATERS</p>

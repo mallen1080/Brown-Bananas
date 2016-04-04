@@ -18,6 +18,30 @@
   padding: 10px;
 }
 
+// SIDEBAR
+
+.showpage-sidebar-content {
+  width: 100%;
+}
+
+.sidebar-buttons div {
+  float: left;
+  height: 35px;
+  width: 150px;
+  text-align: center;
+  padding-top: 15px;
+  background-color: lightblue;
+}
+
+.showpage-sidebar-content {
+  font-size: 13px;
+}
+
+.show-img-content tr .left-col {
+  width: 20%;
+}
+
+
 // TRAILER
 
 
@@ -111,6 +135,7 @@
 // MORE INFO
 
 .movie-show-moreinfo {
+  width: 75%;
   margin-top: 10px;
   border-top: 1px solid #eee;
   border-left: 1px solid #eee;
