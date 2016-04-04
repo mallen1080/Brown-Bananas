@@ -54,8 +54,11 @@ var Navbar = React.createClass({
 
   _searchResultList: function () {
     return this.state.movieSearchResults.map(function (movie) {
+      var link = "#/movies/" + movie.id;
       return (
-        <li key={ movie.id }>{movie.title} ({movie.year})</li>
+        <li key={ movie.id }>
+          <a href={link}>{movie.title} ({movie.year})</a>
+        </li>
       )
     });
   },

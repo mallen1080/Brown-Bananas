@@ -13,6 +13,10 @@ var ShowPage = React.createClass({
     ApiUtil.fetchSingleMovie(this.props.params.movieId);
   },
 
+  componentWillReceiveProps: function (newProps) {
+    ApiUtil.fetchSingleMovie(newProps.params.movieId);
+  },
+
   render: function () {
 
     return (
