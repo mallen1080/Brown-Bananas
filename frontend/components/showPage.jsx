@@ -5,7 +5,7 @@ var ShowPageSidebar = require('./showPageSidebar');
 var ShowPageTrailer = require('./showPageTrailer');
 var ShowPageInfo = require('./showPageInfo');
 var ShowPageMoreInfo = require('./showPageMoreInfo');
-// var ShowPageReviewList = require('./showPageReviewList');
+var ShowPageReview = require('./showPageReview');
 
 var ShowPage = React.createClass({
 
@@ -29,6 +29,7 @@ var ShowPage = React.createClass({
         <ShowPageTrailer />
         <ShowPageInfo />
         <ShowPageMoreInfo />
+        <ShowPageReview />
       </div>
 
     </div>

@@ -53,6 +53,7 @@ class Movie < ActiveRecord::Base
   def recent_reviews
     self.reviews
     .order(created_at: :desc)
+    .where("body is NOT NULL")
     .limit(10)
   end
 
