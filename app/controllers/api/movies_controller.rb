@@ -35,11 +35,6 @@ class Api::MoviesController < ApplicationController
     render :show
   end
 
-  # def random
-  #   @movie = Movie.get_random
-  #   render :show
-  # end
-
   private
 
   def movie_params

@@ -60,7 +60,6 @@ function _getHomePageMovies(nextState, replace, callback) {
 
 function _getSingleMovie(nextState, replace, callback) {
   ApiUtil.fetchHomePageMovies(callback);
-  // ApiUtil.fetchSingleMovie(callback);
 }
 
 var AppRoutes = (

@@ -29,11 +29,11 @@ var Navbar = React.createClass({
 
   _onChange: function () {
     console.log(AppStore.currentUser());
-    this.setState({ currentUser: AppStore.currentUser() })
+    this.setState({ currentUser: AppStore.currentUser() });
   },
 
   _movieSearchChange: function () {
-    this.setState({ movieSearchResults: SearchStore.movieSearchResults() })
+    this.setState({ movieSearchResults: SearchStore.movieSearchResults() });
   },
 
   _signedIn: function () {
@@ -57,9 +57,9 @@ var Navbar = React.createClass({
 
   _search: function (e) {
     if (e.target.value.length > 2) {
-      ApiUtil.searchMovies({ movie: e.target.value })
+      ApiUtil.searchMovies({ movie: e.target.value });
     } else {
-      this.setState({ movieSearchResults: [] })
+      this.setState({ movieSearchResults: [] });
     }
   },
 
@@ -70,7 +70,7 @@ var Navbar = React.createClass({
         <li key={ movie.id }>
           <a href={link}>{movie.title} ({movie.year})</a>
         </li>
-      )
+      );
     });
   },
 
@@ -81,7 +81,7 @@ var Navbar = React.createClass({
 
   render: function () {
     var message, button1Text, button2Text,
-      button1Action, button2Action, button1Class
+      button1Action, button2Action, button1Class;
 
     if (this._signedIn()) {
       message = "Welcome, " + this.state.currentUser.username;
@@ -90,7 +90,7 @@ var Navbar = React.createClass({
       button2Text = "LOG OUT";
       button2Action = ApiUtil.signOutUser;
     } else {
-      message = "Sign Up to Leave Reviews on Hundreds of Movies!"
+      message = "Sign Up to Leave Reviews on Hundreds of Movies!";
       button1Text = "SIGN UP";
       button1Action = this.displaySignUp;
       button2Text = "LOG IN";
@@ -101,7 +101,7 @@ var Navbar = React.createClass({
       <div className="welcome-message">{message}</div>
         <div className="navbar-logo-search">
           <div className="navbar-logo">
-            <a className="group" href="#"><img src="logo.png" /></a>
+            <a className="group" href="#"><h1>BROWN BANANAS</h1></a>
           </div>
           <form className="navbar-search-form group">
             <div className="navbar-searchbox">
@@ -135,5 +135,7 @@ var Navbar = React.createClass({
   }
 
 });
+
+// <img src="logo.png" />
 
 module.exports = Navbar;
