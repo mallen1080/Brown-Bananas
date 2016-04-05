@@ -341,8 +341,8 @@
 }
 
 .review-form-up {
-  height: 20px;
-  padding: 10px;
+  height: 30px;
+  padding: 5px 10px;
   margin-bottom: 5px;
   text-align: center;
   background-color: lightgreen;
@@ -350,16 +350,16 @@
 }
 
 .review-form-down {
-  height: 20px;
-  padding: 10px;
+  height: 30px;
+  padding: 5px 10px;
   text-align: center;
   background-color: red;
   border: 1px solid transparent;
 }
 
 .review-form-up-selected {
-  height: 20px;
-  padding: 10px;
+  height: 30px;
+  padding: 5px 10px;
   margin-bottom: 5px;
   text-align: center;
   background-color: green;
@@ -368,10 +368,15 @@
 }
 
 .review-form-down-selected {
-  height: 20px;
-  padding: 10px;
+  height: 30px;
+  padding: 5px 10px;
   text-align: center;
   background-color: darkred;
   color: white;
   border: 1px solid black;
+}
+
+.review-form-right img {
+  width: auto;
+  height: 100%
 }

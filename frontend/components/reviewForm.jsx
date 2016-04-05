@@ -110,9 +110,9 @@ var ReviewForm = React.createClass({
 
         <div className="review-form-right">
           <div onClick={this._reviewButton.bind(this, 1)}
-            className={upKlass}>UP</div>
+            className={upKlass}><img src="up.png" /></div>
           <div onClick={this._reviewButton.bind(this, 2)}
-            className={downKlass}>DOWN</div>
+            className={downKlass}><img src="down.png" /></div>
         </div>
       </div>
     );
