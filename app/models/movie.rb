@@ -84,4 +84,17 @@ class Movie < ActiveRecord::Base
     stringDate
   end
 
+  def current_user_review
+    return self.reviews.where(user_id: current_user.id) if current_user
+    nil
+  end
+
+  def current_user_review(user)
+    if user
+      review = self.reviews.where(user_id: user.id)
+      return review[0] if review.length > 0
+    end
+    nil
+  end
+
 end

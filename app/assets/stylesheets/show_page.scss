@@ -299,7 +299,7 @@
 }
 
 .review-form-left {
-  width: 70%;
+  width: 75%;
   float: left;
 }
 
@@ -333,7 +333,8 @@
 
 .review-form-editdelete button {
   width: 80px;
-  // margin-left: 50px;
+  float: left;
+  margin: 5px 5px 0 0;
   padding: 5px 10px;
   text-align: center;
   background-color: lightblue;
@@ -345,6 +346,7 @@
   margin-bottom: 5px;
   text-align: center;
   background-color: lightgreen;
+  border: 1px solid transparent;
 }
 
 .review-form-down {
@@ -352,4 +354,24 @@
   padding: 10px;
   text-align: center;
   background-color: red;
+  border: 1px solid transparent;
+}
+
+.review-form-up-selected {
+  height: 20px;
+  padding: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  background-color: green;
+  color: white;
+  border: 1px solid black;
+}
+
+.review-form-down-selected {
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: darkred;
+  color: white;
+  border: 1px solid black;
 }

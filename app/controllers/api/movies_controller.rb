@@ -11,6 +11,7 @@ class Api::MoviesController < ApplicationController
   end
 
   def show
+    @user = current_user
     if params[:id] == "random"
       @movie = Movie.get_random
     else
