@@ -123,7 +123,10 @@ images = [
   "http://www.joblo.com/newsimages1/hangover-poster-jm.jpg",
   "http://news.doddleme.com/wp-content/uploads/2013/02/memento-movie-poster.jpg",
   "http://www.dvdsreleasedates.com/posters/800/A/American-Gangster-movie-poster.jpg",
-  "https://upload.wikimedia.org/wikipedia/en/b/b3/Training_Day_Poster.jpg"
+  "https://upload.wikimedia.org/wikipedia/en/b/b3/Training_Day_Poster.jpg",
+  "http://www.hollywoodreporter.com/sites/default/files/custom/Blog_Images/interstellar3.jpg",
+  "http://fontmeme.com/images/Rain-Man-Poster.jpg",
+  "http://gallerytheimage.com/sites/default/files/imagecache/Original_Watermark/kill_bill_I_1_frgrand.jpg"
 ]
 
 trailers = [
@@ -153,8 +156,13 @@ trailers = [
   "https://www.youtube.com/watch?v=tcdUhdOlz9M",
   "https://www.youtube.com/watch?v=0vS0E9bBSL0",
   "https://www.youtube.com/watch?v=BV_nssS6Zkg",
-  "https://www.youtube.com/watch?v=DXPJqRtkDP0"
+  "https://www.youtube.com/watch?v=DXPJqRtkDP0",
+  "https://www.youtube.com/watch?v=2LqzF5WauAw",
+  "https://www.youtube.com/watch?v=mlNwXuHUA8I",
+  "https://www.youtube.com/watch?v=ot6C1ZKyiME"
 ]
+
+mtitles = []
 
 Movie.all.each do |movie|
   num = rand(images.length)
@@ -162,5 +170,16 @@ Movie.all.each do |movie|
   trailer = trailers[num]
   trailer.sub!("watch?v=", "embed/")
 
-  movie.update!(image_url: image, trailer_url: trailer)
+  if !mtitles.include?(movie.title)
+    new_title = movie.title
+    mtitles << new_title
+  else
+    until !mtitles.include?(movie.title)
+      movie.title = Faker::Book.title
+    end
+    new_title = movie.title
+    mtitles << new_title
+  end
+
+  movie.update!(image_url: image, trailer_url: trailer, title: new_title)
 end
