@@ -12,7 +12,8 @@ class Api::ReviewsController < ApplicationController
 
   def update
     @review = Review.find(params[:review][:id])
-    @review.body = nil if params[:review][:body] == ""
+    @review.body = params[:review][:body] == "" ?
+      nil : params[:review][:body]
     @review.update!(review_params)
     @movie = @review.movie
     render 'api/movies/show'

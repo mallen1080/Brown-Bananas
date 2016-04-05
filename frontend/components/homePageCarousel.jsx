@@ -8,8 +8,8 @@ var HomePageCarousel = React.createClass({
 
   render: function () {
     var movies = MovieStore.homePageMovies().top_rated_theaters.slice(0,7);
-    var carMovies = movies.map(function (movie) {
-      return <CarouselMovie movie={movie} />;
+    var carMovies = movies.map(function (movie, i) {
+      return <CarouselMovie key={i} movie={movie} />;
     });
 
     var settings = {
