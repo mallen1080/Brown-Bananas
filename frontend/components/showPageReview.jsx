@@ -24,15 +24,15 @@ var ShowPageReview = React.createClass({
     if (list) {
       return list.map(function (review, i) {
         var banana = review.value ? "fresh_banana.png" : "brown_banana.png";
-        
+
         return (
           <div key={i} className="show-review">
             <div className="review-banana">
               <img src={banana} />
             </div>
             <div className="review-content group">
-              <p>{review.body}</p>
-              <div>
+              <p>"{review.body}"</p>
+              <div className="review-source">
                 <div className="review-author">
                   <p>by: <span>{review.author}</span></p>
                 </div>
@@ -52,7 +52,7 @@ var ShowPageReview = React.createClass({
 
     return (
       <div className="showpage-reviews">
-        <h2>REVIEWS FOR {movie.title}</h2>
+        <h2>REVIEWS FOR <span>{movie.title}</span></h2>
         <div className="review-list group">
           {this._reviewList()}
         </div>
