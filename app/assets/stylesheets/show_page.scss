@@ -337,7 +337,12 @@
   margin: 5px 5px 0 0;
   padding: 5px 10px;
   text-align: center;
-  background-color: lightblue;
+  background-color: #0C89Ca;
+  border-radius: 5px;
+  color: white;
+}
+.review-form-editdelete button:hover {
+  background-color: #09689a
 }
 
 .review-form-up {
@@ -345,16 +350,18 @@
   padding: 5px 10px;
   margin-bottom: 5px;
   text-align: center;
-  background-color: lightgreen;
+  background-color: white;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .review-form-down {
   height: 30px;
   padding: 5px 10px;
   text-align: center;
-  background-color: red;
+  background-color: white;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .review-form-up-selected {
@@ -362,21 +369,28 @@
   padding: 5px 10px;
   margin-bottom: 5px;
   text-align: center;
-  background-color: green;
+  background-color: lightgreen;
   color: white;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .review-form-down-selected {
   height: 30px;
   padding: 5px 10px;
   text-align: center;
-  background-color: darkred;
+  background-color: red;
   color: white;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .review-form-right img {
   width: auto;
   height: 100%
+}
+
+.review-form-up:hover,
+.review-form-down:hover {
+  border: 1px solid black;
 }

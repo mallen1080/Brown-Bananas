@@ -49,6 +49,7 @@ var ReviewForm = React.createClass({
 
   _deleteReview: function () {
     ApiUtil.deleteReview(this.state.currentMovie.user_review.id);
+    this.setState({ selectedButton: 0 });
   },
 
   _createEditReview: function () {
@@ -73,7 +74,7 @@ var ReviewForm = React.createClass({
 
   render: function () {
     var userReview = this.state.currentMovie.user_review;
-    var editAddKlass, editAddContent, deleteKlass, body, selectedButton;
+    var editAddKlass, editAddContent, deleteKlass, body, selectedButton, header;
     var upKlass = "review-form-up";
     var downKlass = "review-form-down";
 
@@ -84,16 +85,18 @@ var ReviewForm = React.createClass({
       }
     if (userReview) {
       editAddContent = "Edit";
+      header = "EDIT YOUR REVIEW";
     } else {
       editAddContent = "Submit";
       deleteKlass = "hide";
+      header = "ADD YOUR REVIEW";
       body = "";
     }
 
     return (
       <div className="review-form group">
         <div className="review-form-left">
-          <h3>ADD YOUR REVIEW</h3>
+          <h3>{header}</h3>
           <textarea
             placeholder="Add a Review (optional)"
             valueLink={this.linkState('reviewBody')} />
