@@ -1,5 +1,6 @@
 var React = require('react');
 var MovieStore = require('../stores/movieStore');
+var ReviewForm = require('./reviewForm');
 
 var ShowPageReview = React.createClass({
 
@@ -56,6 +57,7 @@ var ShowPageReview = React.createClass({
         <div className="review-list group">
           {this._reviewList()}
         </div>
+        <ReviewForm />
       </div>
     );
   }

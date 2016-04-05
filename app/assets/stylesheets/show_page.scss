@@ -203,7 +203,7 @@
   }
 
 .movie-show-moreinfo p {
-  padding: 0 20px;
+  padding: 0 20px 10px 20px;
   width: 75%;
 }
 
@@ -289,4 +289,67 @@
 
 .review-created {
   float: right;
+}
+
+
+// REVIEWS FORM
+
+.review-form {
+  padding: 15px;
+}
+
+.review-form-left {
+  width: 70%;
+  float: left;
+}
+
+.review-form-right {
+  width: 80px;
+  float: left;
+  padding: 0 15px 15px 0;
+}
+
+.review-form-left h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.review-form-left textarea {
+  min-width: 96%;
+  max-width: 96%;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.review-edit {
+  width: 21%;
+  float: left;
+}
+
+.review-delete {
+  width: 30%;
+  float: left;
+}
+
+.review-form-editdelete button {
+  width: 80px;
+  // margin-left: 50px;
+  padding: 5px 10px;
+  text-align: center;
+  background-color: lightblue;
+}
+
+.review-form-up {
+  height: 20px;
+  padding: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  background-color: lightgreen;
+}
+
+.review-form-down {
+  height: 20px;
+  padding: 10px;
+  text-align: center;
+  background-color: red;
 }
