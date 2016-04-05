@@ -33,17 +33,21 @@
 // }
 
 .navbar-logo h1 {
-  font-size: 25px;
+  font-size: 26px;
   text-align: center;
-  font-family: 'Kavoon', cursive;
-  font-weight: 900;
+  font-family: 'Londrina Solid';
+  // font-weight: bold;
   color: #ffff66;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  font-style: italic;
-  letter-spacing: 2px;
+  text-shadow: 3px 3px 5px black;
+  // -webkit-text-stroke-width: 0.2px;
+  // -webkit-text-stroke-color: black;
+  // font-style: italic;
+  letter-spacing: 5px;
 }
 
+.navbar-logo h1:first-child {
+  color: #994d00;
+}
 .navbar-search-form {
   float: right;
 }

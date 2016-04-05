@@ -101,7 +101,7 @@ var Navbar = React.createClass({
       <div className="welcome-message">{message}</div>
         <div className="navbar-logo-search">
           <div className="navbar-logo">
-            <a className="group" href="#"><h1>BROWN BANANAS</h1></a>
+            <a className="group" href="#"><h1>BROWN</h1><h1>BANANAS</h1></a>
           </div>
           <form className="navbar-search-form group">
             <div className="navbar-searchbox">
