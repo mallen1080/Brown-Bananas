@@ -77,7 +77,7 @@ var SignInForm = React.createClass({
               </div>
 
               <div className="form-submit">
-                <button onClick={this._submitForm}>Sign In</button>
+                <button onClick={this._submitForm}>Log In</button>
               </div>
 
             </form>
