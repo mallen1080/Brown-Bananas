@@ -71,15 +71,46 @@ var ApiUtil = {
     });
   },
 
-  createReview: function () {
+  createReview: function (review) {
     $.ajax({
       method: "POST",
       url: "api/reviews",
       dataType: "json",
-      data: data,
-      success: function (reviews) {console.log(review);},
+      data: {review: review},
+      success: function (movie) {
+        MovieActions.singleMovieReceived(movie);
+      },
       error: function () {
         console.log("error in createReview");
+      }
+    });
+  },
+
+  editReview: function (review) {
+    $.ajax({
+      method: "PATCH",
+      url: "api/reviews/" + review.id,
+      dataType: "json",
+      data: {review: review},
+      success: function (movie) {
+        MovieActions.singleMovieReceived(movie);
+      },
+      error: function () {
+        console.log("error in editReview");
+      }
+    });
+  },
+
+  deleteReview: function (reviewId) {
+    $.ajax({
+      method: "DELETE",
+      url: "api/reviews/" + reviewId,
+      dataType: "json",
+      success: function (movie) {
+        MovieActions.singleMovieReceived(movie);
+      },
+      error: function () {
+        console.log("error in deleteReview");
       }
     });
   },

@@ -55,6 +55,7 @@ class Movie < ActiveRecord::Base
     .order(created_at: :desc)
     .where("body is NOT NULL")
     .limit(10)
+    .reverse
   end
 
   def review_counts

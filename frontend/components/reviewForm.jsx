@@ -32,9 +32,9 @@ var ReviewForm = React.createClass({
     this.setState({
       reviewBody: MovieStore.currentMovie().user_review.body,
       selectedButton: MovieStore.currentMovie().user_review.value ? 1 : 2});
-  } else {
-    this.setState({ reviewBody: "" });
-  }
+    } else {
+      this.setState({ reviewBody: "" });
+    }
   },
 
   _userChange: function () {
@@ -49,6 +49,26 @@ var ReviewForm = React.createClass({
 
   _deleteReview: function () {
     ApiUtil.deleteReview(this.state.currentMovie.user_review.id);
+  },
+
+  _createEditReview: function () {
+    var review = {
+      body: this.state.reviewBody,
+      value: this.state.selectedButton === 1 ? true : false,
+      movie_id: this.state.currentMovie.id
+    };
+    if (!this.state.loggedIn.username) {
+      alert("Log in to create a review");
+    } else {
+      if (this.state.currentMovie.user_review) {
+        review.id = this.state.currentMovie.user_review.id;
+        ApiUtil.editReview(review);
+      } else if (this.state.selectedButton !== 0){
+        ApiUtil.createReview(review);
+      } else {
+        alert("Select up or down to add a review!");
+      }
+    }
   },
 
   render: function () {
@@ -81,7 +101,7 @@ var ReviewForm = React.createClass({
           <div className="review-form-editdelete group">
 
             <div className={editAddKlass}>
-              <button>{editAddContent}</button>
+              <button onClick={this._createEditReview}>{editAddContent}</button>
             </div>
             <div className={deleteKlass}>
               <button onClick={this._deleteReview}>Delete</button>
