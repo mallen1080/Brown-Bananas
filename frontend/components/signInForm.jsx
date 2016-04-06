@@ -61,7 +61,9 @@ var SignInForm = React.createClass({
 
           <div className="form-main">
 
-            <p className="logo"><img src="logo.png" /></p>
+            <div className="modal-logo">
+              <h1>BROWN</h1><h1>BANANAS</h1>
+            </div>
 
             <form>
 
@@ -90,3 +92,8 @@ var SignInForm = React.createClass({
 });
 
 module.exports = SignInForm;
+
+
+
+
+// <p className="logo"><img src="logo.png" /></p>

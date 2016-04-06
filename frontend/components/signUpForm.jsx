@@ -77,7 +77,10 @@ var SignUpForm = React.createClass({
 
           <div className="form-main">
 
-            <p className="logo"><img src="logo.png" /></p>
+          <div className="modal-logo">
+            <h1>BROWN</h1><h1>BANANAS</h1>
+          </div>
+
 
             <form>
               <div className="errors">{errors}</div>

@@ -43,3 +43,29 @@
 .logo img {
   height: 60px;
 }
+
+.modal-logo {
+    // background-color: yellow;
+  width: 200px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50px;
+  background: radial-gradient(ellipse at center, #00dbdb 20%, #ffffff 72%, #ffffff 100%);
+}
+
+.modal-logo h1 {
+  font-size: 26px;
+  text-align: center;
+  font-family: 'Londrina Solid';
+  // font-weight: bold;
+  color: #ffff66;
+  text-shadow: 3px 3px 5px black;
+  // -webkit-text-stroke-width: 0.2px;
+  // -webkit-text-stroke-color: black;
+  // font-style: italic;
+  letter-spacing: 5px;
+}
+
+.modal-logo h1:first-child {
+  color: #994d00;
+}

@@ -64,10 +64,6 @@ function _checkAdmin(nextState, replace, callback) {
   }
   callback();
 }
-//
-// function _getSingleMovie(nextState, replace, callback) {
-//   ApiUtil.fetchHomePageMovies(callback);
-// }
 
 var AppRoutes = (
   <Router history={HashHistory}>
