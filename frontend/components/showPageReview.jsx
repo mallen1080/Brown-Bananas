@@ -53,7 +53,7 @@ var ShowPageReview = React.createClass({
 
     return (
       <div className="showpage-reviews">
-        <h2>REVIEWS FOR <span>{movie.title}</span></h2>
+        <h2>RECENT REVIEWS FOR <span>{movie.title}</span></h2>
         <div className="review-list group">
           {this._reviewList()}
         </div>

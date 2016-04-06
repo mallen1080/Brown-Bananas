@@ -51,7 +51,7 @@ class Movie < ActiveRecord::Base
   end
 
   def recent_reviews
-    self.reviews
+    self.reviews.includes(:user)
     .order(created_at: :desc)
     .where("body is NOT NULL")
     .limit(10)
@@ -85,10 +85,10 @@ class Movie < ActiveRecord::Base
     stringDate
   end
 
-  def current_user_review
-    return self.reviews.where(user_id: current_user.id) if current_user
-    nil
-  end
+  # def current_user_review
+  #   return self.reviews.where(user_id: current_user.id) if current_user
+  #   nil
+  # end
 
   def current_user_review(user)
     if user
