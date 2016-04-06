@@ -29,6 +29,10 @@ AppStore.currentUser = function () {
   return $.extend(true, {}, _currentUser);
 };
 
+AppStore.admin = function () {
+  return _currentUser.username === "admin";
+};
+
 AppStore.signedIn = function () {
   return !!_currentUser.username;
 };

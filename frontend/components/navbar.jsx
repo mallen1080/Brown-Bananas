@@ -3,6 +3,7 @@ var AppActions = require('../actions/appActions');
 var AppStore = require('../stores/appStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SearchStore = require('../stores/searchStore');
+var MovieStore = require('../stores/movieStore');
 var PropTypes = React.PropTypes;
 
 var Navbar = React.createClass({
@@ -14,17 +15,21 @@ var Navbar = React.createClass({
   getInitialState: function () {
     return {
       currentUser: AppStore.currentUser(),
-      movieSearchResults: []
+      movieSearchResults: [],
+      currentMovie : {}
      };
   },
 
   componentDidMount: function () {
     this.changeUser = AppStore.addListener(this._onChange);
     this.updateSearch = SearchStore.addListener(this._movieSearchChange);
+    this.updateMovie = MovieStore.addListener(this._currentMovieChange);
   },
 
   componentWillUnmount: function () {
     this.changeUser.remove();
+    this.updateSearch.remove();
+    this.updateMovie.remove();
   },
 
   _onChange: function () {
@@ -33,6 +38,10 @@ var Navbar = React.createClass({
 
   _movieSearchChange: function () {
     this.setState({ movieSearchResults: SearchStore.movieSearchResults() });
+  },
+
+  _currentMovieChange: function () {
+    this.setState({ currentMovie: MovieStore.currentMovie() });
   },
 
   _signedIn: function () {
@@ -87,24 +96,36 @@ var Navbar = React.createClass({
 
   render: function () {
     var message, button1Text, button2Text,
-      button1Action, button2Action, button1Class;
-
+      button1Action, button2Action, button1Class, adminAdd, adminEdit;
     if (this._signedIn()) {
-      message = "Welcome, " + this.state.currentUser.username;
+      message = <p>{"Welcome, " + this.state.currentUser.username}</p>;
       button1Text = "RANDOM";
       button1Action = this.getRandom;
       button2Text = "LOG OUT";
       button2Action = ApiUtil.signOutUser;
     } else {
-      message = "Sign Up to Leave Reviews on Hundreds of Movies!";
+      message = <p>Sign Up to Leave Reviews on Hundreds of Movies!</p>;
       button1Text = "SIGN UP";
       button1Action = this.displaySignUp;
       button2Text = "LOG IN";
       button2Action = this.displaySignIn;
     }
+
+    if (this.state.currentUser.username === "admin") {
+      adminAdd = <div className="admin-buttons">
+        <a href="#/movies/new">Add A Movie</a></div>;
+    }
+
+    if (this.state.currentUser.username === "admin" &&
+      $('div.showpage-content').length > 0) {
+        var link = "#/movies/" + this.state.currentMovie.id + "/edit";
+      adminEdit = <div className="admin-buttons">
+        <a href={link}>Edit Movie</a></div>;
+
+    }
     return (
       <div className="navbar group">
-      <div className="welcome-message">{message}</div>
+      <div className="welcome-message group">{message}{adminAdd}{adminEdit}</div>
         <div className="navbar-logo-search">
           <div className="navbar-logo">
             <a className="group" href="#"><h1>BROWN</h1><h1>BANANAS</h1></a>
@@ -141,7 +162,5 @@ var Navbar = React.createClass({
   }
 
 });
-
-// <img src="logo.png" />
 
 module.exports = Navbar;

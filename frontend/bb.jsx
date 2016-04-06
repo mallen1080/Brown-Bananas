@@ -58,17 +58,23 @@ function _getHomePageMovies(nextState, replace, callback) {
   ApiUtil.fetchHomePageMovies(callback);
 }
 
-function _getSingleMovie(nextState, replace, callback) {
-  ApiUtil.fetchHomePageMovies(callback);
+function _checkAdmin(nextState, replace, callback) {
+  if (!AppStore.admin()) {
+    replace('#');
+  }
 }
+//
+// function _getSingleMovie(nextState, replace, callback) {
+//   ApiUtil.fetchHomePageMovies(callback);
+// }
 
 var AppRoutes = (
   <Router history={HashHistory}>
     <Route path="/" component={App} onEnter={_checkCurrentUser}>
       <IndexRoute component={HomePage} onEnter={_getHomePageMovies}/>
+      <Route path="movies/new" component={MovieForm} onEnter={_checkAdmin}/>
       <Route path="movies/:movieId" component={ShowPage} onEnter={_getHomePageMovies}/>
-      <Route path="movies/new" component={MovieForm} />
-      <Route path="movies/:movieId/edit" component={MovieForm} />
+      <Route path="movies/:movieId/edit" component={MovieForm} onEnter={_checkAdmin}/>
     </Route>
   </Router>
 );

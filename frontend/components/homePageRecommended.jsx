@@ -43,7 +43,7 @@ var HomePageRecommended = React.createClass({
             </div>
             <p>Movies are Certified Fresh based on their reviews since their theater release.
             Fresh Bananas are those that receive a rating of 60% or higher. The following
-            movies are the top rated in theaters an on DVD in the last year.</p>
+            movies are the top rated in theaters and on DVD in the last year.</p>
           </div>
           <div className="recommended-list group">
             {this.recommendedList()}

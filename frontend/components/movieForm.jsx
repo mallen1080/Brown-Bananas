@@ -2,6 +2,7 @@ var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var ApiUtil = require('../util/apiUtil');
 var MovieStore = require('../stores/movieStore');
+var AppStore = require('../stores/appStore');
 var MovieActions = require('../actions/movieActions');
 
 var MovieForm = React.createClass({
@@ -79,7 +80,9 @@ var MovieForm = React.createClass({
     delete newMovie.movie.actor2;
     newMovie.movie.actors = [this.state.actor1, this.state.actor2];
 
+    if (AppStore.currentUser().username === "admin") {
     ApiUtil.createOrEditMovie(newMovie, method, movieId);
+    }
   },
 
   render: function () {
