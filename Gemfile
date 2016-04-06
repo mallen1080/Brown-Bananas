@@ -13,6 +13,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'pg_search'
 gem 'kaminari'
+gem 'figaro'
+gem 'omniauth-facebook'
 
 group :development, :test do
   gem 'byebug'

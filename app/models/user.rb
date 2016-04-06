@@ -18,6 +18,21 @@ class User < ActiveRecord::Base
     digest.is_password?(pw) ? @user : nil
   end
 
+  def self.find_or_create_by_auth_hash(auth_hash)
+    provider = auth_hash[:provider]
+    uid = auth_hash[:uid]
+
+    user = User.find_by(provider: provider, uid: uid)
+    return user if username
+
+    User.create(
+    provider: provider,
+    uid: uid,
+    username: auth_hash[:extra][:raw_info][:name],
+    password: "facebook"
+    )
+  end
+
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)
