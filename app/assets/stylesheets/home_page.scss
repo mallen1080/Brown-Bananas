@@ -202,14 +202,17 @@
   text-transform: uppercase;
 }
 
-.table-hover {
+.table-hover-content {
   position: absolute;
+  // top: -20px;
   background-color: white;
   z-index: 10;
   width: 200px;
-  border: 1px solid black;
+  border: 1px solid #aaa;
+  box-shadow: 0 1px #aaa;
   color: black;
   border-radius: 10px;
+  padding: 10px;
 }
 
 .table-hover-img-container {
@@ -221,10 +224,6 @@
 .table-hover-img-container img {
   height: 100%;
   width: 100%;
-}
-
-.table-hover-content {
-  padding: 10px;
 }
 
 .table-hover-top-info  > h4 {
@@ -239,7 +238,7 @@
 .table-hover-top-info {
   float: right;
   padding: 5px;
-  width: 105px;
+  width: 120px;
 }
 
 .table-hover-top-info span {

@@ -12,20 +12,22 @@ var HomePageTableItem = React.createClass({
 
   hoverComponent: function () {
     var movie = this.props.movie;
+    var link = "#/movies/" + movie.id;
     var banana = movie.rating.percentage > 59 ?
       "fresh_banana.png" : "brown_banana.png";
     var actors = movie.actors.map(function (actor, i) {
       return <p key={i}>{actor}</p>;
     });
+    var hoverKlass = this.state.hover ? "table-hover-content" : "hide";
 
     return (
-      <div className="table-hover-content">
+      <div className={hoverKlass}>
         <div className="table-hover-top group">
           <div className="table-hover-img-container">
             <img src={movie.image_url} />
           </div>
           <div className="table-hover-top-info">
-            <h4>{movie.title}</h4>
+            <h4><a href={link}>{movie.title}</a></h4>
             <div className="table-hover-rating group">
               <span className="rating-img"><img src={banana} /></span>
               <span className="percentage">{movie.rating.percentage}</span>
@@ -49,7 +51,7 @@ var HomePageTableItem = React.createClass({
     var date = movie.on_dvd_parse || movie.in_theaters_parse;
     var banana = movie.rating.percentage > 59 ?
       "fresh_banana.png" : "brown_banana.png";
-    var hoverKlass = this.state.hover ? "table-hover" : "hide";
+
 
     return (
       <tr onMouseEnter={this.changeShow.bind(this, true)}
@@ -62,7 +64,7 @@ var HomePageTableItem = React.createClass({
         </td>
         <td className="middle-col"><a href={link}>{movie.title}</a></td>
         <td className="right-col">{date}</td>
-        <td className={hoverKlass}>{this.hoverComponent()}</td>
+        <td className="table-hover">{this.hoverComponent()}</td>
       </tr>
     );
   }
