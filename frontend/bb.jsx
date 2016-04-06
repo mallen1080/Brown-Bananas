@@ -12,7 +12,7 @@ var SignInForm = require('./components/signInForm');
 var HomePage = require('./components/homePage');
 var ShowPage = require('./components/showPage');
 var Footer = require('./components/footer');
-AppStore = require('./stores/appStore');
+var AppStore = require('./stores/appStore');
 ApiUtil = require('./util/apiUtil'); //FOR TESTING
 
 var App = React.createClass({
@@ -62,6 +62,7 @@ function _checkAdmin(nextState, replace, callback) {
   if (!AppStore.admin()) {
     replace('#');
   }
+  callback();
 }
 //
 // function _getSingleMovie(nextState, replace, callback) {
