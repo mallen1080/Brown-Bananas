@@ -24,12 +24,16 @@ var Navbar = React.createClass({
     this.changeUser = AppStore.addListener(this._onChange);
     this.updateSearch = SearchStore.addListener(this._movieSearchChange);
     this.updateMovie = MovieStore.addListener(this._currentMovieChange);
+    this.clearSearch = $(document).click(function () {
+      this.setState({ movieSearchResults: [] });
+    }.bind(this));
   },
 
   componentWillUnmount: function () {
     this.changeUser.remove();
     this.updateSearch.remove();
     this.updateMovie.remove();
+    this.clearSearch.remove();
   },
 
   _onChange: function () {
@@ -71,19 +75,13 @@ var Navbar = React.createClass({
     }
   },
 
-  _clearSearch: function () {
-    this.setState({ movieSearchResults: [] });
-  },
-
   _searchResultList: function () {
     var that = this;
     return this.state.movieSearchResults.map(function (movie) {
       var link = "#/movies/" + movie.id;
       return (
         <li key={ movie.id }>
-          <a onClick={that._clearSearch}
-            href={link}>{movie.title} ({movie.year})
-          </a>
+          <a href={link}>{movie.title} ({movie.year})</a>
         </li>
       );
     });
