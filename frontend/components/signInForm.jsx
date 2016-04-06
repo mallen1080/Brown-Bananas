@@ -40,6 +40,11 @@ var SignInForm = React.createClass({
     }
   },
 
+  _switchModals: function () {
+    AppActions.displaySignIn(false);
+    AppActions.displaySignUp(true);
+  },
+
   _submitForm: function (e) {
     e.preventDefault();
     ApiUtil.signInUser({ user: this.state });
@@ -76,6 +81,14 @@ var SignInForm = React.createClass({
               <div className="form-input group">
               <label>Password: </label>
               <input type="password" placeholder="password" valueLink={this.linkState('password')} />
+              </div>
+
+              <div className="switch-modal">
+                <p><span>Dont have an account? </span>
+                  <span onClick={this._switchModals}>
+                    Sign up here
+                  </span>
+                </p>
               </div>
 
               <div className="form-submit">

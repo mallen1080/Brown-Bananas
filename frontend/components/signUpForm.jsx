@@ -42,6 +42,11 @@ var SignUpForm = React.createClass({
       }
     },
 
+    _switchModals: function () {
+      AppActions.displaySignUp(false);
+      AppActions.displaySignIn(true);
+    },
+
   _submitForm: function (e) {
     e.preventDefault();
     ApiUtil.createUser({user: this.state });
@@ -99,6 +104,14 @@ var SignUpForm = React.createClass({
               <select valueLink={this.linkState('genre')}>
                 {this._genreOptions()}
               </select>
+              </div>
+
+              <div className="switch-modal">
+                <p><span>Already have an account? </span>
+                  <span onClick={this._switchModals}>
+                    Log in here
+                  </span>
+                </p>
               </div>
 
               <div className="form-submit">

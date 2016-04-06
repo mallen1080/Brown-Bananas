@@ -113,6 +113,17 @@ ul {
   color: black;
 }
 
+.switch-modal {
+  font-size: 13px;
+  margin: 0 0 15px 15px;
+}
+
+.switch-modal span:nth-child(2) {
+  text-decoration: underline;
+  color: #0073e6;
+  cursor: pointer;
+}
+
 .errors {
   margin-bottom: 20px;
   color: red;
