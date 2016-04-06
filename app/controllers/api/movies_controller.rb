@@ -3,10 +3,11 @@ class Api::MoviesController < ApplicationController
   def create
     @movie = Movie.new(movie_params)
     @movie.parse_for_create_or_edit(params)
-    if @movie.save
+    if @movie.valid?
+      @movie.save
       Casting.create_from_movie_form(params[:movie][:actors], @movie)
+    else
     end
-
     render :show
   end
 

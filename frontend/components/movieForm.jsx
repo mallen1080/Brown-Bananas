@@ -70,7 +70,8 @@ var MovieForm = React.createClass({
     return genres;
   },
 
-  _submitForm: function (method, movieId) {
+  _submitForm: function (method, movieId, e) {
+    e.preventDefault();
     var newMovie = { movie: $.extend(true, {}, this.state) };
 
     if (!newMovie.movie.on_dvd) {

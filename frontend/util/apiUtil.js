@@ -66,7 +66,7 @@ var ApiUtil = {
         MovieActions.singleMovieReceived(movie);
       },
       error: function () {
-        console.log("error in createoreditMovie");
+        console.log("error in create or edit movie");
       }
     });
   },
