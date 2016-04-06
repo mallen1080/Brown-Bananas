@@ -4,9 +4,13 @@ var ApiUtil = require('../util/apiUtil');
 var MovieStore = require('../stores/movieStore');
 var AppStore = require('../stores/appStore');
 var MovieActions = require('../actions/movieActions');
+var PropTypes = React.PropTypes;
 
 var MovieForm = React.createClass({
   mixins: [LinkedStateMixin],
+  contextTypes: {
+    router: PropTypes.object.isRequired
+  },
 
   getInitialState: function () {
 
@@ -81,8 +85,11 @@ var MovieForm = React.createClass({
     delete newMovie.movie.actor2;
     newMovie.movie.actors = [this.state.actor1, this.state.actor2];
 
+    var router = this.context.router;
     if (AppStore.currentUser().username === "admin") {
-    ApiUtil.createOrEditMovie(newMovie, method, movieId);
+    ApiUtil.createOrEditMovie(newMovie, method, movieId, (function (id) {
+      router.push("/movies/" + id);
+    }));
     }
   },
 
@@ -108,7 +115,8 @@ var MovieForm = React.createClass({
 
           <div className="form-input group">
           <label>Trailer URL: </label>
-          <input type="text" valueLink={this.linkState('trailer_url')} />
+          <input type="text" valueLink={this.linkState('trailer_url')}
+            placeholder="https://www.youtube.com/watch?v=s7EdQ4FqbhY"/>
           </div>
 
           <div className="form-input group">
