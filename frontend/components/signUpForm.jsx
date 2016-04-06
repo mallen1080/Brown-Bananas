@@ -104,8 +104,10 @@ var SignUpForm = React.createClass({
               <div className="form-submit">
                 <button onClick={this._submitForm}>Sign Up</button>
               </div>
+              <div className="facebook">
+                <a href="/auth/facebook">Sign up with Facebook</a>
+              </div>
 
-              <a href="/auth/facebook">FACEBOOK</a>
 
             </form>
           </div>

@@ -4,7 +4,7 @@ class OmniauthController < ApplicationController
     @user = User.find_or_create_by_auth_hash(auth_hash)
     login!(@user)
 
-    render 'api/sessions/user'
+    redirect_to root_url + "#"
   end
 
   private

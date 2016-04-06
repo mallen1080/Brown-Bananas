@@ -75,10 +75,28 @@ ul {
   background-color: #0C89Ca;
   color: white;
   border-radius: 5px;
+  margin-bottom: 15px;
 }
 
 .form-submit > button:hover {
   background-color: #09689a;
+}
+
+.facebook {
+  margin: auto;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.facebook a:hover {
+  background-color: #324b81;
+}
+
+.facebook a {
+  padding: 8px 16px;
+  border-radius: 5px;
+  background-color: #3B5999;
+  color: white;
 }
 
 .hide {

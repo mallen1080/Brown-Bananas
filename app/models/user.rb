@@ -23,13 +23,14 @@ class User < ActiveRecord::Base
     uid = auth_hash[:uid]
 
     user = User.find_by(provider: provider, uid: uid)
-    return user if username
+    return user if user
 
     User.create(
     provider: provider,
     uid: uid,
     username: auth_hash[:extra][:raw_info][:name],
-    password: "facebook"
+    password: "facebook",
+    favorite_genre_id: 3
     )
   end
 

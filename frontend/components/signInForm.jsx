@@ -82,6 +82,10 @@ var SignInForm = React.createClass({
                 <button onClick={this._submitForm}>Log In</button>
               </div>
 
+              <div className="facebook">
+                <a href="/auth/facebook">Log in with Facebook</a>
+              </div>
+
             </form>
           </div>
         </div>
