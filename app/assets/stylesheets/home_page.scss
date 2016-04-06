@@ -202,6 +202,60 @@
   text-transform: uppercase;
 }
 
+.table-hover {
+  position: absolute;
+  background-color: white;
+  z-index: 10;
+  width: 200px;
+  border: 1px solid black;
+  color: black;
+  border-radius: 10px;
+}
+
+.table-hover-img-container {
+  height: 100px;
+  width: 65px;
+  float: left;
+}
+
+.table-hover-img-container img {
+  height: 100%;
+  width: 100%;
+}
+
+.table-hover-content {
+  padding: 10px;
+}
+
+.table-hover-top-info  > h4 {
+  font-weight: bold;
+}
+
+.table-hover-rating {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.table-hover-top-info {
+  float: right;
+  padding: 5px;
+  width: 105px;
+}
+
+.table-hover-top-info span {
+  float: left;
+  width: 15%;
+  // margin-right: 5px;
+}
+
+.table-hover-actors {
+  font-size: 12px;
+}
+
+.table-hover-content > p span:first-child {
+  color: #aaa;
+}
+
 // RECOMMENDED
 
 .recommended > h1 {
