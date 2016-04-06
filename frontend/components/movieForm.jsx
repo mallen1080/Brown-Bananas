@@ -93,9 +93,16 @@ var MovieForm = React.createClass({
     }
   },
 
+  _deleteMovie: function (e) {
+    e.preventDefault();
+    ApiUtil.deleteMovie(this.props.params.movieId);
+  },
+
   render: function () {
     var heading = this.props.params.movieId ? "Edit Movie" : "Add a Movie";
     var verb = this.props.params.movieId ? "PATCH" : "POST";
+    var deletee = this.props.params.movieId ?
+      <button onClick={this._deleteMovie}>Delete</button> : <div></div>;
     var id = this.props.params.movieId;
 
     return(
@@ -163,6 +170,7 @@ var MovieForm = React.createClass({
 
           <div className="form-submit">
             <button onClick={this._submitForm.bind(this, verb, id)}>Submit</button>
+            {deletee}
           </div>
 
         </form>

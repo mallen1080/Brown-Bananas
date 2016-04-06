@@ -24,7 +24,7 @@ class Api::MoviesController < ApplicationController
   end
 
   def destroy
-    @movie = Movie.find(params[:movie_id])
+    @movie = Movie.find(params[:id])
     @movie.destroy
     render :show
   end

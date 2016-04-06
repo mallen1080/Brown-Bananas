@@ -75,6 +75,20 @@ var ApiUtil = {
     });
   },
 
+  deleteMovie: function (movieId) {
+      $.ajax({
+      method: "DELETE",
+      url: "api/movies/" + movieId,
+      dataType: "json",
+      success: function () {
+        console.log("movie deleted");
+      },
+      error: function () {
+        console.log("error in delete movie");
+      }
+    });
+  },
+
   createReview: function (review) {
     $.ajax({
       method: "POST",
