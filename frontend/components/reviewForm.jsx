@@ -1,6 +1,7 @@
 var React = require('react');
 var MovieStore = require('../stores/movieStore');
 var AppStore = require('../stores/appStore');
+var AppActions = require('../actions/appActions');
 var ApiUtil = require('../util/apiUtil');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
@@ -33,7 +34,7 @@ var ReviewForm = React.createClass({
       reviewBody: MovieStore.currentMovie().user_review.body,
       selectedButton: MovieStore.currentMovie().user_review.value ? 1 : 2});
     } else {
-      this.setState({ reviewBody: "" });
+      // this.setState({ reviewBody: "" });
     }
   },
 
@@ -59,7 +60,7 @@ var ReviewForm = React.createClass({
       movie_id: this.state.currentMovie.id
     };
     if (!this.state.loggedIn.username) {
-      alert("Log in to create a review");
+      AppActions.displaySignIn(true);
     } else {
       if (this.state.currentMovie.user_review) {
         review.id = this.state.currentMovie.user_review.id;
