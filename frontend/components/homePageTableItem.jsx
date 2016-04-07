@@ -22,6 +22,7 @@ var HomePageTableItem = React.createClass({
 
     return (
       <div className={hoverKlass}>
+        <div className="triangle"></div> 
         <div className="table-hover-top group">
           <div className="table-hover-img-container">
             <img src={movie.image_url} />
