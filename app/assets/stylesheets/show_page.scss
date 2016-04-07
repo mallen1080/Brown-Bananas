@@ -292,29 +292,37 @@
 }
 
 .pagination {
-  margin-bottom: 15px;
+  margin: 0 0 15px 15px;
 }
 
-.pagination .next {
+.pagination .next a {
   width: 40px;
   float: left;
 }
 
-.pagination .previous {
+.pagination .previous a {
   width: 70px;
   float: left;
 }
 
 .pagination li {
-  width: 20px;
+  cursor: pointer;
+  // width: 20px;
   float: left;
-  padding: 5px;
   text-align: center;
   border: 1px solid transparent;
 }
 
+.pagination a {
+  display: block;
+  width: 20px;
+  padding: 5px;
+
+}
+
 .pagination .disabled {
   // opacity: 0;
+  cursor: default;
   color: #ccc;
 }
 
