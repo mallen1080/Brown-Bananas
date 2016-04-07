@@ -13,8 +13,8 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] Create an account
 - [x] Log in / Log out
-- [ ] View show page for any movie in the db
-- [ ] Add a rating to a movie, by applying an up/down vote and optional text
+- [x] View show page for any movie in the db
+- [x] Add a rating to a movie, by applying an up/down vote and optional text
 - [x] An admin user can create/edit/delete movies from the db
 - [ ] Browse movies and filter results based on genre, Banana Rating, release date, etc.(done last)
 
@@ -85,7 +85,7 @@ the API.
 
 - [x] searchbar dynamically shows movies matching search
 - [x] create buttons for browse, log-in, and sign-up
-- [ ] Show button to create movie if current user is admin
+- [x] Show button to create movie if current user is admin
 
 ### Phase 7: Log In / Sign Up (0.5 days)
 
@@ -114,11 +114,11 @@ the API.
   - [x] Trailer
   - [x] BasicInfo
   - [x] Detail Info
-  - [ ] Review List
-  - [ ] ReviewListItem
-  - [ ] ReviewInputForm
-  - [ ] Show button to edit / delete movie if current user is admin
-- [ ] Basic styling
+  - [x] Review List
+  - [x] ReviewListItem
+  - [x] ReviewInputForm
+  - [x] Show button to edit / delete movie if current user is admin
+- [x] Basic styling
 
 ### Phase 10: Detail Styling of Home Page (1 days)
 
@@ -134,9 +134,9 @@ the API.
 - [x] Trailer
 - [x] BasicInfo
 - [x] Detail Info
-- [ ] Review List
-- [ ] ReviewListItem
-- [ ] ReviewInputForm
+- [x] Review List
+- [x] ReviewListItem
+- [x] ReviewInputForm
 
 
 ### Bonus Features (TBD)
