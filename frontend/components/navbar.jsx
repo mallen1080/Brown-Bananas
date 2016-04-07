@@ -102,7 +102,7 @@ var Navbar = React.createClass({
       button2Text = "LOG OUT";
       button2Action = ApiUtil.signOutUser;
     } else {
-      message = <p>Sign Up to Leave Reviews on Hundreds of Movies!</p>;
+      message = <p>Sign Up to Leave Your Review on Hundreds of Movies!</p>;
       button1Text = "SIGN UP";
       button1Action = this.displaySignUp;
       button2Text = "LOG IN";
