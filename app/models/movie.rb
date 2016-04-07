@@ -64,8 +64,8 @@ class Movie < ActiveRecord::Base
     .where("body is NOT NULL")
     .count
 
-    review_total = total / 6
-    review_total += 1 if total % 6 != 0
+    return total / 6 if total % 6 == 0
+    (total / 6) + 1
   end
 
   def review_counts
