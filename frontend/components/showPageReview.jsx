@@ -76,7 +76,7 @@ var ShowPageReview = React.createClass({
                      marginPagesDisplayed={2}
                      pageRangeDisplayed={5}
                      clickCallback={this.handlePageClick}
-                     containerClassName={"pagination"}
+                     containerClassName={"pagination group"}
                      subContainerClassName={"pages pagination"}
                      activeClassName={"active"} />
         </div>

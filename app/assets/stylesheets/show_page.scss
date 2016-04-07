@@ -232,7 +232,7 @@
 }
 
 .review-list {
-  padding: 15px;
+  padding: 15px 15px 0 15px;
 }
 
 .show-review {
@@ -291,6 +291,37 @@
   float: right;
 }
 
+.pagination {
+  margin-bottom: 15px;
+}
+
+.pagination .next {
+  width: 40px;
+  float: left;
+}
+
+.pagination .previous {
+  width: 70px;
+  float: left;
+}
+
+.pagination li {
+  width: 20px;
+  float: left;
+  padding: 5px;
+  text-align: center;
+  border: 1px solid transparent;
+}
+
+.pagination .disabled {
+  // opacity: 0;
+  color: #ccc;
+}
+
+.pagination .active {
+  border: 1px solid #ccc;
+  color: #0C89Ca;
+}
 
 // REVIEWS FORM
 
