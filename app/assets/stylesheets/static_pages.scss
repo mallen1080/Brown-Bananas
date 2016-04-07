@@ -78,8 +78,18 @@ ul {
   margin-bottom: 15px;
 }
 
+.guest button {
+  background-color: #343434;
+}
+
+
+
 .form-submit > button:hover {
   background-color: #09689a;
+}
+
+.guest button:hover {
+  background-color: black;
 }
 
 .facebook {
