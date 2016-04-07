@@ -18,6 +18,7 @@ class Api::MoviesController < ApplicationController
     else
       @movie = Movie.find(params[:id])
     end
+    @review_page = params[:review_page]
   end
 
   def index

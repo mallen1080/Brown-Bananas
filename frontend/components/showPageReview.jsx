@@ -1,11 +1,13 @@
 var React = require('react');
 var MovieStore = require('../stores/movieStore');
 var ReviewForm = require('./reviewForm');
+var Paginate = require('react-paginate');
+var ApiUtil = require('../util/apiUtil');
 
 var ShowPageReview = React.createClass({
 
   getInitialState: function () {
-    return { currentMovie: {} };
+    return { currentMovie: {}, page: 1 };
   },
 
   componentDidMount: function () {
@@ -18,6 +20,14 @@ var ShowPageReview = React.createClass({
 
   _onChange: function () {
     this.setState({ currentMovie: MovieStore.currentMovie() });
+  },
+
+  handlePageClick: function (data) {
+    this.setState({ page: data.selected });
+    ApiUtil.fetchSingleMovie(
+      this.state.currentMovie.id,
+      data.selected + 1
+    );
   },
 
   _reviewList: function () {
@@ -53,10 +63,24 @@ var ShowPageReview = React.createClass({
 
     return (
       <div className="showpage-reviews">
-        <h2>RECENT REVIEWS FOR <span>{movie.title}</span></h2>
+        <h2>REVIEWS FOR <span>{movie.title}</span></h2>
         <div className="review-list group">
           {this._reviewList()}
         </div>
+
+        <div className="review-paginate">
+          <Paginate previousLabel={"previous"}
+                     nextLabel={"next"}
+                     breakLabel={<a href="">...</a>}
+                     pageNum={movie.review_page_count}
+                     marginPagesDisplayed={2}
+                     pageRangeDisplayed={5}
+                     clickCallback={this.handlePageClick}
+                     containerClassName={"pagination"}
+                     subContainerClassName={"pages pagination"}
+                     activeClassName={"active"} />
+        </div>
+
         <ReviewForm />
       </div>
     );

@@ -22,11 +22,13 @@ var ApiUtil = {
     });
   },
 
-  fetchSingleMovie: function (movieId) {
+  fetchSingleMovie: function (movieId, reviewPage) {
     var url = "api/movies/" + movieId;
+    var review_page = reviewPage || 1;
     $.ajax({
       method: "GET",
       url: url,
+      data: {review_page: review_page},
       dataType: "json",
       success: function (movie) {
         MovieActions.singleMovieReceived(movie);

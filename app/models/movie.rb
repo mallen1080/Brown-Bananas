@@ -50,12 +50,22 @@ class Movie < ActiveRecord::Base
     Movie.all[random]
   end
 
-  def recent_reviews
+  def recent_reviews(page)
     self.reviews.includes(:user)
     .order(created_at: :desc)
     .where("body is NOT NULL")
-    .limit(10)
+    .page(page)
+    .per(6)
     .reverse
+  end
+
+  def review_page_count
+    total = self.reviews
+    .where("body is NOT NULL")
+    .count
+
+    review_total = total / 6
+    review_total += 1 if total % 6 != 0
   end
 
   def review_counts
