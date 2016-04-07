@@ -216,7 +216,22 @@ var ApiUtil = {
         SearchActions.receiveMovieSearchResults(movies);
       },
       error: function () {
-        console.log("error in signOutUser");
+        console.log("error in search movies");
+      }
+    });
+  },
+
+  browseMovies: function (params) {
+    $.ajax({
+      method: "GET",
+      url: "api/browse",
+      dataType: "json",
+      data: params,
+      success: function (movies) {
+        SearchActions.receiveMovieBrowseResults(movies);
+      },
+      error: function () {
+        console.log("error in browse movies");
       }
     });
   }

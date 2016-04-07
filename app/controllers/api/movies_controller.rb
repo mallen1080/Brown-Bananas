@@ -38,6 +38,17 @@ class Api::MoviesController < ApplicationController
     render :show
   end
 
+  def browse
+    genres = params[:query].keys.select do |key|
+      params[:query][key] == 'true'
+    end
+    @movies = Movie.search({
+      min_rating: params[:query][:minRating].to_i,
+      max_rating: params[:query][:maxRating].to_i,
+      genres: genres.map(&:to_i)
+      })
+  end
+
   private
 
   def movie_params

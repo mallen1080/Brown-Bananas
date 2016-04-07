@@ -15,6 +15,7 @@ gem 'pg_search'
 gem 'kaminari'
 gem 'figaro'
 gem 'omniauth-facebook'
+gem 'paperclip', '5.0.0.beta1'
 
 group :development, :test do
   gem 'byebug'

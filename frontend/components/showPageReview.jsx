@@ -7,7 +7,7 @@ var ApiUtil = require('../util/apiUtil');
 var ShowPageReview = React.createClass({
 
   getInitialState: function () {
-    return { currentMovie: {}, page: 1 };
+    return { currentMovie: {} };
   },
 
   componentDidMount: function () {
@@ -19,11 +19,11 @@ var ShowPageReview = React.createClass({
   },
 
   _onChange: function () {
-    this.setState({ currentMovie: MovieStore.currentMovie() });
+    this.setState({ currentMovie: MovieStore.currentMovie(),
+      page: 1 });
   },
 
   handlePageClick: function (data) {
-    this.setState({ page: data.selected });
     ApiUtil.fetchSingleMovie(
       this.state.currentMovie.id,
       data.selected + 1

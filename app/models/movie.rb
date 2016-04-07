@@ -5,6 +5,9 @@ class Movie < ActiveRecord::Base
                     :tsearch => {:prefix => true}
                   }
 
+  has_attached_file :image, default_url: "missing.png"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   validates :title, :image_url, :trailer_url,
     :genre_id, :in_theaters, :director_id,
     :consensus, :description, presence: true
@@ -43,6 +46,19 @@ class Movie < ActiveRecord::Base
     .where("on_dvd > ?", Date.new(2015, 4, 1))
     .sort_by { |movie| movie.review_counts[:percentage] }
     .reverse[0...count]
+  end
+
+  def self.search(options)
+    min_rating = options[:min_rating] || 0
+    max_rating = options[:max_rating] || 100
+    genres = options[:genres] || Genre.all.pluck(:id)
+    sort = options[:sort] || "release"
+
+    Movie.includes(:reviews)
+    .order(in_theaters: :desc)
+    .where(genre_id: genres)
+    .select { |movie| movie.review_counts[:percentage] > min_rating &&
+      movie.review_counts[:percentage] < max_rating }[0..10]
   end
 
   def self.get_random

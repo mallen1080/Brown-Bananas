@@ -9,6 +9,14 @@ var SearchActions = {
       movies: movies
     };
     AppDispatcher.dispatch(action);
+  },
+
+  receiveMovieBrowseResults: function (movies) {
+    var action = {
+      actionType: SearchConstants.MOVIE_BROWSE_RESULTS_RECEIVED,
+      movies: movies
+    };
+    AppDispatcher.dispatch(action);
   }
 
 };

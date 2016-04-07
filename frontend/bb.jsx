@@ -13,6 +13,7 @@ var HomePage = require('./components/homePage');
 var ShowPage = require('./components/showPage');
 var Footer = require('./components/footer');
 var AppStore = require('./stores/appStore');
+var BrowsePage = require('./components/browsePage');
 ApiUtil = require('./util/apiUtil'); //FOR TESTING
 
 var App = React.createClass({
@@ -70,6 +71,7 @@ var AppRoutes = (
     <Route path="/" component={App} onEnter={_checkCurrentUser}>
       <IndexRoute component={HomePage} onEnter={_getHomePageMovies}/>
       <Route path="movies/new" component={MovieForm} onEnter={_checkAdmin}/>
+      <Route path="movies/browse" component={BrowsePage} />
       <Route path="movies/:movieId" component={ShowPage} onEnter={_getHomePageMovies}/>
       <Route path="movies/:movieId/edit" component={MovieForm} onEnter={_checkAdmin}/>
     </Route>
