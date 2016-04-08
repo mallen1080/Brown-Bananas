@@ -77,16 +77,16 @@
 #   movie.castings.create(actor_id: rand(Actor.count) + 1)
 # end
 #
-1000.times do
-  movie = Movie.all[rand(Movie.count)]
-  user = User.all[rand(User.count)]
-  value = [true, false][rand(2)]
-  body = Faker::Hacker.say_something_smart
-  movie.reviews.create(
-    user_id: user.id,
-    value: value,
-    body: body)
-end
+# 1000.times do
+#   movie = Movie.all[rand(Movie.count)]
+#   user = User.all[rand(User.count)]
+#   value = [true, false][rand(2)]
+#   body = Faker::Hacker.say_something_smart
+#   movie.reviews.create(
+#     user_id: user.id,
+#     value: value,
+#     body: body)
+# end
 #
 # 1000.times do
 #   movie = Movie.find(rand(Movie.count) + 1)
@@ -97,17 +97,17 @@ end
 #     value: value)
 # end
 
-# 1000.times do
-#   user = User.all[rand(User.count)]
-#   movie = Movie.all[rand(Movie.count)]
-#   val = movie.review_counts[:percentage] > 50 ? true : false
-#
-#   movie.reviews.create(
-#     user_id: user.id,
-#     value: val,
-#     body: Faker::Hacker.say_something_smart
-#   )
-# end
+500.times do
+  user = User.all[rand(User.count)]
+  movie = Movie.all[rand(Movie.count)]
+  val = movie.review_counts[:percentage] > 60 ? true : false
+
+  movie.reviews.create(
+    user_id: user.id,
+    value: val,
+    body: Faker::Hacker.say_something_smart
+  )
+end
 
 # images = [
 #   "https://www.movieposter.com/posters/archive/main/117/MPW-58950",
