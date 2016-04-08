@@ -39,7 +39,22 @@ var BrowsePage = React.createClass({
   render: function () {
 
     var browseResults = this.state.browseResults.map(function (movie, i) {
-      return <li key={i}>{movie.title}</li>;
+      var link = "#/movies/" + movie.id;
+      var banana = movie.rating.percentage > 59 ? "fresh_banana.png" : "brown_banana.png";
+      return (
+        <div className="rec-list-item" key={movie.id}>
+          <a href={link}>
+            <div className="rec-img-container">
+              <img src={movie.image_url} />
+              </div>
+              <span>
+                <span className="rating-img"><img src={banana} /></span>
+                <span className="percentage">{movie.rating.percentage}</span>
+              </span>
+              <p>{movie.title}</p>
+          </a>
+        </div>
+      );
     });
 
     return (
@@ -89,10 +104,10 @@ var BrowsePage = React.createClass({
           </div>
 
           </form>
-          
-          <ul>
+
+          <div className="browse-results group">
             {browseResults}
-          </ul>
+          </div>
 
       </div>
 

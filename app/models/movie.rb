@@ -58,7 +58,7 @@ class Movie < ActiveRecord::Base
     .order(in_theaters: :desc)
     .where(genre_id: genres)
     .select { |movie| movie.review_counts[:percentage] > min_rating &&
-      movie.review_counts[:percentage] < max_rating }[0..10]
+      movie.review_counts[:percentage] < max_rating }[0..24]
   end
 
   def self.get_random
