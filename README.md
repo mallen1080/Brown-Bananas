@@ -16,7 +16,7 @@ progress. Put an x between the brackets for a checkmark: [x] -->
 - [x] View show page for any movie in the db
 - [x] Add a rating to a movie, by applying an up/down vote and optional text
 - [x] An admin user can create/edit/delete movies from the db
-- [ ] Browse movies and filter results based on genre, Banana Rating, release date, etc.(done last)
+- [x] Browse movies and filter results based on genre, Banana Rating, release date, etc.(done last)
 
 ## Design Docs
 * [View Wireframes][views]
@@ -140,7 +140,7 @@ the API.
 
 
 ### Bonus Features (TBD)
-- [ ] BROWSE PAGE!! (will be done)
+- [x] BROWSE PAGE!! (will be done)
 - [ ] Recommendation List becomes customized based on current users fav genre
 - [ ] Have actor and director names dynamically display upon input of create movie form
 - [ ] Ability to update user (change pw or fav genre)
