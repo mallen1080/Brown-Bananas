@@ -44,41 +44,56 @@ var BrowsePage = React.createClass({
 
     return (
       <div className="browse-page">
-        <form>
-          <label>Min Rating:</label>
-          <input type="text" valueLink={this.linkState('minRating')} />
+        <form className="browse-form">
+          <h2>BROWSE MOVIES</h2>
+          <div className="browse-ratings">
+            <label>Min Rating:</label>
+            <input type="text" valueLink={this.linkState('minRating')} />
 
-          <label>Max Rating:</label>
-          <input type="text" valueLink={this.linkState('maxRating')} />
+            <label>Max Rating:</label>
+            <input type="text" valueLink={this.linkState('maxRating')} />
+          </div>
 
-          <label>Action:</label>
-          <input type="checkbox" checkedLink={this.linkState('1')} />
+          <div className="browse-genres">
+            <label>Action:
+            <input type="checkbox" checkedLink={this.linkState('1')} />
+            </label>
 
-          <label>Animation:</label>
-          <input type="checkbox" checkedLink={this.linkState('2')} />
+            <label>Animation:
+            <input type="checkbox" checkedLink={this.linkState('2')} />
+            </label>
 
-          <label>Comedy:</label>
-          <input type="checkbox" checkedLink={this.linkState('3')} />
+            <label>Comedy:
+            <input type="checkbox" checkedLink={this.linkState('3')} />
+            </label>
 
-          <label>Documentary:</label>
-          <input type="checkbox" checkedLink={this.linkState('4')} />
+            <label>Documentary:
+            <input type="checkbox" checkedLink={this.linkState('4')} />
+            </label>
 
-          <label>Drama:</label>
-          <input type="checkbox" checkedLink={this.linkState('5')} />
+            <label>Drama:
+            <input type="checkbox" checkedLink={this.linkState('5')} />
+            </label>
 
-          <label>Horror:</label>
-          <input type="checkbox" checkedLink={this.linkState('6')} />
+            <label>Horror:
+            <input type="checkbox" checkedLink={this.linkState('6')} />
+            </label>
 
-          <label>Sci-Fi:</label>
-          <input type="checkbox" checkedLink={this.linkState('7')} />
+            <label>Sci-Fi:
+            <input type="checkbox" checkedLink={this.linkState('7')} />
+            </label>
+          </div>
 
-          <button onClick={this.submitForm}>Submit</button>
+          <div className="form-submit">
+            <button onClick={this.submitForm}>Submit</button>
+          </div>
 
+          </form>
+          
           <ul>
             {browseResults}
           </ul>
 
-        </form>
       </div>
 
     );

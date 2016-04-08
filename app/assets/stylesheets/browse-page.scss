@@ -3,3 +3,38 @@
   margin: auto;
   background-color: white;
 }
+
+.browse-form {
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.browse-form h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.browse-ratings {
+
+}
+
+.browse-ratings input {
+  width: 40px;
+  padding: 2px 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+}
+
+.browse-genres input {
+  margin: 0 15px 0 5px;
+}
+
+.browse-form .form-submit {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.browse-form .form-submit button {
+  margin: 0;
+}

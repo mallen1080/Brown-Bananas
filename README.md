@@ -2,7 +2,7 @@
 
 [Heroku link][heroku]
 
-[heroku]: https://brownbananas.herokuapp.com/
+[heroku]: https://brownbananas.win/
 
 ## Minimum Viable Product
 
