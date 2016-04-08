@@ -77,16 +77,16 @@
 #   movie.castings.create(actor_id: rand(Actor.count) + 1)
 # end
 #
-# 1000.times do
-#   movie = Movie.find(rand(Movie.count) + 1)
-#   user = rand(User.count) + 1
-#   value = [true, false][rand(2)]
-#   body = Faker::Hacker.say_something_smart
-#   movie.reviews.create(
-#     user_id: user,
-#     value: value,
-#     body: body)
-# end
+1000.times do
+  movie = Movie.all[rand(Movie.count)]
+  user = User.all[rand(User.count)]
+  value = [true, false][rand(2)]
+  body = Faker::Hacker.say_something_smart
+  movie.reviews.create(
+    user_id: user.id,
+    value: value,
+    body: body)
+end
 #
 # 1000.times do
 #   movie = Movie.find(rand(Movie.count) + 1)
@@ -197,7 +197,7 @@
 #   movie.update!(image_url: image, trailer_url: trailer, title: new_title)
 # end
 
-Movie.all.each do |movie|
-  genre = rand(7) + 1
-  movie.update!(genre_id: genre)
-end
+# Movie.all.each do |movie|
+#   genre = rand(7) + 1
+#   movie.update!(genre_id: genre)
+# end
