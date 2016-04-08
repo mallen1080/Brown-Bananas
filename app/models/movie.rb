@@ -53,9 +53,10 @@ class Movie < ActiveRecord::Base
     max_rating = options[:max_rating] || 100
     genres = options[:genres] || Genre.all.pluck(:id)
     sort = options[:sort] || "release"
+    theaters = options[:theaters] ? "on_dvd is NULL" : "on_dvd is NOT NULL"
 
     Movie.includes(:reviews)
-    .order(in_theaters: :desc)
+    .where(theaters)
     .where(genre_id: genres)
     .select { |movie| movie.review_counts[:percentage] > min_rating &&
       movie.review_counts[:percentage] < max_rating }[0..24]

@@ -42,9 +42,11 @@ class Api::MoviesController < ApplicationController
     genres = params[:query].keys.select do |key|
       params[:query][key] == 'true'
     end
+
     @movies = Movie.search({
       min_rating: params[:query][:minRating].to_i,
       max_rating: params[:query][:maxRating].to_i,
+      theaters: params[:query][:theaters] == "true",
       genres: genres.map(&:to_i)
       })
   end

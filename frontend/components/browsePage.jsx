@@ -9,6 +9,8 @@ var BrowsePage = React.createClass({
   getInitialState: function () {
     return {
       browseResults: [],
+      theaters: false,
+      dvd: true,
       minRating: 0,
       maxRating: 100,
       "1": true,
@@ -29,6 +31,16 @@ var BrowsePage = React.createClass({
     this.setState({ browseResults: SearchStore.movieBrowseResults() });
   },
 
+  setRelease: function (release) {
+    if (release === "theaters") {
+      this.setState({ theaters: true});
+      this.setState({ dvd: false });
+    } else {
+      this.setState({ theaters: false});
+      this.setState({ dvd: true });
+    }
+  },
+
   submitForm: function (e) {
     var query = $.extend(true, {}, this.state);
     delete query.browseResults;
@@ -47,11 +59,12 @@ var BrowsePage = React.createClass({
             <div className="rec-img-container">
               <img src={movie.image_url} />
               </div>
+              <p className="browse-title">{movie.title}</p>
               <span>
                 <span className="rating-img"><img src={banana} /></span>
                 <span className="percentage">{movie.rating.percentage}</span>
               </span>
-              <p>{movie.title}</p>
+              <p className="browse-genre">{movie.genre}</p>
           </a>
         </div>
       );
@@ -61,6 +74,21 @@ var BrowsePage = React.createClass({
       <div className="browse-page">
         <form className="browse-form">
           <h2>BROWSE MOVIES</h2>
+
+          <div className="browse-release">
+            <label>In Theaters:
+            <input type="radio"
+              name="browse"
+              onClick={this.setRelease.bind(this, "theaters")} />
+            </label>
+
+            <label>On DVD:
+            <input type="radio"
+              name="browse"
+              onClick={this.setRelease.bind(this, "dvd")} />
+            </label>
+          </div>
+
           <div className="browse-ratings">
             <label>Min Rating:</label>
             <input type="text" valueLink={this.linkState('minRating')} />

@@ -19,6 +19,11 @@
 
 }
 
+.browse-release input {
+  padding: 2px 5px;
+  margin: 5px 15px 5px 5px;
+}
+
 .browse-ratings input {
   width: 40px;
   padding: 2px 5px;
@@ -46,7 +51,12 @@
 
 .browse-results .rec-list-item {
   margin-top: 15px;
-  margin-bottom: 10px;
+  min-height: 290px;
   float: left;
-  font-size: 13px; 
+  font-size: 13px;
+}
+
+.browse-title {
+  font-size: 15px;
+  font-weight: bold;
 }

@@ -87,11 +87,6 @@ var Navbar = React.createClass({
     });
   },
 
-  _browse: function (e) {
-    e.preventDefault();
-    alert("Coming soon!");
-  },
-
   render: function () {
     var message, button1Text, button2Text,
       button1Action, button2Action, button1Class, adminAdd, adminEdit;
@@ -143,7 +138,9 @@ var Navbar = React.createClass({
         <div className="navbar-buttons">
           <ul>
             <li>
-              <button onClick={this._browse}>BROWSE</button>
+              <a href="#/movies/browse">
+                <button>BROWSE</button>
+              </a>
             </li>
 
             <li className={button1Class} onClick={button1Action}>
