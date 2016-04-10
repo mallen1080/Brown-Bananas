@@ -19,13 +19,41 @@ Leave your mark at: [BrownBananas][heroku]
 ## Browse Page
 ![browse]
 
+## Add / Edit Movie
+![edit]
 
 [home1]: ./docs/final/HomePage-Top.png
 [home2]: ./docs/final/HomePage-Bottom.png
 [showinfo]: ./docs/final/ShowPage-Info.png
 [showreview]: ./docs/final/ShowPage-Reviews.png
 [browse]: ./docs/final/BrowsePage.png
+[edit]: ./docs/final/Edit-Movie.png
 
+## Features
+
+An Admin user can:
+- Add, edit, and delete movies from the database through a user interface
+
+A standard user can:
+- Browse movies on the home page based on their release dates and rating values
+- View basic info about a movie when hovering over the link on the homepage
+- Create an account / log in with username or facebook account
+- Watch youtube trailer on movie show page
+- View all movie details on show page
+- View all reviews for the movie
+- Create, edit, and delete a review for each movie (only one per movie)
+- Get redirected to a random movie's show page using the random movie generator
+- Browse and filter movies based on their release, genre, and rating on browse page
+- Search for movies using the search bar on the navbar
+
+## Future work
+
+- [x] BROWSE PAGE!!
+- [ ] Recommendation List becomes customized based on current users fav genre
+- [ ] Have actor and director names dynamically display upon input of create movie form
+- [ ] Ability to update user (change pw or fav genre) through interface
+- [ ] Password verify on sign up
+- [ ] Add more filters to browse page
 
 <!--
 
