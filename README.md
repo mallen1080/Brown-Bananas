@@ -20,11 +20,11 @@ Leave your mark at: [BrownBananas][heroku]
 ![browse]
 
 
-[home1]: .docs/final/HomePage-Top.png
-[home2]: .docs/final/HomePage-Bottom.png
-[showinfo]: .docs/final/ShowPage-Info.png
-[showreview]: .docs/final/ShowPage-Reviews.png
-[browse]: .docs/final/BrowsePage.png
+[home1]: ./docs/final/HomePage-Top.png
+[home2]: ./docs/final/HomePage-Bottom.png
+[showinfo]: ./docs/final/ShowPage-Info.png
+[showreview]: ./docs/final/ShowPage-Reviews.png
+[browse]: ./docs/final/BrowsePage.png
 
 
 <!--
