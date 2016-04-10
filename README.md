@@ -54,6 +54,7 @@ A standard user can:
 - [ ] Ability to update user (change pw or fav genre) through interface
 - [ ] Password verify on sign up
 - [ ] Add more filters to browse page
+- [ ] Add and about page
 
 <!--
 
