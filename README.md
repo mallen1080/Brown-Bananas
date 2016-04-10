@@ -5,7 +5,7 @@ It was inspired by RottenTomatoes and built using Ruby on Rails and React.js.
 
 Leave your mark at: [BrownBananas][heroku]
 
-[heroku]: https://www.brownbananas.win/
+[heroku]: http://www.brownbananas.win/
 
 
 - [x] Create an account
