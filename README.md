@@ -8,6 +8,27 @@ Leave your mark at: [BrownBananas][heroku]
 [heroku]: http://www.brownbananas.win/
 
 
+## Home Page
+![home1]
+![home2]
+
+## Movie Show Page
+![showinfo]
+![showreview]
+
+## Browse Page
+![browse]
+
+
+[home1]: .docs/final/HomePage-Top.png
+[home2]: .docs/final/HomePage-Bottom.png
+[showinfo]: .docs/final/ShowPage-Info.png
+[showreview]: .docs/final/ShowPage-Reviews.png
+[browse]: .docs/final/BrowsePage.png
+
+
+<!--
+
 - [x] Create an account
 - [x] Log in / Log out
 - [x] View show page for any movie in the db
@@ -141,4 +162,4 @@ the API.
 - [ ] Recommendation List becomes customized based on current users fav genre
 - [ ] Have actor and director names dynamically display upon input of create movie form
 - [ ] Ability to update user (change pw or fav genre)
-- [ ] Password verify on sign up
+- [ ] Password verify on sign up -->
