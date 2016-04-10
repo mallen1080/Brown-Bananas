@@ -1,15 +1,12 @@
 # BrownBananas
 
-[Heroku link][heroku]
+BrownBananas is a web application for browsing and leaving reviews on movies in theaters and on DVD.
+It was inspired by RottenTomatoes and built using Ruby on Rails and React.js.
 
-[heroku]: https://brownbananas.win/
+Leave your mark at: [BrownBananas][heroku]
 
-## Minimum Viable Product
+[heroku]: https://www.brownbananas.win/
 
-BrownBananas is a web application inspired by RottenTomatoes built using Ruby on Rails and React.js. BrownBananas allows users to:
-
-<!-- This is a Markdown checklist. Use it to keep track of your
-progress. Put an x between the brackets for a checkmark: [x] -->
 
 - [x] Create an account
 - [x] Log in / Log out
