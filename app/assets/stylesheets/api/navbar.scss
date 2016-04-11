@@ -27,21 +27,12 @@
   color: #ffff00;
 }
 
-// .navbar-logo img {
-//   width: auto;
-//   height: 60px;
-// }
-
 .navbar-logo h1 {
   font-size: 26px;
   text-align: center;
   font-family: 'Londrina Solid';
-  // font-weight: bold;
   color: #ffff66;
   text-shadow: 3px 3px 5px black;
-  // -webkit-text-stroke-width: 0.2px;
-  // -webkit-text-stroke-color: black;
-  // font-style: italic;
   letter-spacing: 5px;
 }
 
@@ -87,6 +78,12 @@
   background-color: #ff9933;
   color: white;
   cursor: pointer;
+}
+
+.navbar-search-results a {
+  float: left;
+  height: 100%;
+  width: 100%;
 }
 
 .navbar-buttons li {

@@ -76,7 +76,6 @@ var Navbar = React.createClass({
   },
 
   _searchResultList: function () {
-    var that = this;
     return this.state.movieSearchResults.map(function (movie) {
       var link = "#/movies/" + movie.id;
       return (
@@ -114,7 +113,6 @@ var Navbar = React.createClass({
         var link = "#/movies/" + this.state.currentMovie.id + "/edit";
       adminEdit = <div className="admin-buttons">
         <a href={link}>Edit Movie</a></div>;
-
     }
     return (
       <div className="navbar group">
