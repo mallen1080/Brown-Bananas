@@ -80,6 +80,14 @@
   cursor: pointer;
 }
 
+.navbar-search-results li:first-child {
+  background-color: black;
+  color: white;
+  pointer-events: none;
+  cursor: default;
+  // text-align: center;
+}
+
 .navbar-search-results a {
   float: left;
   height: 100%;
