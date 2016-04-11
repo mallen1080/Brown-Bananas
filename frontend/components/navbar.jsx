@@ -77,11 +77,11 @@ var Navbar = React.createClass({
   },
 
   _searchResultList: function () {
-    // if (this.state.movieSearchResults.length > 0) {
-    //   this.state.movieSearchResults.unshift(
-    //     {id: 100000, title: "Movie", year: "release year"}
-    //   );
-    // }
+    if (this.state.movieSearchResults.length > 0) {
+      this.state.movieSearchResults.unshift(
+        {id: 100000, title: "Movie", year: "release year"}
+      );
+    }
     return this.state.movieSearchResults.map(function (movie) {
       var link = "#/movies/" + movie.id;
       return (
