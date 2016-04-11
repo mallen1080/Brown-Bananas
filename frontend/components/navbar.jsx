@@ -1,5 +1,6 @@
 var React = require('react');
 var AppActions = require('../actions/appActions');
+var SearchActions = require('../actions/searchActions');
 var AppStore = require('../stores/appStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SearchStore = require('../stores/searchStore');
@@ -25,7 +26,7 @@ var Navbar = React.createClass({
     this.updateSearch = SearchStore.addListener(this._movieSearchChange);
     this.updateMovie = MovieStore.addListener(this._currentMovieChange);
     this.clearSearch = $(document).click(function () {
-      this.setState({ movieSearchResults: [] });
+      SearchActions.receiveMovieSearchResults([]);
     }.bind(this));
   },
 
@@ -76,11 +77,11 @@ var Navbar = React.createClass({
   },
 
   _searchResultList: function () {
-    if (this.state.movieSearchResults.length > 0) {
-      this.state.movieSearchResults.unshift(
-        {id: 100000, title: "Movie", year: "release year"}
-      );
-    }
+    // if (this.state.movieSearchResults.length > 0) {
+    //   this.state.movieSearchResults.unshift(
+    //     {id: 100000, title: "Movie", year: "release year"}
+    //   );
+    // }
     return this.state.movieSearchResults.map(function (movie) {
       var link = "#/movies/" + movie.id;
       return (
