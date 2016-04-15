@@ -50,7 +50,8 @@ class Api::MoviesController < ApplicationController
       min_rating: params[:query][:minRating].to_i,
       max_rating: params[:query][:maxRating].to_i,
       theaters: params[:query][:theaters] == "true",
-      genres: genres.map(&:to_i)
+      genres: genres.map(&:to_i),
+      count: 24
       })
   end
 

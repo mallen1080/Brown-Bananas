@@ -31,14 +31,14 @@ class Movie < ActiveRecord::Base
   end
 
   def self.top_rated_theaters(count)
-    Movie.includes(:reviews)
+    Movie.includes(:reviews, :director, :actors)
     .where("on_dvd is NULL")
     .sort_by { |movie| movie.review_counts[:percentage] }
     .reverse[0...count]
   end
 
   def self.top_rated_dvd(count)
-    Movie.includes(:reviews)
+    Movie.includes(:reviews, :director, :actors)
     .where("on_dvd is NOT NULL")
     .where("on_dvd > ?", Date.new(2015, 4, 1))
     .sort_by { |movie| movie.review_counts[:percentage] }
@@ -51,17 +51,19 @@ class Movie < ActiveRecord::Base
     genres = options[:genres] || Genre.all.pluck(:id)
     sort = options[:sort] || "release"
     theaters = options[:theaters] ? "on_dvd is NULL" : "on_dvd is NOT NULL"
+    count = options[:count] || 24
 
     Movie.includes(:reviews)
     .where(theaters)
     .where(genre_id: genres)
     .select { |movie| movie.review_counts[:percentage] > min_rating &&
-      movie.review_counts[:percentage] < max_rating }[0..24]
+      movie.review_counts[:percentage] < max_rating }[0..count]
   end
 
   def self.get_random
-    random = rand(Movie.all.length)
-    Movie.all[random]
+    all_movies = Movie.all
+    random = rand(all_movies.length)
+    all_movies[random]
   end
 
   def recent_reviews(page)
