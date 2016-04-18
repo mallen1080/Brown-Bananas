@@ -201,7 +201,7 @@ var ApiUtil = {
         completion && completion();
       },
       error: function () {
-        console.log("error in signOutUser");
+        console.log("error in fetchCurrentUser");
       }
     });
   },

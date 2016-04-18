@@ -31,14 +31,14 @@ class Movie < ActiveRecord::Base
   end
 
   def self.top_rated_theaters(count)
-    Movie.includes(:reviews, :director, :actors, :genre)
+    Movie.includes(:reviews, :genre, :director, :actors)
     .where("on_dvd is NULL")
     .sort_by { |movie| movie.review_counts[:percentage] }
     .reverse[0...count]
   end
 
   def self.top_rated_dvd(count)
-    Movie.includes(:reviews, :director, :actors, :genre)
+    Movie.includes(:reviews, :genre, :director, :actors)
     .where("on_dvd is NOT NULL")
     .where("on_dvd > ?", Date.new(2015, 4, 1))
     .sort_by { |movie| movie.review_counts[:percentage] }

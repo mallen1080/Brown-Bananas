@@ -7,7 +7,6 @@ class Api::MoviesController < ApplicationController
     if @movie.valid?
       @movie.save
       Casting.create_from_movie_form(params[:movie][:actors], @movie)
-    else
     end
     render :show
   end

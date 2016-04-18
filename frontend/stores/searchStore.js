@@ -32,7 +32,6 @@ SearchStore.__onDispatch = function (payload) {
     case SearchConstants.MOVIE_BROWSE_RESULTS_RECEIVED:
       SearchStore.updateMovieBrowseResults(payload.movies);
       this.__emitChange();
-      break;
     }
 };
 
