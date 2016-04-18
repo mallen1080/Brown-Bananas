@@ -20,12 +20,11 @@ var HomePageCarousel = React.createClass({
     };
     return (
       <div className="top">
-
-      <div className='carousel-container group'>
-        <Slider {...settings}>
-          {carMovies}
-        </Slider>
-      </div>
+        <div className='carousel-container group'>
+          <Slider {...settings}>
+            {carMovies}
+          </Slider>
+        </div>
       </div>
     );
   }

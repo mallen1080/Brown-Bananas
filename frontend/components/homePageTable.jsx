@@ -7,7 +7,8 @@ var HomePageTable = React.createClass({
   tableRow: function (movie) {
     var link = "#/movies/" + movie.id;
     var date = movie.on_dvd_parse || movie.in_theaters_parse;
-    var banana = movie.rating.percentage > 59 ? "fresh_banana.png" : "brown_banana.png";
+    var banana = movie.rating.percentage > 59 ?
+      "fresh_banana.png" : "brown_banana.png";
 
     return (
       <tr key={movie.id}>

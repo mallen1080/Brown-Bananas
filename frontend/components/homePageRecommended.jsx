@@ -12,7 +12,9 @@ var HomePageRecommended = React.createClass({
       list.map(function (movie, i) {
         var link = "#/movies/" + movie.id;
         var heading = i < 2 ? "IN THEATERS" : "ON DVD";
-        var banana = movie.rating.percentage > 59 ? "fresh_banana.png" : "brown_banana.png";
+        var banana = movie.rating.percentage > 59 ?
+          "fresh_banana.png" : "brown_banana.png";
+          
         return (
           <div className="rec-list-item" key={movie.id}>
             <a href={link}>

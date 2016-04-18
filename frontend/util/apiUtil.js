@@ -1,5 +1,4 @@
 var MovieActions = require('../actions/movieActions');
-var ReviewActions = require('../actions/reviewActions');
 var AppActions = require('../actions/appActions');
 var SearchActions = require('../actions/searchActions');
 

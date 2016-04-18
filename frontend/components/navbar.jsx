@@ -94,7 +94,7 @@ var Navbar = React.createClass({
 
   render: function () {
     var message, button1Text, button2Text,
-      button1Action, button2Action, button1Class, adminAdd, adminEdit;
+      button1Action, button2Action, adminAdd, adminEdit;
     if (this._signedIn()) {
       message = <p>{"Welcome, " + this.state.currentUser.username}</p>;
       button1Text = "RANDOM";
@@ -133,7 +133,9 @@ var Navbar = React.createClass({
                 <input type="text"
                 onChange={this._search}
                 placeholder="Search movies..." />
-                <ul className="navbar-search-results">{this._searchResultList()}</ul>
+                <ul className="navbar-search-results">
+                  {this._searchResultList()}
+                </ul>
               </div>
             </div>
           </form>
@@ -147,7 +149,7 @@ var Navbar = React.createClass({
               </a>
             </li>
 
-            <li className={button1Class} onClick={button1Action}>
+            <li onClick={button1Action}>
               <button>{button1Text}</button>
             </li>
 

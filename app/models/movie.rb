@@ -53,7 +53,7 @@ class Movie < ActiveRecord::Base
     theaters = options[:theaters] ? "on_dvd is NULL" : "on_dvd is NOT NULL"
     count = options[:count] || 24
 
-    Movie.includes(:reviews)
+    Movie.includes(:reviews, :genre, :director, :actors)
     .where(theaters)
     .where(genre_id: genres)
     .select { |movie| movie.review_counts[:percentage] > min_rating &&

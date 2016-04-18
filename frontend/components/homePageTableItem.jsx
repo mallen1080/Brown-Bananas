@@ -22,7 +22,7 @@ var HomePageTableItem = React.createClass({
 
     return (
       <div className={hoverKlass}>
-        <div className="triangle"></div> 
+        <div className="triangle"></div>
         <div className="table-hover-top group">
           <div className="table-hover-img-container">
             <img src={movie.image_url} />
@@ -52,7 +52,6 @@ var HomePageTableItem = React.createClass({
     var date = movie.on_dvd_parse || movie.in_theaters_parse;
     var banana = movie.rating.percentage > 59 ?
       "fresh_banana.png" : "brown_banana.png";
-
 
     return (
       <tr onMouseEnter={this.changeShow.bind(this, true)}

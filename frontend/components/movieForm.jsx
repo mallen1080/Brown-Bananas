@@ -99,11 +99,11 @@ var MovieForm = React.createClass({
   },
 
   render: function () {
-    var heading = this.props.params.movieId ? "Edit Movie" : "Add a Movie";
-    var verb = this.props.params.movieId ? "PATCH" : "POST";
-    var deletee = this.props.params.movieId ?
+    var movieId = this.props.params.movieId;
+    var heading = movieId ? "Edit Movie" : "Add a Movie";
+    var verb = movieId ? "PATCH" : "POST";
+    var deletee = movieId ?
       <button onClick={this._deleteMovie}>Delete</button> : <div></div>;
-    var id = this.props.params.movieId;
 
     return(
       <div className="movie-form-page">
@@ -169,7 +169,7 @@ var MovieForm = React.createClass({
           </div>
 
           <div className="form-submit">
-            <button onClick={this._submitForm.bind(this, verb, id)}>Submit</button>
+            <button onClick={this._submitForm.bind(this, verb, movieId)}>Submit</button>
             {deletee}
           </div>
 

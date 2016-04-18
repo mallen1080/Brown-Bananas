@@ -23,8 +23,12 @@ var BrowsePage = React.createClass({
   },
 
   componentDidMount: function () {
-    SearchStore.addListener(this.updateBrowseResults);
+    this.browseListener = SearchStore.addListener(this.updateBrowseResults);
     ApiUtil.browseMovies({ query: this.state });
+  },
+
+  componentWillUnmount: function () {
+    this.browseListener.remove();
   },
 
   updateBrowseResults: function () {
@@ -41,18 +45,12 @@ var BrowsePage = React.createClass({
     }
   },
 
-  submitForm: function (e) {
-    var query = $.extend(true, {}, this.state);
-    delete query.browseResults;
-    e.preventDefault();
-    ApiUtil.browseMovies({ query: query });
-  },
-
-  render: function () {
-
-    var browseResults = this.state.browseResults.map(function (movie, i) {
+  browseResults: function () {
+    return this.state.browseResults.map(function (movie, i) {
       var link = "#/movies/" + movie.id;
-      var banana = movie.rating.percentage > 59 ? "fresh_banana.png" : "brown_banana.png";
+      var banana = movie.rating.percentage > 59 ?
+        "fresh_banana.png" : "brown_banana.png";
+        
       return (
         <div className="rec-list-item" key={movie.id}>
           <a href={link}>
@@ -69,6 +67,16 @@ var BrowsePage = React.createClass({
         </div>
       );
     });
+  },
+
+  submitForm: function (e) {
+    var query = $.extend(true, {}, this.state);
+    delete query.browseResults;
+    e.preventDefault();
+    ApiUtil.browseMovies({ query: query });
+  },
+
+  render: function () {
 
     return (
       <div className="browse-page">
@@ -134,14 +142,13 @@ var BrowsePage = React.createClass({
           </form>
 
           <div className="browse-results group">
-            {browseResults}
+            {this.browseResults()}
           </div>
 
       </div>
 
     );
   }
-
 
 });
 
