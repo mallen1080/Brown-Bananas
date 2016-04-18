@@ -82,28 +82,31 @@ var SignUpForm = React.createClass({
 
           <div className="form-main">
 
-          <div className="modal-logo">
-            <h1>BROWN</h1><h1>BANANAS</h1>
-          </div>
-
+            <div className="modal-logo">
+              <h1>BROWN</h1><h1>BANANAS</h1>
+            </div>
 
             <form>
               <div className="errors">{errors}</div>
               <div className="form-input group">
                 <label>Username: </label>
-                <input type="text" placeholder="username" valueLink={this.linkState('username')} />
+                <input type="text"
+                placeholder="username"
+                valueLink={this.linkState('username')} />
               </div>
 
               <div className="form-input group">
-              <label>Password: </label>
-              <input type="password" placeholder="password" valueLink={this.linkState('password')} />
+                <label>Password: </label>
+                <input type="password"
+                  placeholder="password"
+                  valueLink={this.linkState('password')} />
               </div>
 
               <div className="form-input group">
-              <label>Favorite Genre: </label>
-              <select valueLink={this.linkState('genre')}>
-                {this._genreOptions()}
-              </select>
+                <label>Favorite Genre: </label>
+                <select valueLink={this.linkState('genre')}>
+                  {this._genreOptions()}
+                </select>
               </div>
 
               <div className="switch-modal">
@@ -117,10 +120,10 @@ var SignUpForm = React.createClass({
               <div className="form-submit">
                 <button onClick={this._submitForm}>Sign Up</button>
               </div>
+
               <div className="facebook">
                 <a href="/auth/facebook">Sign up with Facebook</a>
               </div>
-
 
             </form>
           </div>

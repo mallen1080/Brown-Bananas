@@ -12,9 +12,8 @@ var ShowPageSidebar = React.createClass({
     this.setState({ selected: button });
   },
 
-  render: function () {
-
-    var tables = [
+  tables: function () {
+    return [
       <div className="sidebar-tables-theaters">
         <HomePageTable
         klass="showpage-table"
@@ -39,6 +38,9 @@ var ShowPageSidebar = React.createClass({
         movies={MovieStore.homePageMovies().top_rated_dvd} />
       </div>
     ];
+  },
+
+  render: function () {
 
     var leftKlass = "sidebar-left-button";
     var rightKlass = "sidebar-right-button";
@@ -60,7 +62,7 @@ var ShowPageSidebar = React.createClass({
             <p>DVD</p>
           </div>
         </div>
-        {tables[this.state.selected]}
+        {this.tables()[this.state.selected]}
       </div>
     );
   }

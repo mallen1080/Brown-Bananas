@@ -7,14 +7,14 @@ var ShowPageMoreInfo = React.createClass({
   },
 
   componentDidMount: function () {
-    this.movieListener = MovieStore.addListener(this._onChange);
+    this.movieListener = MovieStore.addListener(this._movieChange);
   },
 
   componentWillUnmount: function () {
     this.movieListener.remove();
   },
 
-  _onChange: function () {
+  _movieChange: function () {
     this.setState({ currentMovie: MovieStore.currentMovie() });
   },
 
@@ -36,7 +36,6 @@ var ShowPageMoreInfo = React.createClass({
       return <div></div>;
     }
   }
-
 
 });
 

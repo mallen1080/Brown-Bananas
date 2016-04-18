@@ -7,14 +7,14 @@ var ShowPageInfo = React.createClass({
   },
 
   componentDidMount: function () {
-    this.movieListener = MovieStore.addListener(this._onChange);
+    this.movieListener = MovieStore.addListener(this._movieChange);
   },
 
   componentWillUnmount: function () {
     this.movieListener.remove();
   },
 
-  _onChange: function () {
+  _movieChange: function () {
     this.setState({ currentMovie: MovieStore.currentMovie() });
   },
 
@@ -22,9 +22,11 @@ var ShowPageInfo = React.createClass({
 
     if (this.state.currentMovie.title) {
       var movie = this.state.currentMovie;
-      var banana = movie.rating.percentage > 59 ? "fresh_banana.png" : "brown_banana.png";
+      var banana = movie.rating.percentage > 59 ?
+        "fresh_banana.png" : "brown_banana.png";
       var total = movie.rating.up + movie.rating.down;
       var dvd;
+
       if (movie.on_dvd) {
         dvd = (<tr>
           <td>On DVD</td><td>{movie.on_dvd_parse}</td>
@@ -42,7 +44,9 @@ var ShowPageInfo = React.createClass({
               <h4>BANANAMETER</h4>
               <div className="show-rating-rating group">
                 <span><img src={banana} /></span>
-                <span><p className="percentage">{movie.rating.percentage}</p></span>
+                <span>
+                  <p className="percentage">{movie.rating.percentage}</p>
+                </span>
               </div>
               <div className="show-rating-counts">
                 <p>Reviews Counted: {total}</p>
@@ -83,7 +87,6 @@ var ShowPageInfo = React.createClass({
       return <div></div>;
     }
   }
-
 
 });
 

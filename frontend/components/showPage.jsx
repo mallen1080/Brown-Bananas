@@ -1,5 +1,4 @@
 var React = require('react');
-var MovieStore = require('../stores/movieStore');
 var ApiUtil = require('../util/apiUtil');
 var ShowPageSidebar = require('./showPageSidebar');
 var ShowPageTrailer = require('./showPageTrailer');

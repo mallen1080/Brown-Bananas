@@ -19,7 +19,7 @@ var ReviewForm = React.createClass({
   },
 
   componentDidMount: function () {
-    this.movieListener = MovieStore.addListener(this._onChange);
+    this.movieListener = MovieStore.addListener(this._movieChange);
     this.userListener = AppStore.addListener(this._userChange);
   },
 
@@ -28,14 +28,14 @@ var ReviewForm = React.createClass({
     this.userListener.remove();
   },
 
-  _onChange: function () {
-    this.setState({ currentMovie: MovieStore.currentMovie() });
-    if (MovieStore.currentMovie().user_review) {
+  _movieChange: function () {
+    var currentMovie = MovieStore.currentMovie();
+
+    this.setState({ currentMovie: currentMovie });
+    if (currentMovie.user_review) {
     this.setState({
-      reviewBody: MovieStore.currentMovie().user_review.body,
-      selectedButton: MovieStore.currentMovie().user_review.value ? 1 : 2});
-    } else {
-      // this.setState({ reviewBody: "" });
+      reviewBody: currentMovie.user_review.body,
+      selectedButton: currentMovie.user_review.value ? 1 : 2});
     }
   },
 
@@ -54,7 +54,7 @@ var ReviewForm = React.createClass({
     this.setState({ selectedButton: 0 });
   },
 
-  _createEditReview: function () {
+  _createOrEditReview: function () {
     var review = {
       body: this.state.reviewBody,
       value: this.state.selectedButton === 1 ? true : false,
@@ -75,16 +75,18 @@ var ReviewForm = React.createClass({
   },
 
   render: function () {
+    var editAddKlass, editAddContent,
+      deleteKlass, body, selectedButton, header;
     var userReview = this.state.currentMovie.user_review;
-    var editAddKlass, editAddContent, deleteKlass, body, selectedButton, header;
     var upKlass = "review-form-up";
     var downKlass = "review-form-down";
 
-      if (this.state.selectedButton === 1) {
-        upKlass += "-selected";
-      } else if (this.state.selectedButton === 2){
-        downKlass += "-selected";
-      }
+    if (this.state.selectedButton === 1) {
+      upKlass += "-selected";
+    } else if (this.state.selectedButton === 2){
+      downKlass += "-selected";
+    }
+    
     if (userReview) {
       editAddContent = "Edit";
       header = "EDIT YOUR REVIEW";
@@ -105,7 +107,7 @@ var ReviewForm = React.createClass({
           <div className="review-form-editdelete group">
 
             <div className={editAddKlass}>
-              <button onClick={this._createEditReview}>{editAddContent}</button>
+              <button onClick={this._createOrEditReview}>{editAddContent}</button>
             </div>
             <div className={deleteKlass}>
               <button onClick={this._deleteReview}>Delete</button>

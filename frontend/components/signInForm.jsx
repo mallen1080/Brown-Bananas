@@ -59,7 +59,8 @@ var SignInForm = React.createClass({
   },
 
   render: function () {
-    var classNm = this.state.hide ? "session-page hide" : "session-page";
+    var classNm = this.state.hide ?
+      "session-page hide" : "session-page";
     var errors = this.state.errors.map(function (error, i) {
       return <p key={i}>{error}</p>;
     });
@@ -83,12 +84,16 @@ var SignInForm = React.createClass({
               <div className="errors">{errors}</div>
               <div className="form-input group">
                 <label>Username: </label>
-                <input type="text" placeholder="username" valueLink={this.linkState('username')} />
+                <input type="text"
+                  placeholder="username"
+                  valueLink={this.linkState('username')} />
               </div>
 
               <div className="form-input group">
-              <label>Password: </label>
-              <input type="password" placeholder="password" valueLink={this.linkState('password')} />
+                <label>Password: </label>
+                <input type="password"
+                  placeholder="password"
+                  valueLink={this.linkState('password')} />
               </div>
 
               <div className="switch-modal">
@@ -125,8 +130,3 @@ var SignInForm = React.createClass({
 });
 
 module.exports = SignInForm;
-
-
-
-
-// <p className="logo"><img src="logo.png" /></p>

@@ -7,19 +7,20 @@ var ApiUtil = require('../util/apiUtil');
 var ShowPageReview = React.createClass({
 
   getInitialState: function () {
-    return { currentMovie: {} };
+    return { currentMovie: {}, page: 1 };
   },
 
   componentDidMount: function () {
-    this.movieListener = MovieStore.addListener(this._onChange);
+    this.movieListener = MovieStore.addListener(this._movieChange);
   },
 
   componentWillUnmount: function () {
     this.movieListener.remove();
   },
 
-  _onChange: function () {
-    this.setState({ currentMovie: MovieStore.currentMovie(),
+  _movieChange: function () {
+    this.setState({
+      currentMovie: MovieStore.currentMovie(),
       page: 1 });
   },
 
@@ -34,7 +35,8 @@ var ShowPageReview = React.createClass({
     var list = this.state.currentMovie.reviews;
     if (list) {
       return list.map(function (review, i) {
-        var banana = review.value ? "fresh_banana.png" : "brown_banana.png";
+        var banana = review.value ?
+          "fresh_banana.png" : "brown_banana.png";
 
         return (
           <div key={i} className="show-review">
