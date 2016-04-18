@@ -17,28 +17,28 @@ class Movie < ActiveRecord::Base
   has_many :reviews, dependent: :destroy
 
   def self.newest_in_theaters(count)
-    Movie.includes(:genre, :director, :actors)
+    Movie.includes(:reviews, :genre, :director, :actors)
     .where("on_dvd is NULL")
     .order(in_theaters: :desc)
     .limit(count)
   end
 
   def self.newest_on_dvd(count)
-    Movie.includes(:genre, :director, :actors)
+    Movie.includes(:reviews, :genre, :director, :actors)
     .where("on_dvd is NOT NULL")
     .order(on_dvd: :desc)
     .limit(count)
   end
 
   def self.top_rated_theaters(count)
-    Movie.includes(:reviews, :director, :actors)
+    Movie.includes(:reviews, :director, :actors, :genre)
     .where("on_dvd is NULL")
     .sort_by { |movie| movie.review_counts[:percentage] }
     .reverse[0...count]
   end
 
   def self.top_rated_dvd(count)
-    Movie.includes(:reviews, :director, :actors)
+    Movie.includes(:reviews, :director, :actors, :genre)
     .where("on_dvd is NOT NULL")
     .where("on_dvd > ?", Date.new(2015, 4, 1))
     .sort_by { |movie| movie.review_counts[:percentage] }
