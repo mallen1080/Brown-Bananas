@@ -47,9 +47,12 @@ var SignInForm = React.createClass({
 
   _submitForm: function (guest, e) {
     e.preventDefault();
-    if (guest) {
+    if (guest === "guest") {
       ApiUtil.signInUser({ user:
         { username: "guest", password: "password"}});
+    } else if (guest === "admin") {
+      ApiUtil.signInUser({ user:
+        { username: "admin", password: "yellow"}});
     } else {
       ApiUtil.signInUser({ user: this.state });
     }
@@ -101,7 +104,11 @@ var SignInForm = React.createClass({
               </div>
 
               <div className="form-submit guest">
-                <button onClick={this._submitForm.bind(this, true)}>Log in as Guest</button>
+                <button onClick={this._submitForm.bind(this, "guest")}>Log in as Guest</button>
+              </div>
+
+              <div className="form-submit admin">
+                <button onClick={this._submitForm.bind(this, "admin")}>Log in as Admin</button>
               </div>
 
               <div className="facebook">

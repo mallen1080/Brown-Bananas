@@ -78,16 +78,21 @@ ul {
   margin-bottom: 15px;
 }
 
-
-
 .guest button {
   background-color: #343434;
+  margin: 8px;
 }
 
-
+.admin button {
+  background-color: #ff9933;
+}
 
 .form-submit > button:hover {
   background-color: #09689a;
+}
+
+.admin button:hover {
+  background-color: #ff8000;
 }
 
 .guest button:hover {
@@ -100,15 +105,15 @@ ul {
   margin-bottom: 10px;
 }
 
-.facebook a:hover {
-  background-color: #324b81;
-}
-
 .facebook a {
   padding: 8px 16px;
   border-radius: 5px;
   background-color: #3B5999;
   color: white;
+}
+
+.facebook a:hover {
+  background-color: #324b81;
 }
 
 .hide {
