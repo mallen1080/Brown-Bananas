@@ -61,7 +61,6 @@ class Api::MoviesController < ApplicationController
       :title,
       :image_url,
       :in_theaters,
-      :trailer_url,
       :on_dvd,
       :consensus,
       :description)

@@ -95,6 +95,7 @@ class Movie < ActiveRecord::Base
   def parse_for_create_or_edit(params)
     self.genre_id = Genre.find_by_name(params[:movie][:genre]).id
     self.director_id = Director.find_or_create(params[:movie][:director])
+    self.trailer_url = params[:movie][:trailer_url]
     self.trailer_url.sub!("watch?v=", "embed/")
     self.update_attribute(:on_dvd, nil) unless params[:movie][:on_dvd]
   end
