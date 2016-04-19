@@ -86,9 +86,9 @@ var ReviewForm = React.createClass({
     } else if (this.state.selectedButton === 2){
       downKlass += "-selected";
     }
-    
+
     if (userReview) {
-      editAddContent = "Edit";
+      editAddContent = "Save Edit";
       header = "EDIT YOUR REVIEW";
     } else {
       editAddContent = "Submit";
