@@ -17,7 +17,7 @@ var HomePageTableItem = React.createClass({
       if (that.state.hover) {
         that.setState({ show: true });
       }
-    }, 1500);
+    }, 1000);
   },
 
   hoverComponent: function () {
