@@ -8,9 +8,12 @@ var HomePageTableItem = React.createClass({
 
   changeShow: function (hover) {
     var that = this;
-    if (!hover) { this.setState({ show: false });}
+    if (!hover) {
+      this.setState({ show: false });
+      window.clearTimeout(window.hoverCheck);
+      }
     that.setState({ hover: hover });
-    window.setTimeout(function () {
+    window.hoverCheck = window.setTimeout(function () {
       if (that.state.hover) {
         that.setState({ show: true });
       }
