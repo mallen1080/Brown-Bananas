@@ -3,11 +3,18 @@ var React = require('react');
 var HomePageTableItem = React.createClass({
 
   getInitialState: function () {
-    return { hover: false };
+    return { hover: false , show: false };
   },
 
   changeShow: function (hover) {
-    this.setState({ hover: hover });
+    var that = this;
+    if (!hover) { this.setState({ show: false });}
+    that.setState({ hover: hover });
+    window.setTimeout(function () {
+      if (that.state.hover) {
+        that.setState({ show: true });
+      }
+    }, 1500);
   },
 
   hoverComponent: function () {
@@ -18,7 +25,7 @@ var HomePageTableItem = React.createClass({
     var actors = movie.actors.map(function (actor, i) {
       return <p key={i}>{actor}</p>;
     });
-    var hoverKlass = this.state.hover ? "table-hover-content" : "hide";
+    var hoverKlass = this.state.show ? "table-hover-content" : "hide";
 
     return (
       <div className={hoverKlass}>
