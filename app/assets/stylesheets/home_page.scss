@@ -142,6 +142,11 @@
 
 // TABLES
 
+.home-page-table tr {
+  vertical-align: middle;
+  height: 26px;
+}
+
 .home-page-tables {
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
@@ -168,6 +173,7 @@
 
 .home-page-table table {
   width: 100%;
+  border-spacing: 0;
 }
 
 .home-page-table h2 {
@@ -198,7 +204,10 @@
 }
 
 .home-page-table .middle-col a {
-  display: block;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding-top: 4px;
 }
 
 .home-page-table .right-col {
