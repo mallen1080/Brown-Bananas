@@ -11,13 +11,14 @@ var HomePageTableItem = React.createClass({
     if (!hover) {
       this.setState({ show: false });
       window.clearTimeout(window.hoverCheck);
-      }
+    } else {
+      window.hoverCheck = window.setTimeout(function () {
+        if (that.state.hover) {
+          that.setState({ show: true });
+        }
+      }, 600);
+    }
     that.setState({ hover: hover });
-    window.hoverCheck = window.setTimeout(function () {
-      if (that.state.hover) {
-        that.setState({ show: true });
-      }
-    }, 1000);
   },
 
   hoverComponent: function () {
