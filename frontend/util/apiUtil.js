@@ -3,7 +3,7 @@ var AppActions = require('../actions/appActions');
 var SearchActions = require('../actions/searchActions');
 
 var ApiUtil = {
-
+  
   fetchHomePageMovies: function (completion) {
     $.ajax({
       method: "GET",

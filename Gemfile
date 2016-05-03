@@ -10,8 +10,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faker'
 gem 'pg_search'
 gem 'kaminari'
-gem 'figaro'
 gem 'omniauth-facebook'
+gem 'figaro'
 gem 'paperclip', '5.0.0.beta1'
 
 group :development, :test do
