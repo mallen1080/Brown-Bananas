@@ -60,6 +60,7 @@ class Api::MoviesController < ApplicationController
     params.require(:movie).permit(
       :title,
       :image_url,
+      :image,
       :in_theaters,
       :on_dvd,
       :consensus,

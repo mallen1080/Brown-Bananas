@@ -5,6 +5,7 @@ class Casting < ActiveRecord::Base
   belongs_to :movie
 
   def self.create_from_movie_form(actors, movie)
+    actors = actors.split(",")
     unless movie.actors.map(&:name) == actors
       movie.castings.destroy_all
       actors.each do |actor|

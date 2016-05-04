@@ -17,6 +17,7 @@ var MovieForm = React.createClass({
     return {
       title: "",
       image_url: "",
+      image: "",
       trailer_url: "",
       genre: "Action",
       in_theaters: "",
@@ -74,22 +75,44 @@ var MovieForm = React.createClass({
     return genres;
   },
 
+  _fileUpload: function (e) {
+    this.setState({ image: e.currentTarget.files[0] });
+  },
+
   _submitForm: function (method, movieId, e) {
     e.preventDefault();
-    var newMovie = { movie: $.extend(true, {}, this.state) };
+    // var newMovie = { movie: $.extend(true, {}, this.state) };
 
-    if (!newMovie.movie.on_dvd) {
-      delete newMovie.movie.on_dvd;
+    var formData = new FormData();
+    formData.append("movie[title]", this.state.title);
+    formData.append("movie[image_url]", this.state.image_url);
+    formData.append("movie[image]", this.state.image);
+    formData.append("movie[trailer_url]", this.state.trailer_url);
+    formData.append("movie[genre]", this.state.genre);
+    formData.append("movie[in_theaters]", this.state.in_theaters);
+    formData.append("movie[director]", this.state.director);
+    formData.append("movie[description]", this.state.description);
+    formData.append("movie[consensus]", this.state.consensus);
+    formData.append("movie[actors]", [this.state.actor1, this.state.actor2]);
+
+
+
+    if (this.state.on_dvd) {
+      formData.append("movie[on_dvd]", this.state.on_dvd);
     }
-    delete newMovie.movie.actor1;
-    delete newMovie.movie.actor2;
-    newMovie.movie.actors = [this.state.actor1, this.state.actor2];
+
+    // if (!newMovie.movie.on_dvd) {
+    //   delete newMovie.movie.on_dvd;
+    // }
+    // delete newMovie.movie.actor1;
+    // delete newMovie.movie.actor2;
+    // newMovie.movie.actors = [this.state.actor1, this.state.actor2];
 
     var router = this.context.router;
     if (AppStore.currentUser().username === "admin") {
-    ApiUtil.createOrEditMovie(newMovie, method, movieId, (function (id) {
-      router.push("/movies/" + id);
-    }));
+      ApiUtil.createOrEditMovie(formData, method, movieId, (function (id) {
+        router.push("/movies/" + id);
+      }));
     }
   },
 
@@ -118,6 +141,11 @@ var MovieForm = React.createClass({
           <div className="form-input group">
           <label>Image URL: </label>
           <input type="text" valueLink={this.linkState('image_url')} />
+          </div>
+
+          <div className="form-input group">
+          <label>Image: </label>
+          <input type="file" onChange={this._fileUpload} />
           </div>
 
           <div className="form-input group">

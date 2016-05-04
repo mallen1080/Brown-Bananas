@@ -13,6 +13,7 @@ gem 'kaminari'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'paperclip', '5.0.0.beta1'
+gem 'aws-sdk', '>=2.0'
 
 group :development, :test do
   gem 'byebug'

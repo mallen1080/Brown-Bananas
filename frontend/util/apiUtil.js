@@ -3,7 +3,7 @@ var AppActions = require('../actions/appActions');
 var SearchActions = require('../actions/searchActions');
 
 var ApiUtil = {
-  
+
   fetchHomePageMovies: function (completion) {
     $.ajax({
       method: "GET",
@@ -61,6 +61,8 @@ var ApiUtil = {
     $.ajax({
       method: method,
       url: "api/movies/" + id,
+      processData: false,
+      contentType: false,
       dataType: "json",
       data: movie,
       success: function (movie) {
