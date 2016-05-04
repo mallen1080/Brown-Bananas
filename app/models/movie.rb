@@ -5,7 +5,7 @@ class Movie < ActiveRecord::Base
                     :tsearch => {:prefix => true}
                   }
 
-  has_attached_file :image
+  has_attached_file :image, :styles => {:medium => "50000@"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :title, :trailer_url,
