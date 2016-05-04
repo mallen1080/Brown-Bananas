@@ -81,11 +81,10 @@ var MovieForm = React.createClass({
 
   _submitForm: function (method, movieId, e) {
     e.preventDefault();
-    // var newMovie = { movie: $.extend(true, {}, this.state) };
 
     var formData = new FormData();
     formData.append("movie[title]", this.state.title);
-    formData.append("movie[image_url]", this.state.image_url);
+    // formData.append("movie[image_url]", this.state.image_url);
     formData.append("movie[image]", this.state.image);
     formData.append("movie[trailer_url]", this.state.trailer_url);
     formData.append("movie[genre]", this.state.genre);
@@ -95,18 +94,9 @@ var MovieForm = React.createClass({
     formData.append("movie[consensus]", this.state.consensus);
     formData.append("movie[actors]", [this.state.actor1, this.state.actor2]);
 
-
-
     if (this.state.on_dvd) {
       formData.append("movie[on_dvd]", this.state.on_dvd);
     }
-
-    // if (!newMovie.movie.on_dvd) {
-    //   delete newMovie.movie.on_dvd;
-    // }
-    // delete newMovie.movie.actor1;
-    // delete newMovie.movie.actor2;
-    // newMovie.movie.actors = [this.state.actor1, this.state.actor2];
 
     var router = this.context.router;
     if (AppStore.currentUser().username === "admin") {
@@ -138,12 +128,7 @@ var MovieForm = React.createClass({
           <input type="text" valueLink={this.linkState('title')} />
           </div>
 
-          <div className="form-input group">
-          <label>Image URL: </label>
-          <input type="text" valueLink={this.linkState('image_url')} />
-          </div>
-
-          <div className="form-input group">
+          <div className="form-input form-image group">
           <label>Image: </label>
           <input type="file" onChange={this._fileUpload} />
           </div>
