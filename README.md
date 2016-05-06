@@ -49,6 +49,7 @@ A standard user can:
 ## Future work
 
 - [x] BROWSE PAGE!!
+- [ ] Trailer Modal
 - [ ] Recommendation List becomes customized based on current users fav genre
 - [ ] Have actor and director names dynamically display upon input of create movie form
 - [ ] Ability to update user (change pw or fav genre) through interface
