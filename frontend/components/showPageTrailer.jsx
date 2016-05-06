@@ -20,9 +20,10 @@ var ShowPageTrailer = React.createClass({
   },
 
   render: function () {
+    var link = this.state.currentMovie.trailer_url + "?rel=0&showinfo=0&autohide=1";
     return (
       <div className="movie-trailer-container">
-        <iframe src={this.state.currentMovie.trailer_url}
+        <iframe src={link}
         width="760" height="425"></iframe>
       </div>
     );
