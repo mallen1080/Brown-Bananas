@@ -40,6 +40,14 @@ var AppActions = {
       actionType: AppConstants.SIGN_OUT_USER
     };
     AppDispatcher.dispatch(action);
+  },
+
+  displayTrailerModal: function (link) {
+    var action = {
+      actionType: AppConstants.DISPLAY_TRAILER_MODAL,
+      link: link
+    };
+    AppDispatcher.dispatch(action);
   }
 };
 

@@ -8,6 +8,7 @@ var _signUpHide = true;
 var _signInHide = true;
 var _errors = [];
 var _currentUser = {};
+var _trailerModal = "";
 
 AppStore.signInHide = function () {
   return _signInHide;
@@ -37,6 +38,10 @@ AppStore.signedIn = function () {
   return !!_currentUser.username;
 };
 
+AppStore.trailerModal = function () {
+  return _trailerModal.slice();
+};
+
 AppStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
     case AppConstants.DISPLAY_SIGN_IN:
@@ -63,6 +68,10 @@ AppStore.__onDispatch = function (payload) {
       break;
     case AppConstants.SIGN_OUT_USER:
       _currentUser = null;
+      this.__emitChange();
+      break;
+    case AppConstants.DISPLAY_TRAILER_MODAL:
+      _trailerModal = payload.link;
       this.__emitChange();
     }
   };

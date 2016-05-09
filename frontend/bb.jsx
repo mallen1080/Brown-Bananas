@@ -14,6 +14,7 @@ var ShowPage = require('./components/showPage');
 var Footer = require('./components/footer');
 var AppStore = require('./stores/appStore');
 var BrowsePage = require('./components/browsePage');
+var TrailerModal = require('./components/trailerModal');
 ApiUtil = require('./util/apiUtil'); //FOR TESTING
 
 var App = React.createClass({
@@ -39,6 +40,7 @@ var App = React.createClass({
       <div>
         <SignUpForm />
         <SignInForm />
+        <TrailerModal />
         <div>
           <Navbar />
           {this.props.children}

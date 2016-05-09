@@ -1,4 +1,5 @@
 var React = require('react');
+var AppActions = require('../actions/appActions');
 
 var HomePageTableItem = React.createClass({
 
@@ -19,6 +20,11 @@ var HomePageTableItem = React.createClass({
       }, 600);
     }
     that.setState({ hover: hover });
+  },
+
+  displayTrailer: function (e) {
+    e.preventDefault();
+    AppActions.displayTrailerModal(this.props.movie.trailer_url);
   },
 
   hoverComponent: function () {
@@ -53,6 +59,9 @@ var HomePageTableItem = React.createClass({
           <span>Critics Consensus: </span>
           <span>{movie.consensus}</span>
         </p>
+        <div className="form-submit">
+          <button onClick={this.displayTrailer}>Play Trailer</button>
+        </div>
       </div>
     );
   },
