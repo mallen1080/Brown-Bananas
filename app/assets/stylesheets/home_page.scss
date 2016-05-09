@@ -231,6 +231,7 @@
   color: black;
   border-radius: 10px;
   padding: 10px;
+  font-size: 15px;
 }
 
 .table-hover-content:after,
@@ -307,6 +308,20 @@
 
 .table-hover-content > p span:first-child {
   color: #aaa;
+}
+
+.trailer-button > button {
+  width: 83%;
+  margin: 5px auto;
+  padding: 8px 16px;
+  background-color: #0C89Ca;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.trailer-button > button:hover {
+  background-color: #09689a;
 }
 
 // RECOMMENDED

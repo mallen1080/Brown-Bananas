@@ -28,16 +28,17 @@ var TrailerModal = React.createClass({
 
   render: function () {
     var classNm = this.state.link ? "session-page" : "session-page hide";
+    var link = this.state.link;
+    if (link) { link += "?rel=0&showinfo=0&autohide=1&autoplay=1"; }
 
     return (
       <div className={classNm} onClick={this._hidePage}>
         <div className="video-container">
-          <iframe src={this.state.link} width="670" height="425"></iframe>
+          <iframe src={link} width="670" height="425"></iframe>
         </div>
       </div>
     );
   }
-
 
 });
 

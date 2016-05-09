@@ -59,7 +59,7 @@ var HomePageTableItem = React.createClass({
           <span>Critics Consensus: </span>
           <span>{movie.consensus}</span>
         </p>
-        <div className="form-submit">
+        <div className="trailer-button">
           <button onClick={this.displayTrailer}>Play Trailer</button>
         </div>
       </div>
