@@ -12,9 +12,11 @@
 
 .top {
     background-color: lightgrey;
+    height: 300px;
 }
 
 .carousel-container {
+  float: left;
   width: 600px;
   color: #333;
 }
@@ -140,6 +142,47 @@
 .carousel-movie-info-table tr td:first-child {
   text-align: right;
   padding-right: 20px;
+}
+
+// RECENTS
+
+.home-page-recents {
+  width: 500px;
+  float: right;
+}
+
+.recent-container {
+  float: left;
+  width: 249px;
+  border-left: 1px solid white;
+  background-color: black;
+}
+
+.recent-img {
+  height: 225px;
+  width: 166px;
+  margin: auto;
+}
+
+.recent-img img {
+  height: 100%;
+  width: 100%;
+}
+
+.recent-desc {
+  height: 75px;
+  background-color: #343434;
+}
+
+.recent-desc h3 {
+  display: inline-block;
+  background-color: #ff9933;
+  padding: 0 10px;
+}
+
+.recent-desc p {
+  padding: 10px;
+  color: white;
 }
 
 

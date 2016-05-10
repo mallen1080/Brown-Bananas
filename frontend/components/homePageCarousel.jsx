@@ -19,13 +19,11 @@ var HomePageCarousel = React.createClass({
       speed: 1000
     };
     return (
-      <div className="top">
         <div className='carousel-container group'>
           <Slider {...settings}>
             {carMovies}
           </Slider>
         </div>
-      </div>
     );
   }
 

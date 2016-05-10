@@ -1,7 +1,8 @@
 var React = require('react');
+var HomePageCarousel = require('./homePageCarousel');
 var HomePageTableGroup = require('./homePageTableGroup');
 var HomePageRecommended = require('./homePageRecommended');
-var HomePageCarousel = require('./homePageCarousel');
+var HomePageRecents = require('./homePageRecents');
 
 
 var HomePage = React.createClass({
@@ -9,7 +10,10 @@ var HomePage = React.createClass({
   render: function () {
     return (
       <div className="home-page-content">
-        <HomePageCarousel />
+        <div className="top group">
+          <HomePageCarousel />
+          <HomePageRecents />
+        </div>
         <HomePageTableGroup />
         <HomePageRecommended />
       </div>
