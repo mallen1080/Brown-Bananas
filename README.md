@@ -49,10 +49,10 @@ A standard user can:
 ## Future work
 
 - [x] BROWSE PAGE!!
-- [ ] Trailer Modal
+- [x] Trailer Modal
+- [x] Recent releases on home page top
 - [ ] Recommendation List becomes customized based on current users fav genre
 - [ ] Have actor and director names dynamically display upon input of create movie form
-- [ ] Ability to update user (change pw or fav genre) through interface
 - [ ] Password verify on sign up
 - [ ] Add more filters to browse page
 - [ ] Add an about page
