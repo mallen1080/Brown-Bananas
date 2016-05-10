@@ -1,16 +1,17 @@
-.session-page {
-  height: 100%;
-  width: 100%;
-  z-index: 100;
-  position: fixed;
-  overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
-}
-
-.session-page > .new-session-form {
+.modal > .new-session-form {
   width: 400px;
-  margin: 5% auto;
+  margin: 0 auto;
   background-color: white;
   z-index: 101;
+  animation: slidein 0.7s forwards;
+}
+
+@keyframes slidein {
+  from {
+    margin: 0 auto;
+  }
+
+  to {
+    margin: 5% auto;
+  }
 }

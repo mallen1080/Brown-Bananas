@@ -36,7 +36,7 @@ var SignUpForm = React.createClass({
 
     _hidePage: function (e) {
       var klass = e.target.className;
-      if (klass === "user-page" || klass === "exit-button") {
+      if (klass === "modal" || klass === "exit-button") {
       AppActions.displaySignUp(false);
       AppStore.resetErrors();
       }
@@ -67,7 +67,7 @@ var SignUpForm = React.createClass({
   },
 
   render: function () {
-    var classNm = this.state.hide ? "user-page hide" : "user-page";
+    var classNm = this.state.hide ? "hide" : "modal";
     var errors = this.state.errors.map(function (error, i) {
       return <p key={i}>{error}</p>;
     });

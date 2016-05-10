@@ -21,13 +21,13 @@ var TrailerModal = React.createClass({
   },
 
   _hidePage: function (e) {
-    if (e.target.className == "session-page") {
+    if (e.target.className == "modal trailer") {
     AppActions.displayTrailerModal("");
     }
   },
 
   render: function () {
-    var classNm = this.state.link ? "session-page" : "session-page hide";
+    var classNm = this.state.link ? "modal trailer" : "hide";
     var link = this.state.link;
     if (link) { link += "?rel=0&showinfo=0&autohide=1&autoplay=1"; }
 

@@ -1,4 +1,4 @@
-.user-page {
+.modal {
   height: 100%;
   width: 100%;
   z-index: 100;
@@ -8,11 +8,12 @@
   background-color: rgba(0,0,0,0.4);
 }
 
-.user-page > .new-user-form {
+.modal > .new-user-form {
   width: 500px;
   margin: 5% auto;
   background-color: white;
   z-index: 101;
+  animation: slidein 0.7s forwards;
 }
 
 .form-header {

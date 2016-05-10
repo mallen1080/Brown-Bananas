@@ -34,7 +34,7 @@ var SignInForm = React.createClass({
 
   _hidePage: function (e) {
     var klass = e.target.className;
-    if (klass === "session-page" || klass === "exit-button") {
+    if (klass === "modal" || klass === "exit-button") {
     AppActions.displaySignIn(false);
     AppStore.resetErrors();
     }
@@ -60,7 +60,7 @@ var SignInForm = React.createClass({
 
   render: function () {
     var classNm = this.state.hide ?
-      "session-page hide" : "session-page";
+      "hide" : "modal";
     var errors = this.state.errors.map(function (error, i) {
       return <p key={i}>{error}</p>;
     });
