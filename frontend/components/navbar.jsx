@@ -86,7 +86,14 @@ var Navbar = React.createClass({
       var link = "#/movies/" + movie.id;
       return (
         <li key={ movie.id }>
-          <a href={link}>{movie.title} ({movie.year})</a>
+          <a href={link} className="group">
+            <div className="search-result-img">
+              <img src={movie.image_url} />
+            </div>
+            <div className="search-result-info">
+              {movie.title} ({movie.year})
+            </div>
+          </a>
         </li>
       );
     });
