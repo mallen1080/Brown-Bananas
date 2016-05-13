@@ -79,7 +79,7 @@ var Navbar = React.createClass({
   _searchResultList: function () {
     if (this.state.movieSearchResults.length > 0) {
       this.state.movieSearchResults.unshift(
-        {id: 100000, title: "Movie", year: "release year"}
+        {id: 100000, title: "Movie", year: "release year", actors: [{name:""}, {name:""}]}
       );
     }
     return this.state.movieSearchResults.map(function (movie) {
@@ -91,7 +91,8 @@ var Navbar = React.createClass({
               <img src={movie.image_url} />
             </div>
             <div className="search-result-info">
-              {movie.title} ({movie.year})
+              <p>{movie.title} ({movie.year})</p>
+              <p>{movie.actors[0].name}, {movie.actors[1].name}</p>
             </div>
           </a>
         </li>

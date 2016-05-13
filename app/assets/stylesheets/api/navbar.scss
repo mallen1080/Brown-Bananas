@@ -76,8 +76,11 @@
 
 .navbar-search-results li:hover {
   background-color: #ff9933;
-  color: white;
   cursor: pointer;
+}
+
+.navbar-search-results li:hover p {
+  color: white;
 }
 
 .navbar-search-results li:first-child {
@@ -117,9 +120,18 @@ img:not([src]) {
 .search-result-info {
   width: 89%;
   float: right;
-  padding: 5px;
+  padding: 5px 5px 2px 5px;
   font-size: 14px;
+}
+
+.search-result-info p:first-child {
   font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.search-result-info p:nth-child(2) {
+  color: #aaa;
+  font-size: 13px;
 }
 
 .navbar-buttons li {
