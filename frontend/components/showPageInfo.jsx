@@ -18,6 +18,10 @@ var ShowPageInfo = React.createClass({
     this.setState({ currentMovie: MovieStore.currentMovie() });
   },
 
+  _actDirClick: function () {
+    alert("Coming soon!");
+  },
+
   render: function () {
 
     if (this.state.currentMovie.title) {
@@ -61,13 +65,22 @@ var ShowPageInfo = React.createClass({
                 <table>
                   <tbody>
                     <tr>
-                      <td>Lead Actor</td><td>{movie.actors[0]}</td>
+                      <td>Lead Actor</td>
+                      <td className="act-dir" onClick={this._actDirClick}>
+                        {movie.actors[0]}
+                      </td>
                     </tr>
                     <tr>
-                      <td>Supporting Actor</td><td>{movie.actors[1]}</td>
+                      <td>Supporting Actor</td>
+                      <td className="act-dir" onClick={this._actDirClick}>
+                        {movie.actors[1]}
+                      </td>
                     </tr>
                     <tr>
-                      <td>Director</td><td>{movie.director}</td>
+                      <td>Director</td>
+                      <td className="act-dir" onClick={this._actDirClick}>
+                        {movie.director}
+                      </td>
                     </tr>
                     <tr>
                       <td>Genre</td><td>{movie.genre}</td>

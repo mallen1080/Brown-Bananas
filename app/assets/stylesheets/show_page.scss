@@ -139,8 +139,9 @@
 
 .show-rating {
   float: left;
-  width: 40%;
+  width: 35%;
   height: 100%;
+  border-right: 1px solid #343434;
 }
 
 .show-rating h4 {
@@ -176,10 +177,6 @@
   margin: 10px 0 0 20px;
 }
 
-// .show-rating-counts p {
-//   font-size: 14px;
-// }
-
 .show-info-titletable {
   float: right;
   width: 60%;
@@ -201,14 +198,18 @@
   padding-right: 20px;
 }
 
+.act-dir {
+  color: #0073e6;
+}
+
+.act-dir:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 // MORE INFO
 
 .movie-show-moreinfo {
-  // width: 75%;
-  // margin-top: 10px;
-  // border-top: 1px solid #eee;
-  // border-left: 1px solid #eee;
-  // border-bottom: 1px solid #eee;
   border: 1px solid #eee;
   margin-top: 10px;
 }
@@ -226,6 +227,7 @@
   margin-top: 10px;
   font-weight: bold;
   padding: 0 20px;
+  text-decoration: underline;
   }
 
 .movie-show-moreinfo p {
