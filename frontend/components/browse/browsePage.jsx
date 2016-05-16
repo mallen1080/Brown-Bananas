@@ -43,6 +43,17 @@ var BrowsePage = React.createClass({
     }
   },
 
+  _clearGenres: function () {
+    this.setState({
+      "1": false,
+      "2": false,
+      "3": false,
+      "4": false,
+      "5": false,
+      "6": false,
+      "7": false });
+  },
+
   browseResults: function () {
     return this.state.browseResults.map(function (movie, i) {
       var link = "#/movies/" + movie.id;
@@ -135,6 +146,8 @@ var BrowsePage = React.createClass({
             <label>Sci-Fi:
             <input type="checkbox" checkedLink={this.linkState('7')} />
             </label>
+
+            <label onClick={this._clearGenres}>Clear All</label>
           </div>
 
           <div className="form-submit">

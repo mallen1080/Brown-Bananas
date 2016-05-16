@@ -15,10 +15,6 @@
   margin-bottom: 10px;
 }
 
-.browse-ratings {
-
-}
-
 .browse-release input {
   padding: 2px 5px;
   margin: 5px 15px 5px 5px;
@@ -33,6 +29,15 @@
 
 .browse-genres input {
   margin: 0 15px 0 5px;
+}
+
+.browse-genres label:last-child {
+  color: #0073e6;
+}
+
+.browse-genres label:last-child:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .browse-form .form-submit {
