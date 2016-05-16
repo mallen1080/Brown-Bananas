@@ -99,7 +99,7 @@ var BrowsePage = React.createClass({
         <div className="browse-header">
           <h2>BROWSE MOVIES</h2>
         </div>
-        
+
         <form className="browse-form">
 
             <div className="browse-release">
@@ -158,9 +158,9 @@ var BrowsePage = React.createClass({
             </label>
 
             <label className="set-genre"
-              onClick={this._setGenres.bind(this, false)}>Clear All</label>
-            <label className="set-genre"
               onClick={this._setGenres.bind(this, true)}>Select All</label>
+            <label className="set-genre"
+              onClick={this._setGenres.bind(this, false)}>Clear All</label>
           </div>
 
           <div className="form-submit">
