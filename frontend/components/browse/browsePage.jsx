@@ -1,7 +1,7 @@
 var React = require('react');
-var SearchStore = require('../stores/searchStore');
+var SearchStore = require('../../stores/searchStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var ApiUtil = require('../util/apiUtil');
+var ApiUtil = require('../../util/apiUtil');
 
 var BrowsePage = React.createClass({
   mixins: [LinkedStateMixin],
@@ -50,7 +50,7 @@ var BrowsePage = React.createClass({
       var link = "#/movies/" + movie.id;
       var banana = movie.rating.percentage > 59 ?
         "fresh_banana.png" : "brown_banana.png";
-        
+
       return (
         <div className="rec-list-item" key={movie.id}>
           <a href={link}>

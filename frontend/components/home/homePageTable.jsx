@@ -1,5 +1,5 @@
 var React = require('react');
-var MovieStore = require('../stores/movieStore');
+var MovieStore = require('../../stores/movieStore');
 var HomePageTableItem = require('./homePageTableItem');
 
 var HomePageTable = React.createClass({

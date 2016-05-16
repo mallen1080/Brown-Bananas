@@ -1,9 +1,9 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var ApiUtil = require('../util/apiUtil');
-var MovieStore = require('../stores/movieStore');
-var AppStore = require('../stores/appStore');
-var MovieActions = require('../actions/movieActions');
+var ApiUtil = require('../../util/apiUtil');
+var MovieStore = require('../../stores/movieStore');
+var AppStore = require('../../stores/appStore');
+var MovieActions = require('../../actions/movieActions');
 var PropTypes = React.PropTypes;
 
 var MovieForm = React.createClass({

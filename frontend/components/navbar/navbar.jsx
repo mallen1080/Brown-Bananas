@@ -1,10 +1,10 @@
 var React = require('react');
-var AppActions = require('../actions/appActions');
-var SearchActions = require('../actions/searchActions');
-var AppStore = require('../stores/appStore');
+var AppActions = require('../../actions/appActions');
+var SearchActions = require('../../actions/searchActions');
+var AppStore = require('../../stores/appStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var SearchStore = require('../stores/searchStore');
-var MovieStore = require('../stores/movieStore');
+var SearchStore = require('../../stores/searchStore');
+var MovieStore = require('../../stores/movieStore');
 var PropTypes = React.PropTypes;
 
 var Navbar = React.createClass({

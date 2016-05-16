@@ -1,8 +1,8 @@
 var React = require('react');
-var MovieStore = require('../stores/movieStore');
+var MovieStore = require('../../stores/movieStore');
 var ReviewForm = require('./reviewForm');
 var Paginate = require('react-paginate');
-var ApiUtil = require('../util/apiUtil');
+var ApiUtil = require('../../util/apiUtil');
 
 var ShowPageReview = React.createClass({
 

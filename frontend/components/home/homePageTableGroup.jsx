@@ -1,6 +1,6 @@
 var React = require('react');
 var HomePageTable = require('./homePageTable');
-var MovieStore = require('../stores/movieStore');
+var MovieStore = require('../../stores/movieStore');
 
 var HomePageTableGroup = React.createClass({
 

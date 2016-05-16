@@ -1,8 +1,8 @@
 var React = require('react');
-var MovieStore = require('../stores/movieStore');
-var AppStore = require('../stores/appStore');
-var AppActions = require('../actions/appActions');
-var ApiUtil = require('../util/apiUtil');
+var MovieStore = require('../../stores/movieStore');
+var AppStore = require('../../stores/appStore');
+var AppActions = require('../../actions/appActions');
+var ApiUtil = require('../../util/apiUtil');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 

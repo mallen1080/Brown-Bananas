@@ -1,6 +1,6 @@
 var React = require('react');
-var AppStore  = require('../stores/appStore');
-var AppActions = require('../actions/appActions');
+var AppStore  = require('../../stores/appStore');
+var AppActions = require('../../actions/appActions');
 
 var TrailerModal = React.createClass({
 

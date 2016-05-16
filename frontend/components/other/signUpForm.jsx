@@ -1,8 +1,8 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var ApiUtil = require('../util/apiUtil');
-var AppStore = require('../stores/appStore');
-var AppActions = require('../actions/appActions');
+var ApiUtil = require('../../util/apiUtil');
+var AppStore = require('../../stores/appStore');
+var AppActions = require('../../actions/appActions');
 
 var SignUpForm = React.createClass({
   mixins: [LinkedStateMixin],
@@ -103,14 +103,14 @@ var SignUpForm = React.createClass({
               <div className="form-input group">
                 <label>Password: </label>
                 <input type="password"
-                  placeholder="password"
+                  placeholder="at least 6 characters"
                   valueLink={this.linkState('password')} />
               </div>
 
               <div className="form-input group">
                 <label>Confirm Password: </label>
                 <input type="password"
-                  placeholder="confirm"
+                  placeholder="confirm password"
                   valueLink={this.linkState('password2')} />
               </div>
 

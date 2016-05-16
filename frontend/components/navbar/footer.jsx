@@ -7,7 +7,7 @@ var Footer = React.createClass({
     var linkedin = "https://www.linkedin.com/in/matthew-allen-ba576447";
     var github = "https://github.com/mallen1080";
     var gmail = "mailto:matt.allen1080@gmail.com";
-    
+
     return (
       <div className="footer group">
         <div className="footer-text">

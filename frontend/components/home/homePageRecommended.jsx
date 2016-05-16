@@ -1,5 +1,5 @@
 var React = require('react');
-var MovieStore = require('../stores/movieStore');
+var MovieStore = require('../../stores/movieStore');
 
 var HomePageRecommended = React.createClass({
 
@@ -14,7 +14,7 @@ var HomePageRecommended = React.createClass({
         var heading = i < 2 ? "IN THEATERS" : "ON DVD";
         var banana = movie.rating.percentage > 59 ?
           "fresh_banana.png" : "brown_banana.png";
-          
+
         return (
           <div className="rec-list-item" key={movie.id}>
             <a href={link}>

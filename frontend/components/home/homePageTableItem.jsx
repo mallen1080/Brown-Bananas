@@ -1,5 +1,5 @@
 var React = require('react');
-var AppActions = require('../actions/appActions');
+var AppActions = require('../../actions/appActions');
 
 var HomePageTableItem = React.createClass({
 

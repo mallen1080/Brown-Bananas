@@ -1,5 +1,5 @@
 var React = require('react');
-var MovieStore = require('../stores/movieStore');
+var MovieStore = require('../../stores/movieStore');
 
 var CarouselMovie = React.createClass({
 
@@ -8,7 +8,7 @@ var CarouselMovie = React.createClass({
     var banana = movie.rating.percentage > 59 ?
       "fresh_banana.png" : "brown_banana.png";
     var link = "#/movies/" + movie.id;
-    
+
     return (
       <div className="carousel-movie">
         <a href={link}>

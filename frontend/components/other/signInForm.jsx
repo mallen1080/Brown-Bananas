@@ -1,8 +1,8 @@
 var React = require('react');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
-var ApiUtil = require('../util/apiUtil');
-var AppStore = require('../stores/appStore');
-var AppActions = require('../actions/appActions');
+var ApiUtil = require('../../util/apiUtil');
+var AppStore = require('../../stores/appStore');
+var AppActions = require('../../actions/appActions');
 
 var SignInForm = React.createClass({
   mixins: [LinkedStateMixin],

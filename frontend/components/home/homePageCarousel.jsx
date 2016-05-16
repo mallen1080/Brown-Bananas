@@ -1,6 +1,6 @@
 var React = require('react');
 var CarouselMovie = require('./carouselMovie');
-var MovieStore = require('../stores/movieStore');
+var MovieStore = require('../../stores/movieStore');
 var Slider = require('react-slick');
 
 
