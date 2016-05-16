@@ -9,10 +9,23 @@
   border-bottom: 1px solid #eee;
 }
 
-.browse-form h2 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.browse-header {
+  background-color: white;
+  height: 68px;
+}
+
+.browse-header > h2 {
+    padding: 10px 20px;
+    font-size: 22px;
+    position: relative;
+    top: 20px;
+    width: 180px;
+    background-color: #ff9933;
+    font-weight: 900;
+}
+
+.browse-release {
+  width: 250px;
 }
 
 .browse-release input {
@@ -20,22 +33,44 @@
   margin: 5px 15px 5px 5px;
 }
 
-.browse-ratings input {
-  width: 40px;
-  padding: 2px 5px;
-  margin: 5px;
-  border: 1px solid #ccc;
+.browse-ratings {
+  width: 250px;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.slider {
+  width: 250px;
+  height: 20px;
+}
+
+.slider .bar {
+  top: 5px;
+  height: 10px;
+  background-color: #ccc;
+}
+
+.handle {
+  font-size: 0.9em;
+  text-align: center;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
 }
 
 .browse-genres input {
   margin: 0 15px 0 5px;
 }
 
-.browse-genres label:last-child {
+.set-genre {
   color: #0073e6;
+  margin-right: 15px;
 }
 
-.browse-genres label:last-child:hover {
+.set-genre:hover {
   text-decoration: underline;
   cursor: pointer;
 }

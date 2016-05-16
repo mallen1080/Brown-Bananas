@@ -2,6 +2,7 @@ var React = require('react');
 var SearchStore = require('../../stores/searchStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var ApiUtil = require('../../util/apiUtil');
+var ReactSlider = require('react-slider');
 
 var BrowsePage = React.createClass({
   mixins: [LinkedStateMixin],
@@ -43,15 +44,19 @@ var BrowsePage = React.createClass({
     }
   },
 
-  _clearGenres: function () {
+  _setGenres: function (val) {
     this.setState({
-      "1": false,
-      "2": false,
-      "3": false,
-      "4": false,
-      "5": false,
-      "6": false,
-      "7": false });
+      "1": val,
+      "2": val,
+      "3": val,
+      "4": val,
+      "5": val,
+      "6": val,
+      "7": val });
+  },
+
+  _ratingChange: function (e) {
+    this.setState({ minRating: e[0], maxRating: e[1] });
   },
 
   browseResults: function () {
@@ -91,32 +96,37 @@ var BrowsePage = React.createClass({
 
     return (
       <div className="browse-page">
-        <form className="browse-form">
+        <div className="browse-header">
           <h2>BROWSE MOVIES</h2>
+        </div>
+        
+        <form className="browse-form">
 
-          <div className="browse-release">
-            <label>In Theaters:
-            <input type="radio"
-              name="browse"
-              defaultChecked={theaters}
-              onClick={this.setRelease.bind(this, "theaters")} />
-            </label>
+            <div className="browse-release">
+              <label>In Theaters:
+              <input type="radio"
+                name="browse"
+                defaultChecked={theaters}
+                onClick={this.setRelease.bind(this, "theaters")} />
+              </label>
 
-            <label>On DVD:
-            <input type="radio"
-              name="browse"
-              defaultChecked={dvd}
-              onClick={this.setRelease.bind(this, "dvd")} />
-            </label>
-          </div>
+              <label>On DVD:
+              <input type="radio"
+                name="browse"
+                defaultChecked={dvd}
+                onClick={this.setRelease.bind(this, "dvd")} />
+              </label>
+            </div>
 
-          <div className="browse-ratings">
-            <label>Min Rating:</label>
-            <input type="text" valueLink={this.linkState('minRating')} />
+            <div className="browse-ratings">
+              <label>Rating: </label>
+              <label className="percentage">{this.state.minRating}</label>
+              <label className="percentage">- {this.state.maxRating}</label>
 
-            <label>Max Rating:</label>
-            <input type="text" valueLink={this.linkState('maxRating')} />
-          </div>
+              <ReactSlider defaultValue={[0,100]}
+                withBars
+                onChange={this._ratingChange}/>
+            </div>
 
           <div className="browse-genres">
             <label>Action:
@@ -147,11 +157,14 @@ var BrowsePage = React.createClass({
             <input type="checkbox" checkedLink={this.linkState('7')} />
             </label>
 
-            <label onClick={this._clearGenres}>Clear All</label>
+            <label className="set-genre"
+              onClick={this._setGenres.bind(this, false)}>Clear All</label>
+            <label className="set-genre"
+              onClick={this._setGenres.bind(this, true)}>Select All</label>
           </div>
 
           <div className="form-submit">
-            <button onClick={this.submitForm}>Submit</button>
+            <button onClick={this.submitForm}>Search</button>
           </div>
 
           </form>
