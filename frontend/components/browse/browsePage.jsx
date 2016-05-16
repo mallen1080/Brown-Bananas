@@ -119,7 +119,7 @@ var BrowsePage = React.createClass({
             </div>
 
             <div className="browse-ratings">
-              <label>Rating: </label>
+              <label>Bananameter: </label>
               <label className="percentage">{this.state.minRating}</label>
               <label className="percentage">- {this.state.maxRating}</label>
 
