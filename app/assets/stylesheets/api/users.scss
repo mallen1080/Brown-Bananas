@@ -9,11 +9,14 @@
 }
 
 .modal > .new-user-form {
-  width: 500px;
+  width: 600px;
   margin: 5% auto;
   background-color: white;
   z-index: 101;
   animation: slidein 0.7s forwards;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .form-header {

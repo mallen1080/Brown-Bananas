@@ -11,6 +11,7 @@ var SignUpForm = React.createClass({
     return {
       username: "",
       password: "",
+      password2: "",
       genre: "Action",
       hide: true,
       errors: []
@@ -49,7 +50,11 @@ var SignUpForm = React.createClass({
 
   _submitForm: function (e) {
     e.preventDefault();
+    if (this.state.password == this.state.password2) {
     ApiUtil.createUser({user: this.state });
+    } else {
+      AppActions.receiveErrors(["Your passwords do not match"]);
+    }
   },
 
   _genreOptions: function () {
@@ -100,6 +105,13 @@ var SignUpForm = React.createClass({
                 <input type="password"
                   placeholder="password"
                   valueLink={this.linkState('password')} />
+              </div>
+
+              <div className="form-input group">
+                <label>Confirm Password: </label>
+                <input type="password"
+                  placeholder="confirm"
+                  valueLink={this.linkState('password2')} />
               </div>
 
               <div className="form-input group">
