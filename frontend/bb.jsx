@@ -5,17 +5,19 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var IndexRoute = ReactRouter.IndexRoute;
 var HashHistory = ReactRouter.hashHistory;
-var MovieForm = require('./components/other/movieForm');
+
 var Navbar = require('./components/navbar/navbar');
+var Footer = require('./components/navbar/footer');
 var SignUpForm = require('./components/other/signUpForm');
 var SignInForm = require('./components/other/signInForm');
+var MovieForm = require('./components/other/movieForm');
 var HomePage = require('./components/home/homePage');
 var ShowPage = require('./components/show/showPage');
-var Footer = require('./components/navbar/footer');
-var AppStore = require('./stores/appStore');
 var BrowsePage = require('./components/browse/browsePage');
 var TrailerModal = require('./components/other/trailerModal');
-ApiUtil = require('./util/apiUtil'); //FOR TESTING
+
+var AppStore = require('./stores/appStore');
+var ApiUtil = require('./util/apiUtil');
 
 var App = React.createClass({
 

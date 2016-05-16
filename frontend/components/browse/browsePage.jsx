@@ -37,11 +37,9 @@ var BrowsePage = React.createClass({
 
   setRelease: function (release) {
     if (release === "theaters") {
-      this.setState({ theaters: true});
-      this.setState({ dvd: false });
+      this.setState({ theaters: true, dvd: false });
     } else {
-      this.setState({ theaters: false});
-      this.setState({ dvd: true });
+      this.setState({ theaters: false, dvd: true });
     }
   },
 
@@ -70,13 +68,15 @@ var BrowsePage = React.createClass({
   },
 
   submitForm: function (e) {
+    e.preventDefault();
     var query = $.extend(true, {}, this.state);
     delete query.browseResults;
-    e.preventDefault();
     ApiUtil.browseMovies({ query: query });
   },
 
   render: function () {
+    var theaters = this.state.theaters ? "checked" : "";
+    var dvd = this.state.dvd ? "checked" : "";
 
     return (
       <div className="browse-page">
@@ -87,12 +87,14 @@ var BrowsePage = React.createClass({
             <label>In Theaters:
             <input type="radio"
               name="browse"
+              defaultChecked={theaters}
               onClick={this.setRelease.bind(this, "theaters")} />
             </label>
 
             <label>On DVD:
             <input type="radio"
               name="browse"
+              defaultChecked={dvd}
               onClick={this.setRelease.bind(this, "dvd")} />
             </label>
           </div>

@@ -4,8 +4,8 @@ var SearchConstants = require('../constants/searchConstants');
 
 var SearchStore = new Store(AppDispatcher);
 
-_movieSearchResults = [];
-_movieBrowseResults = [];
+var _movieSearchResults = [];
+var _movieBrowseResults = [];
 
 SearchStore.movieSearchResults = function () {
   return _movieSearchResults.slice();

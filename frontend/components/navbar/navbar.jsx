@@ -5,6 +5,7 @@ var AppStore = require('../../stores/appStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var SearchStore = require('../../stores/searchStore');
 var MovieStore = require('../../stores/movieStore');
+var ApiUtil = require('../../util/apiUtil');
 var PropTypes = React.PropTypes;
 
 var Navbar = React.createClass({

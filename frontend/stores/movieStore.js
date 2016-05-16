@@ -2,10 +2,10 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher');
 var MovieConstants = require('../constants/movieConstants');
 
-MovieStore = new Store(AppDispatcher);
+MovieStore = new Store(AppDispatcher); //GLOBAL FOR TESTING
 
-_currentMovie = {};
-_homePageMovies = {};
+var _currentMovie = {};
+var _homePageMovies = {};
 
 MovieStore.__onDispatch = function (payload) {
   switch (payload.actionType) {
