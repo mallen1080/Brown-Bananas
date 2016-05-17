@@ -3,9 +3,13 @@ var SearchStore = require('../../stores/searchStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
 var ApiUtil = require('../../util/apiUtil');
 var ReactSlider = require('react-slider');
+var PropTypes = React.PropTypes;
 
 var BrowsePage = React.createClass({
   mixins: [LinkedStateMixin],
+  contextTypes: {
+    router: PropTypes.object.isRequired
+  },
 
   getInitialState: function () {
 
@@ -34,6 +38,10 @@ var BrowsePage = React.createClass({
 
   componentWillUnmount: function () {
     this.browseListener.remove();
+  },
+
+  componentWillReceiveProps: function (newProps) {
+    // this.context.router.push("")
   },
 
   updateBrowseResults: function () {

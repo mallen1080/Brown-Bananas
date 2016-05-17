@@ -75,7 +75,7 @@ var AppRoutes = (
     <Route path="/" component={App} onEnter={_checkCurrentUser}>
       <IndexRoute component={HomePage} onEnter={_getHomePageMovies}/>
       <Route path="movies/new" component={MovieForm} onEnter={_checkAdmin}/>
-      <Route path="movies/browse" component={BrowsePage} />
+      <Route path="movies/browse" component={BrowsePage} onEnter={_getHomePageMovies}/>
       <Route path="movies/:movieId" component={ShowPage} onEnter={_getHomePageMovies}/>
       <Route path="movies/:movieId/edit" component={MovieForm} onEnter={_checkAdmin}/>
     </Route>
