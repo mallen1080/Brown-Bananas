@@ -8,19 +8,23 @@ var BrowsePage = React.createClass({
   mixins: [LinkedStateMixin],
 
   getInitialState: function () {
+
+    var theaters = this.props.location.query.release === "theaters";
+    var genre = this.props.location.query.genre;
+
     return {
       browseResults: [],
-      theaters: false,
-      dvd: true,
+      theaters: theaters,
+      dvd: !theaters,
       minRating: 0,
       maxRating: 100,
-      "1": true,
-      "2": true,
-      "3": true,
-      "4": true,
-      "5": true,
-      "6": true,
-      "7": true };
+      "1": genre === "1" || !genre,
+      "2": genre === "2" || !genre,
+      "3": genre === "3" || !genre,
+      "4": genre === "4" || !genre,
+      "5": genre === "5" || !genre,
+      "6": genre === "6" || !genre,
+      "7": genre === "7" || !genre };
   },
 
   componentDidMount: function () {
@@ -121,7 +125,7 @@ var BrowsePage = React.createClass({
             <div className="browse-ratings">
               <label>Bananameter: </label>
               <label className="percentage">{this.state.minRating}</label>
-              <label className="percentage">- {this.state.maxRating}</label>
+              <label className="percentage"> - {this.state.maxRating}</label>
 
               <ReactSlider defaultValue={[0,100]}
                 withBars
