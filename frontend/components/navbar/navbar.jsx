@@ -1,4 +1,5 @@
 var React = require('react');
+var BrowseDropdown = require('./browseDropdown');
 var AppActions = require('../../actions/appActions');
 var SearchActions = require('../../actions/searchActions');
 var AppStore = require('../../stores/appStore');
@@ -152,10 +153,11 @@ var Navbar = React.createClass({
 
         <div className="navbar-buttons">
           <ul>
-            <li>
+            <li className="navbar-browse">
               <a href="#/movies/browse">
                 <button>BROWSE</button>
               </a>
+              <BrowseDropdown />
             </li>
 
             <li onClick={button1Action}>
