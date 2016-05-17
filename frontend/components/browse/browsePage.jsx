@@ -131,9 +131,11 @@ var BrowsePage = React.createClass({
             </div>
 
             <div className="browse-ratings">
-              <label>Bananameter: </label>
-              <label className="percentage">{this.state.minRating}</label>
-              <label className="percentage"> - {this.state.maxRating}</label>
+              <div className="browse-ratings-disp group">
+                <label>Bananameter: </label>
+                <label>{this.state.maxRating}%</label>
+                <label>{this.state.minRating}% - </label>
+              </div>
 
               <ReactSlider defaultValue={[0,100]}
                 withBars

@@ -35,8 +35,23 @@
 
 .browse-ratings {
   width: 250px;
-  text-align: center;
+  // text-align: center;
   margin: 10px 0;
+}
+
+.browse-ratings-disp label:first-child {
+  float: left;
+  width: 70px;
+}
+
+.browse-ratings-disp label {
+  float: right;
+  width: 45px;
+  text-align: right;
+}
+
+.browse-ratings-disp label:nth-child(2) {
+  margin-right: 40px;
 }
 
 .slider {
@@ -58,16 +73,13 @@
 }
 
 .handle {
-  // font-size: 0.9em;
-  // text-align: center;
+
   background-color: white;
   border: 1px solid #ccc;
-  // color: white;
   cursor: pointer;
   width: 28px;
   height: 24px;
   border-radius: 3px;
-  // line-height: 20px;
 }
 
 .handle:before,
