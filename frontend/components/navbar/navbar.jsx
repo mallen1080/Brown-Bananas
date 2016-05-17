@@ -155,7 +155,7 @@ var Navbar = React.createClass({
           <ul>
             <li className="navbar-browse">
               <a href="#/movies/browse">
-                <button>BROWSE</button>
+                <button>BROWSE ▾</button>
               </a>
               <BrowseDropdown />
             </li>
