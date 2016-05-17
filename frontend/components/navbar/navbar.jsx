@@ -78,6 +78,12 @@ var Navbar = React.createClass({
     }
   },
 
+  _browse: function (e) {
+    if (e.target.className === "navbar-browse") {
+      this.context.router.push("/movies/browse");
+    }
+  },
+
   _searchResultList: function () {
     if (this.state.movieSearchResults.length > 0) {
       this.state.movieSearchResults.unshift(
@@ -153,10 +159,8 @@ var Navbar = React.createClass({
 
         <div className="navbar-buttons">
           <ul>
-            <li className="navbar-browse">
-              <a href="#/movies/browse">
-                <button>BROWSE ▾</button>
-              </a>
+            <li onClick={this._browse} className="navbar-browse">
+              <button>BROWSE ▾</button>
               <BrowseDropdown />
             </li>
 
