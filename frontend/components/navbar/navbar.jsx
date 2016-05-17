@@ -160,7 +160,7 @@ var Navbar = React.createClass({
         <div className="navbar-buttons">
           <ul>
             <li onClick={this._browse} className="navbar-browse">
-              <button>BROWSE ▾</button>
+              <button className="navbar-browse">BROWSE ▾</button>
               <BrowseDropdown />
             </li>
 
