@@ -178,7 +178,7 @@ var BrowsePage = React.createClass({
           </div>
 
           <div className="form-submit">
-            <button onClick={this.submitForm}>Search</button>
+            <button onClick={this.submitForm}>Apply</button>
           </div>
 
           </form>
