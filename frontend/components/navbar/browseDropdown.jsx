@@ -24,6 +24,36 @@ var BrowseDropdown = React.createClass({
     );
   },
 
+  _recommendedList: function () {
+    var recList = MovieStore.homePageMovies().top_rated_theaters.slice(0,2);
+    recList.push(MovieStore.homePageMovies().top_rated_dvd[0]);
+    
+    return (
+      recList.map(function (movie, i) {
+        var link = "#/movies/" + movie.id;
+        var heading = i < 2 ? "IN THEATERS" : "ON DVD";
+        var banana = movie.rating.percentage > 59 ?
+          "fresh_banana.png" : "brown_banana.png";
+
+        return (
+          <div className="rec-list-item" key={movie.id}>
+            <a href={link}>
+            <p>{heading}</p>
+              <div className="rec-img-container">
+                <img src={movie.image_url} />
+                </div>
+                <span>
+                  <span className="rating-img"><img src={banana} /></span>
+                  <span className="percentage">{movie.rating.percentage}</span>
+                </span>
+                <p>{movie.title}</p>
+            </a>
+          </div>
+        );
+      })
+    );
+  },
+
   render: function () {
     var link = "#/movies/browse";
 
@@ -45,6 +75,9 @@ var BrowseDropdown = React.createClass({
 
         <div className="browse-dropdown-certified">
           <h3>CERTIFIED FRESH PICKS</h3>
+          <div className="recommended-list group">
+            {this._recommendedList()}
+          </div>
         </div>
       </div>
     );

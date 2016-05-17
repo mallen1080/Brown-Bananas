@@ -397,13 +397,16 @@
 
 .recommended-list {
   float: right;
-  width: 75%;
   padding: 0 10px;
+}
+
+.recommended-panel .recommended-list {
+  width: 75%;
 }
 
 .rec-list-item {
   float: left;
-  width: 17%;
+  width: 136px;
   padding: 0 10px;
   text-align: center;
 }
