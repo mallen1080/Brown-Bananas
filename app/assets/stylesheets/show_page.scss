@@ -78,10 +78,6 @@
   width: 18%;
 }
 
-// .showpage-table tr:hover {
-//   color: blue;
-// }
-
 .showpage-table h2 {
   font-weight: bold;
   margin: 10px 0;
@@ -98,7 +94,7 @@
   width: 670px;
   margin: 5% auto;
   opacity: 1;
-  animation: fadeIn ease-in-out 2s forwards;
+  animation: fadeIn ease-in-out 1.5s forwards;
 }
 
 @keyframes fadeIn {
