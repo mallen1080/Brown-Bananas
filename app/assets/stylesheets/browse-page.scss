@@ -45,27 +45,45 @@
 }
 
 .bar-1 {
-  height: 10px;
+  height: 14px;
   top: 5px;
-  background-color: #ccc;
+  background-color: #343434;
 }
 
 .bar-0, .bar-2 {
-  height: 8px;
+  height: 12px;
   top: 5px;
   background-color: white;
   border: 1px solid #ccc;
 }
 
 .handle {
-  font-size: 0.9em;
-  text-align: center;
-  background-color: black;
-  color: white;
+  // font-size: 0.9em;
+  // text-align: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  // color: white;
   cursor: pointer;
-  width: 20px;
-  height: 20px;
-  line-height: 20px;
+  width: 28px;
+  height: 24px;
+  border-radius: 3px;
+  // line-height: 20px;
+}
+
+.handle:before,
+.handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: #E8E7E6;
+  left: 12px;
+  top: 5px;
+}
+
+.handle:after {
+  left: 15px;
 }
 
 .browse-genres input {
