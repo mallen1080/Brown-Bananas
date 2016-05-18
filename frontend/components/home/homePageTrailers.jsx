@@ -7,7 +7,7 @@ var HomePageTrailers = React.createClass({
   _trailerComp: function (movie) {
     var url = movie.trailer_url;
     var imgId = movie.trailer_url.slice(30, 41);
-    var imgLink = "http://img.youtube.com/vi/" + imgId + "/0.jpg";
+    var imgLink = "http://img.youtube.com/vi/" + imgId + "/hqdefault.jpg";
 
     return (
       <div className="home-trailer">
