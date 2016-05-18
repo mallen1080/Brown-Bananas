@@ -164,15 +164,17 @@
 
 .recent-img {
   height: 225px;
-  // width: 160px;
-  // margin: auto;
 }
 
 .recent-img-cont {
   position: relative;
   width: 100%;
-  height: 48%;
+  height: 46%;
   overflow: hidden;
+}
+
+.recent-img-cont:first-child {
+  height: 50%;
 }
 
 .recent-img img {
@@ -181,6 +183,10 @@
   width: 100%;
   height: auto;
   top: -10px;
+}
+
+.recent-img:first-child img {
+  top: 0;
 }
 
 // .recent-img img:nth-child(2) {
