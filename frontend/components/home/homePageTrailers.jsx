@@ -7,7 +7,7 @@ var HomePageTrailers = React.createClass({
   _trailerComp: function (movie) {
     var url = movie.trailer_url;
     var imgId = movie.trailer_url.slice(30, 41);
-    var imgLink = "http://img.youtube.com/vi/" + imgId + "/hqdefault.jpg";
+    var imgLink = "http://img.youtube.com/vi/" + imgId + "/mqdefault.jpg";
 
     return (
       <div className="home-trailer">
@@ -41,7 +41,7 @@ var HomePageTrailers = React.createClass({
             {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[4])}
             {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[5])}
             {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[6])}
-            {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[8])}
+            {this._trailerComp(MovieStore.homePageMovies().newest_on_dvd[6])}
           </div>
         </div>
       </div>
