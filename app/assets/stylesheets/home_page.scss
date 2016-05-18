@@ -164,13 +164,14 @@
 
 .recent-img {
   height: 225px;
-  width: 160px;
-  margin: auto;
+  // width: 160px;
+  // margin: auto;
 }
 
 .recent-img img {
-  height: 100%;
+  height: auto;
   width: 100%;
+  height: 50%;
 }
 
 .recent-desc {
