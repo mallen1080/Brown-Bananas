@@ -16,9 +16,7 @@ var HomePageRecents = React.createClass({
             <div className="recent-img-cont">
               <img src={imgLink1} />
             </div>
-            <div className="recent-img-cont">
-              <img src={imgLink2} />
-            </div>
+
           </div>
           <div className="recent-desc">
             <h3>{title}</h3>

@@ -169,7 +169,7 @@
 .recent-img-cont {
   position: relative;
   width: 100%;
-  height: 48%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -178,13 +178,8 @@
   // height: auto;
   width: 100%;
   height: auto;
-  top: -10px;
+  bottom: 20px;
 }
-
-// .recent-img img:nth-child(2) {
-//   clip: rect(0px,5px,0px,5px);
-//   bottom: 0;
-// }
 
 .recent-desc {
   height: 75px;
