@@ -474,6 +474,7 @@
 .trailer-img-container {
   cursor: pointer;
   position: relative;
+  opacity: 0.8;
 }
 
 .trailer-img-container img {
@@ -488,10 +489,34 @@
   background-color: #ff9933;
   color: black;
   font-weight: bold;
+  opacity: 1;
 }
+
+.trailer-img-container:before {
+  content: "\25BA";
+  position: absolute;
+  opacity: 0.6;
+  bottom: 30px;
+  right: 28px;
+}
+
+.trailer-img-container:after {
+  content: "\25CB";
+  position: absolute;
+  opacity: 0.6;
+  bottom: -10px;
+  right: 10px;
+  font-size: 90px;
+}
+
 
 .trailer-img-container:hover h6 {
   background-color: white;
+}
+
+
+.trailer-img-container:hover {
+  opacity: 1;
 }
 
 .trailer-desc h5 {
