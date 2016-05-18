@@ -13,8 +13,12 @@ var HomePageRecents = React.createClass({
       <div className="recent-container">
         <a href={link + movie.id}>
           <div className="recent-img">
-            <img src={imgLink1} />
-            <img src={imgLink2} />
+            <div className="recent-img-cont">
+              <img src={imgLink1} />
+            </div>
+            <div className="recent-img-cont">
+              <img src={imgLink2} />
+            </div>
           </div>
           <div className="recent-desc">
             <h3>{title}</h3>
