@@ -473,6 +473,7 @@
 
 .trailer-img-container {
   cursor: pointer;
+  position: relative;
 }
 
 .trailer-img-container img {
@@ -480,7 +481,20 @@
   height: auto;
 }
 
-.trailer-desc h6 {
+.trailer-img-container h6 {
+  position: absolute;
+  bottom: 4px;
+  padding: 0 10px;
+  background-color: #ff9933;
+  color: black;
+  font-weight: bold;
+}
+
+.trailer-img-container:hover h6 {
+  background-color: white;
+}
+
+.trailer-desc h5 {
   font-weight: bold;
   font-style: italic;
   font-size: 18px;

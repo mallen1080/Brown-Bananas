@@ -13,9 +13,10 @@ var HomePageTrailers = React.createClass({
       <div className="home-trailer">
         <div className="trailer-img-container" onClick={this._playTrailer.bind(this, url)}>
           <img src={imgLink} />
+          <h6>TRAILER</h6>
         </div>
         <div className="trailer-desc">
-          <h6>{movie.title}</h6>
+          <h5>{movie.title}</h5>
           <p>{movie.consensus}</p>
         </div>
       </div>
@@ -37,10 +38,10 @@ var HomePageTrailers = React.createClass({
           </div>
 
           <div className="home-trailers-group-right">
-            {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[3])}
             {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[4])}
             {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[5])}
             {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[6])}
+            {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[8])}
           </div>
         </div>
       </div>
