@@ -364,6 +364,11 @@
 
 // RECOMMENDED
 
+// .recommended {
+//   background-color: #343434;
+//   color: #eee;
+// }
+
 .recommended > h1 {
   padding: 10px 20px;
   margin-top: 20px;
@@ -371,6 +376,7 @@
   background-color: #ff9933;
   float: left;
   font-weight: 900;
+  color: black;
 }
 
 .recommended-panel {
@@ -423,4 +429,58 @@
 .rec-img-container > img {
   height: 100%;
   width: 100%;
+}
+
+// TRAILERS
+
+.home-trailers {
+  background-color: #343434;
+  color: #eee;
+}
+
+.home-trailers > h3 {
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 22px;
+  background-color: #ff9933;
+  float: left;
+  font-weight: 900;
+  color: black;
+}
+
+.home-trailers-group {
+  clear: both;
+}
+
+.home-trailers-group-left {
+  float: left;
+  width: 45%;
+  padding: 10px;
+}
+
+.home-trailers-group-right {
+  float: right;
+  width: 50%;
+  padding: 10px;
+}
+
+.home-trailers-group-right .home-trailer {
+  width: 45%;
+  float: left;
+  margin: 0 10px 10px 10px;
+}
+
+.trailer-img-container img {
+  width: 100%;
+  height: auto;
+}
+
+.trailer-desc h6 {
+  font-weight: bold;
+  font-style: italic;
+  font-size: 18px;
+}
+
+.trailer-desc p {
+  font-size: 14px;
 }

@@ -27,7 +27,7 @@ var BrowseDropdown = React.createClass({
   _recommendedList: function () {
     var recList = MovieStore.homePageMovies().top_rated_theaters.slice(0,2);
     recList.push(MovieStore.homePageMovies().top_rated_dvd[0]);
-    
+
     return (
       recList.map(function (movie, i) {
         var link = "#/movies/" + movie.id;

@@ -3,7 +3,7 @@ var HomePageCarousel = require('./homePageCarousel');
 var HomePageTableGroup = require('./homePageTableGroup');
 var HomePageRecommended = require('./homePageRecommended');
 var HomePageRecents = require('./homePageRecents');
-
+var HomePageTrailers = require('./homePageTrailers.jsx');
 
 var HomePage = React.createClass({
 
@@ -16,6 +16,7 @@ var HomePage = React.createClass({
         </div>
         <HomePageTableGroup />
         <HomePageRecommended />
+        <HomePageTrailers />
       </div>
     );
   }
