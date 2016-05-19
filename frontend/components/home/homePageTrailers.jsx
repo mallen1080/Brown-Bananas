@@ -40,8 +40,8 @@ var HomePageTrailers = React.createClass({
           <div className="home-trailers-group-right">
             {this._trailerComp(MovieStore.homePageMovies().newest_in_theaters[3])}
             {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[6])}
-            {this._trailerComp(MovieStore.homePageMovies().newest_on_dvd[5])}
-            {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[4])}
+            {this._trailerComp(MovieStore.homePageMovies().top_rated_theaters[8])}
+            {this._trailerComp(MovieStore.homePageMovies().newest_on_dvd[7])}
           </div>
         </div>
       </div>
