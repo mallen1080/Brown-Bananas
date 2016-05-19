@@ -16,7 +16,8 @@ var HomePageCarousel = React.createClass({
       dots: true,
       autoplay: true,
       autoplaySpeed: 4000,
-      speed: 1000
+      speed: 1000,
+      pauseOnHover: true
     };
     return (
         <div className='carousel-container group'>
