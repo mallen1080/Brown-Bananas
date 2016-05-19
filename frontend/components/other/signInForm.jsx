@@ -117,7 +117,8 @@ var SignInForm = React.createClass({
               </div>
 
               <div className="facebook">
-                <a href="/auth/facebook">Log in with Facebook</a>
+                <a href="/auth/facebook">
+                  <span>f</span>Log in with Facebook</a>
               </div>
 
             </form>
@@ -128,5 +129,6 @@ var SignInForm = React.createClass({
   }
 
 });
+// <img src="http://www.catholicinfertilityjourney.com/wp-content/uploads/2016/04/facebook-logo.png" />
 
 module.exports = SignInForm;

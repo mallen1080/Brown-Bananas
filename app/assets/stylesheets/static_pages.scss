@@ -122,6 +122,17 @@ ul {
   background-color: #324b81;
 }
 
+.facebook span:first-child {
+  background-color: white;
+  color: #3B5999;
+  width: 20px;
+  display: inline-block;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  padding-bottom: -15px;
+}
+
 .hide {
   display: none;
 }

@@ -134,7 +134,8 @@ var SignUpForm = React.createClass({
               </div>
 
               <div className="facebook">
-                <a href="/auth/facebook">Sign up with Facebook</a>
+                <a href="/auth/facebook">
+                  <span>f</span>Sign up with Facebook</a>
               </div>
 
             </form>
