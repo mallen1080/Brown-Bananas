@@ -7,7 +7,7 @@ var BrowseDropdown = React.createClass({
     var link = "#/movies/browse?";
     if (theaters) { link += "release=theaters&"; }
 
-    return (
+    var genreList = (
       ["Action",
       "Animation",
       "Comedy",
@@ -22,6 +22,14 @@ var BrowseDropdown = React.createClass({
         );
       })
     );
+
+    genreList.push(
+      <li key={100}>
+        <a href={link + "certified=true"}>Certified Fresh</a>
+      </li>
+    );
+
+    return genreList;
   },
 
   _recommendedList: function () {

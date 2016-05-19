@@ -15,12 +15,13 @@ var BrowsePage = React.createClass({
 
     var theaters = this.props.location.query.release === "theaters";
     var genre = this.props.location.query.genre;
+    var minR = this.props.location.query.certified ? 60 : 0;
 
     return {
       browseResults: [],
       theaters: theaters,
       dvd: !theaters,
-      minRating: 0,
+      minRating: minR,
       maxRating: 100,
       "1": genre === "1" || !genre,
       "2": genre === "2" || !genre,
@@ -137,7 +138,7 @@ var BrowsePage = React.createClass({
                 <label>{this.state.minRating}% - </label>
               </div>
 
-              <ReactSlider defaultValue={[0,100]}
+              <ReactSlider defaultValue={[this.state.minRating,100]}
                 withBars
                 onChange={this._ratingChange}/>
             </div>
