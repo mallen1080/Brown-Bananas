@@ -523,8 +523,9 @@
   background-color: white;
 }
 
-
-.trailer-img-container:hover {
+.trailer-img-container:hover,
+.trailer-img-container:hover:before,
+.trailer-img-container:hover:after {
   opacity: 1;
 }
 

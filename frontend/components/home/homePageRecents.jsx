@@ -7,7 +7,6 @@ var HomePageRecents = React.createClass({
     var link = "#/movies/";
     var imgId = movie.trailer_url.slice(30, 41);
     var imgLink1 = "http://img.youtube.com/vi/" + imgId + "/mqdefault.jpg";
-    var imgLink2 = "http://img.youtube.com/vi/" + imgId + "/2.jpg";
 
     return (
       <div className="recent-container">

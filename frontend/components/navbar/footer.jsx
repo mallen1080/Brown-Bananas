@@ -11,7 +11,7 @@ var Footer = React.createClass({
     return (
       <div className="footer group">
         <div className="footer-text">
-          <p>A Matt Allen Production</p>
+          <a href="http://www.mattjallen.com">A Matt Allen Production</a>
         </div>
         <div className="footer-links">
           <ul>
