@@ -25,8 +25,8 @@ var ShowPageTrailer = React.createClass({
 
     return (
       <div className="movie-trailer-container">
-        <iframe src={link}
-        width="760" height="425"></iframe>
+        <iframe src={link} allowFullScreen
+          width="760" height="425"></iframe>
       </div>
     );
   }
