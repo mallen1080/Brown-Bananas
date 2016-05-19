@@ -480,6 +480,10 @@
   margin: 0 10px 10px 10px;
 }
 
+.home-trailers-group-right .home-trailer:nth-child(2n+1) {
+  clear: both;
+}
+
 .trailer-img-container {
   cursor: pointer;
   position: relative;
