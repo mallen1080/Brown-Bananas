@@ -15,8 +15,8 @@ var HomePage = React.createClass({
           <HomePageRecents />
         </div>
         <HomePageTableGroup />
-        <HomePageRecommended />
         <HomePageTrailers />
+        <HomePageRecommended />
       </div>
     );
   }

@@ -76,12 +76,14 @@
 .carousel-movie-desc {
   height: 75%;
   padding: 20px 20px 0 20px;
-  background: white;
+  background-color: white;
+  // color: #eee;
 }
 
 .carousel-movie-cons {
   height: 25%;
   background-color: #343434;
+  // color: black;
 }
 
 .carousel-movie-cons h3 {
@@ -200,11 +202,6 @@
 
 // TABLES
 
-.home-page-table tr {
-  vertical-align: middle;
-  height: 26px;
-}
-
 .home-page-tables {
   border-bottom: 1px solid #eee;
   padding-bottom: 5px;
@@ -227,6 +224,11 @@
   float: left;
   width: 35%;
   padding: 0 0 20px 20px;
+}
+
+.home-page-table tr {
+  vertical-align: middle;
+  height: 26px;
 }
 
 .home-page-table table {
