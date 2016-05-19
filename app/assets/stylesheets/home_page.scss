@@ -176,10 +176,10 @@
 
 .recent-img img {
   position: absolute;
-  // height: auto;
-  width: 100%;
-  height: auto;
-  bottom: 20px;
+  width: auto;
+  height: 100%;
+  // bottom: 20px;
+  left: -80px;
 }
 
 .recent-desc {
