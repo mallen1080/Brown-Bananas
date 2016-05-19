@@ -77,13 +77,11 @@
   height: 75%;
   padding: 20px 20px 0 20px;
   background-color: white;
-  // color: #eee;
 }
 
 .carousel-movie-cons {
   height: 25%;
   background-color: #343434;
-  // color: black;
 }
 
 .carousel-movie-cons h3 {
@@ -91,6 +89,7 @@
   width: 30%;
   text-align: center;
 }
+
 .carousel-movie-cons p {
   padding: 10px;
   color: white;
@@ -283,12 +282,12 @@
 .table-hover-content {
   position: absolute;
   top: -50px;
-  background-color: white;
+  background-color: #343434;
   z-index: 10;
   width: 200px;
   border: 1px solid #aaa;
-  box-shadow: 0 1px #aaa;
-  color: black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #eee;
   border-radius: 10px;
   padding: 10px;
   font-size: 15px;
@@ -298,7 +297,7 @@
 .table-hover-content:before {
     border-bottom: 10px solid transparent;
     border-top: 10px solid transparent;
-    border-right: 10px solid white;
+    border-right: 10px solid #343434;
     top: 52px;
     content: '';
     left: 0%;
