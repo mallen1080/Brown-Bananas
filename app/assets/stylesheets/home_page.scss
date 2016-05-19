@@ -282,12 +282,12 @@
 .table-hover-content {
   position: absolute;
   top: -50px;
-  background-color: #343434;
+  background-color: white;
   z-index: 10;
   width: 200px;
   border: 1px solid #aaa;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-  color: #eee;
+  color: black;
   border-radius: 10px;
   padding: 10px;
   font-size: 15px;
@@ -297,7 +297,7 @@
 .table-hover-content:before {
     border-bottom: 10px solid transparent;
     border-top: 10px solid transparent;
-    border-right: 10px solid #343434;
+    border-right: 10px solid white;
     top: 52px;
     content: '';
     left: 0%;
