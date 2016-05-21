@@ -3,7 +3,7 @@ var HomePageCarousel = require('./homePageCarousel');
 var HomePageTableGroup = require('./homePageTableGroup');
 var HomePageRecommended = require('./homePageRecommended');
 var HomePageRecents = require('./homePageRecents');
-var HomePageTrailers = require('./homePageTrailers.jsx');
+var HomePageTrailers = require('./homePageTrailers');
 
 var HomePage = React.createClass({
 
