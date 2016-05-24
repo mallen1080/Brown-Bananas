@@ -126,18 +126,20 @@
 }
 
 .show-info-info {
-  background-color: #ffe6cc;
   float: left;
-  padding: 20px 10px 10px 10px;
-  height: 240px;
-  width: 565px;
+  // padding: 20px 10px 10px 10px;
+  height: 100%;
+  width: 585px;
 }
 
 .show-rating {
+  background-color: #ffe6cc;
   float: left;
-  width: 35%;
+  // width: 35%;
+  width: 200px;
   height: 100%;
-  border-right: 1px solid #343434;
+  padding: 0 10px;
+  // border-right: 1px solid #343434;
 }
 
 .show-rating h4 {
@@ -175,7 +177,13 @@
 
 .show-info-titletable {
   float: right;
-  width: 60%;
+  // width: 60%;
+  width: 345px;
+
+  background-color: #343434;
+  color: white;
+  height: 100%;
+  padding: 0 10px;
 }
 
 .show-info-titletable h3 {
@@ -186,7 +194,11 @@
   font-size: 36px;
   font-weight: bold;
   margin-bottom: 10px;
-  text-decoration: underline;
+  // text-decoration: underline;
+}
+
+.show-info-table table {
+  margin: auto;
 }
 
 .show-info-table tr td:first-child {
