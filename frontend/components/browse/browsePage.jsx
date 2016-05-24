@@ -19,6 +19,8 @@ var BrowsePage = React.createClass({
 
     return {
       browseResults: [],
+      browseResultTotalCount: 0,
+      browseResultReturnCount: 0,
       theaters: theaters,
       dvd: !theaters,
       minRating: minR,
@@ -46,7 +48,11 @@ var BrowsePage = React.createClass({
   },
 
   updateBrowseResults: function () {
-    this.setState({ browseResults: SearchStore.movieBrowseResults() });
+    this.setState({
+      browseResults: SearchStore.movieBrowseResults(),
+      browseResultTotalCount: SearchStore.movieBrowseTotalCount(),
+      browseResultReturnCount: SearchStore.movieBrowseReturnCount()
+    });
   },
 
   setRelease: function (release) {
@@ -106,6 +112,8 @@ var BrowsePage = React.createClass({
   render: function () {
     var theaters = this.state.theaters ? "checked" : "";
     var dvd = this.state.dvd ? "checked" : "";
+    var rCount = this.state.browseResultReturnCount;
+    var tCount = this.state.browseResultTotalCount;
 
     return (
       <div className="browse-page">
@@ -183,6 +191,9 @@ var BrowsePage = React.createClass({
           </div>
 
           </form>
+
+          <div className="browse-counts"> Showing {rCount} of {tCount}
+          </div>
 
           <div className="browse-results group">
             {this.browseResults()}

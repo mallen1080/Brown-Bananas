@@ -2,10 +2,12 @@ var Store = require('flux/utils').Store;
 var AppDispatcher = require('../dispatcher/dispatcher');
 var SearchConstants = require('../constants/searchConstants');
 
-var SearchStore = new Store(AppDispatcher);
+SearchStore = new Store(AppDispatcher);
 
 var _movieSearchResults = [];
 var _movieBrowseResults = [];
+var _movieBrowseTotalCount = 0;
+var _movieBrowseReturnCount = 0;
 
 SearchStore.movieSearchResults = function () {
   return _movieSearchResults.slice();
@@ -19,8 +21,18 @@ SearchStore.updateMovieSearchResults = function (movies) {
   _movieSearchResults = movies;
 };
 
-SearchStore.updateMovieBrowseResults = function (movies) {
-  _movieBrowseResults = movies;
+SearchStore.movieBrowseTotalCount = function () {
+  return _movieBrowseTotalCount;
+};
+
+SearchStore.movieBrowseReturnCount = function () {
+  return _movieBrowseReturnCount;
+};
+
+SearchStore.updateMovieBrowseResults = function (result) {
+  _movieBrowseResults = result.movies;
+  _movieBrowseTotalCount = result.totalCount;
+  _movieBrowseReturnCount = result.returnCount;
 };
 
 SearchStore.__onDispatch = function (payload) {
@@ -30,7 +42,7 @@ SearchStore.__onDispatch = function (payload) {
       this.__emitChange();
       break;
     case SearchConstants.MOVIE_BROWSE_RESULTS_RECEIVED:
-      SearchStore.updateMovieBrowseResults(payload.movies);
+      SearchStore.updateMovieBrowseResults(payload);
       this.__emitChange();
     }
 };

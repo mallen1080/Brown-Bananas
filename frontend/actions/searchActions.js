@@ -11,10 +11,12 @@ var SearchActions = {
     AppDispatcher.dispatch(action);
   },
 
-  receiveMovieBrowseResults: function (movies) {
+  receiveMovieBrowseResults: function (result) {
     var action = {
       actionType: SearchConstants.MOVIE_BROWSE_RESULTS_RECEIVED,
-      movies: movies
+      movies: result.movies,
+      totalCount: result.total_count,
+      returnCount: result.return_count
     };
     AppDispatcher.dispatch(action);
   }

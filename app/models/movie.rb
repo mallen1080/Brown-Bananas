@@ -56,11 +56,16 @@ class Movie < ActiveRecord::Base
     theaters = options[:theaters] ? "on_dvd is NULL" : "on_dvd is NOT NULL"
     count = options[:count] || 24
 
-    Movie.includes(:reviews, :genre, :director, :actors)
+    return_hash = {}
+    movies = Movie.includes(:reviews, :genre, :director, :actors)
     .where(theaters)
     .where(genre_id: genres)
     .select { |movie| movie.review_counts[:percentage] > min_rating &&
-      movie.review_counts[:percentage] < max_rating }[0..count]
+      movie.review_counts[:percentage] < max_rating }
+    return_hash[:movies] = movies[0..count]
+    return_hash[:total_count] = movies.length
+    return_hash[:return_count] = movies[0..count].length
+    return_hash
   end
 
   def self.get_random

@@ -121,9 +121,14 @@
   margin: 0;
 }
 
-.browse-results {
+.browse-results,
+.browse-counts {
   width: 75%;
   margin: auto;
+}
+
+.browse-counts {
+  margin-top: 10px;
 }
 
 .browse-results .rec-list-item {

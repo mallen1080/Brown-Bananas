@@ -45,13 +45,16 @@ class Api::MoviesController < ApplicationController
       params[:query][key] == 'true'
     end
 
-    @movies = Movie.search({
+    browse_results = Movie.search({
       min_rating: params[:query][:minRating].to_i,
       max_rating: params[:query][:maxRating].to_i,
       theaters: params[:query][:theaters] == "true",
       genres: genres.map(&:to_i),
       count: 24
       })
+      @movies = browse_results[:movies]
+      @total_count = browse_results[:total_count]
+      @return_count = browse_results[:return_count]
   end
 
   private
