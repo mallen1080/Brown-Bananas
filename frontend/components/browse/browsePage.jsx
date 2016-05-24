@@ -19,8 +19,8 @@ var BrowsePage = React.createClass({
 
     return {
       browseResults: [],
-      browseResultTotalCount: 0,
-      browseResultReturnCount: 0,
+      browseResultTotalCount: null,
+      browseResultReturnCount: null,
       theaters: theaters,
       dvd: !theaters,
       minRating: minR,
@@ -114,6 +114,8 @@ var BrowsePage = React.createClass({
     var dvd = this.state.dvd ? "checked" : "";
     var rCount = this.state.browseResultReturnCount;
     var tCount = this.state.browseResultTotalCount;
+    var counts = rCount ? <div className="browse-counts"> Showing {rCount} of {tCount}</div> :
+      <div></div>;
 
     return (
       <div className="browse-page">
@@ -192,8 +194,7 @@ var BrowsePage = React.createClass({
 
           </form>
 
-          <div className="browse-counts"> Showing {rCount} of {tCount}
-          </div>
+          {counts}
 
           <div className="browse-results group">
             {this.browseResults()}
