@@ -134,6 +134,7 @@
 .show-rating {
   background-color: #ffe6cc;
   float: left;
+  position: relative;
   width: 200px;
   height: 100%;
   padding: 0 10px;
@@ -159,11 +160,22 @@
   opacity: 1;
 }
 
+.rating-desc:before {
+  content: "";
+  position: absolute;
+  border-bottom: 10px solid black;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  top: -10px;
+  right: 21px;
+}
+
 .q-symbol:hover + .rating-desc {
   background-color: black;
   color: white;
   display: block;
   position: absolute;
+  top: 42px;
   width: 160px;
   font-size: 13px;
   border-radius: 5px;
