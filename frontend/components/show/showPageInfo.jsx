@@ -46,7 +46,7 @@ var ShowPageInfo = React.createClass({
           <div className="show-info-info group">
             <div className="show-rating">
               <h4>BANANAMETER <span className="q-symbol">?</span>
-              <div className="rating-desc">THE PERCENTAGE OF USERS WHO HAVE GIVEN THIS MOVIE A POSITIVE REVIEW</div>
+                <div className="rating-desc">THE PERCENTAGE OF USERS WHO HAVE GIVEN THIS MOVIE A POSITIVE REVIEW</div>
               </h4>
 
               <div className="show-rating-rating group">
