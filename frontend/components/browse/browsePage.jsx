@@ -107,7 +107,6 @@ var BrowsePage = React.createClass({
   },
 
   submitForm: function (more, e) {
-
     e.preventDefault();
     var query = $.extend(true, {}, this.state);
     query.browseResultReturnCount = 25;
@@ -127,7 +126,7 @@ var BrowsePage = React.createClass({
     var counts = rCount ? <div className="browse-counts"> Showing {rCount} of {tCount}</div> :
       <div></div>;
     var moreClick = rCount == tCount ? function(){} : this.submitForm.bind(this, true);
-    var moreClass = rCount == tCount ? "browse-more disabled" : "browse-more";
+    var moreClass = rCount == tCount ? "hide" : "browse-more";
 
     return (
       <div className="browse-page">
