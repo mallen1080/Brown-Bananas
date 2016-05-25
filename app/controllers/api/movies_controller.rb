@@ -50,7 +50,7 @@ class Api::MoviesController < ApplicationController
       max_rating: params[:query][:maxRating].to_i,
       theaters: params[:query][:theaters] == "true",
       genres: genres.map(&:to_i),
-      count: 24
+      count: params[:query][:browseResultReturnCount].to_i - 1
       })
       @movies = browse_results[:movies]
       @total_count = browse_results[:total_count]

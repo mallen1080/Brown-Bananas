@@ -142,3 +142,27 @@
   font-size: 15px;
   font-weight: bold;
 }
+
+.more-container {
+  height: 50px;
+}
+
+.browse-more {
+  background-color: #ddd;
+  width: 60%;
+  padding: 5px 0;
+  margin: auto;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+}
+
+.browse-more:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.disabled:hover {
+  background-color: #ddd;
+  cursor: default;
+}

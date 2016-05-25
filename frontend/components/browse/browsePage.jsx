@@ -20,7 +20,7 @@ var BrowsePage = React.createClass({
     return {
       browseResults: [],
       browseResultTotalCount: null,
-      browseResultReturnCount: null,
+      browseResultReturnCount: 25,
       theaters: theaters,
       dvd: !theaters,
       minRating: minR,
@@ -78,6 +78,10 @@ var BrowsePage = React.createClass({
     this.setState({ minRating: e[0], maxRating: e[1] });
   },
 
+  _moreResults: function () {
+    this.submitForm();
+  },
+
   browseResults: function () {
     return this.state.browseResults.map(function (movie, i) {
       var link = "#/movies/" + movie.id;
@@ -102,9 +106,11 @@ var BrowsePage = React.createClass({
     });
   },
 
-  submitForm: function (e) {
+  submitForm: function (more, e) {
+
     e.preventDefault();
     var query = $.extend(true, {}, this.state);
+    if (more) { query.browseResultReturnCount = this.state.browseResultReturnCount + 25; }
     delete query.browseResults;
     ApiUtil.browseMovies({ query: query });
   },
@@ -116,6 +122,8 @@ var BrowsePage = React.createClass({
     var tCount = this.state.browseResultTotalCount;
     var counts = rCount ? <div className="browse-counts"> Showing {rCount} of {tCount}</div> :
       <div></div>;
+    var moreClick = rCount == tCount ? function(){} : this.submitForm.bind(this, true);
+    var moreClass = rCount == tCount ? "browse-more disabled" : "browse-more";
 
     return (
       <div className="browse-page">
@@ -189,7 +197,7 @@ var BrowsePage = React.createClass({
           </div>
 
           <div className="form-submit">
-            <button onClick={this.submitForm}>Apply</button>
+            <button onClick={this.submitForm.bind(this, false)}>Apply</button>
           </div>
 
           </form>
@@ -198,6 +206,10 @@ var BrowsePage = React.createClass({
 
           <div className="browse-results group">
             {this.browseResults()}
+          </div>
+
+          <div className="more-container">
+            <div className={moreClass} onClick={moreClick}>More</div>
           </div>
 
       </div>
