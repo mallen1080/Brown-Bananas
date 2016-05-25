@@ -110,7 +110,11 @@ var BrowsePage = React.createClass({
 
     e.preventDefault();
     var query = $.extend(true, {}, this.state);
-    if (more) { query.browseResultReturnCount = this.state.browseResultReturnCount + 25; }
+    query.browseResultReturnCount = 25;
+    if (more) {
+      query.browseResultReturnCount += this.state.browseResultReturnCount;
+    }
+
     delete query.browseResults;
     ApiUtil.browseMovies({ query: query });
   },
