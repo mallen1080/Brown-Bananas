@@ -144,6 +144,10 @@
   padding: 10px;
 }
 
+.show-rating h4 > span:last-child:before {
+  content: "\e085";
+}
+
 .show-rating-rating {
   width: 80%;
   margin: auto;

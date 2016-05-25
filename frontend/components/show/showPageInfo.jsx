@@ -45,7 +45,7 @@ var ShowPageInfo = React.createClass({
 
           <div className="show-info-info group">
             <div className="show-rating">
-              <h4>BANANAMETER</h4>
+              <h4>BANANAMETER <span></span></h4>
               <div className="show-rating-rating group">
                 <span><img src={banana} /></span>
                 <span>
