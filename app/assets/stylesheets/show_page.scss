@@ -163,11 +163,11 @@
 .rating-desc:before {
   content: "";
   position: absolute;
-  border-bottom: 10px solid black;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  top: -10px;
-  right: 21px;
+  border-bottom: 8px solid black;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  top: -8px;
+  right: 23px;
 }
 
 .q-symbol:hover + .rating-desc {
@@ -175,7 +175,7 @@
   color: white;
   display: block;
   position: absolute;
-  top: 42px;
+  top: 40px;
   width: 160px;
   font-size: 13px;
   border-radius: 5px;
