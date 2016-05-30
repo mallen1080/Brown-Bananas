@@ -78,9 +78,17 @@
   width: 18%;
 }
 
+.showpage-table .table-header {
+  margin: 10px 0;
+}
+
+.showpage-table .table-header > a {
+  margin-right: 10px;
+}
+
 .showpage-table h2 {
   font-weight: bold;
-  margin: 10px 0;
+  display: inline-block;
 }
 
 .showpage-table .table-hover {

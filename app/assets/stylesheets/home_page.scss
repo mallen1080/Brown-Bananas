@@ -235,10 +235,24 @@
   border-spacing: 0;
 }
 
+.home-page-table .table-header {
+  padding: 20px 0 10px 0;
+}
+
 .home-page-table h2 {
-  margin: 20px 0 10px 0;
   font-size: 18px;
   font-weight: 900;
+  display: inline-block;
+}
+
+.table-header > a {
+  float: right;
+  margin-right: 30px;
+  color: #0073e6;
+}
+
+.table-header > a:hover {
+  text-decoration: underline;
 }
 
 .home-page-table .left-col {

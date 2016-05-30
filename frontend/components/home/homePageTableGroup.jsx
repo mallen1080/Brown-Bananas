@@ -11,11 +11,13 @@ var HomePageTableGroup = React.createClass({
           <HomePageTable
           klass="home-page-table"
           title="NEW TO THEATERS"
+          allLink="#/movies/browse?release=theaters"
           movies={MovieStore.homePageMovies().newest_in_theaters} />
 
           <HomePageTable
           klass="home-page-table"
           title="TOP BOX OFFICE"
+          allLink="#/movies/browse?release=theaters&certified=true"
           movies={MovieStore.homePageMovies().top_rated_theaters} />
         </div>
 
@@ -23,11 +25,13 @@ var HomePageTableGroup = React.createClass({
           <HomePageTable
           klass="home-page-table"
           title="RECENT DVD RELEASE"
+          allLink="#/movies/browse"
           movies={MovieStore.homePageMovies().newest_on_dvd} />
 
           <HomePageTable
           klass="home-page-table"
           title="TOP RENTALS"
+          allLink="#/movies/browse?certified=true"
           movies={MovieStore.homePageMovies().top_rated_dvd} />
         </div>
       </div>
