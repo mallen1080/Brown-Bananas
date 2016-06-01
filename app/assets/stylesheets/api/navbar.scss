@@ -235,3 +235,26 @@ img:not([src]) {
 .browse-dropdown-certified .recommended-list {
   width: 100%;
 }
+
+.trending {
+  // height: 20px;
+  background-color: black;
+  width: 1080px;
+  margin: auto;
+  padding: 4px 10px;
+  color: white;
+  font-size: 13px;
+  border-bottom: 1px solid white;
+}
+
+.trending ul {
+  padding: 0 15px;
+}
+
+.trending li {
+  float: left;
+  margin-right: 20px;
+}
+.trending li:first-child {
+  color: orange;
+}

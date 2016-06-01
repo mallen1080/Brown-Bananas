@@ -8,6 +8,7 @@ var HashHistory = ReactRouter.hashHistory;
 
 var Navbar = require('./components/navbar/navbar');
 var Footer = require('./components/navbar/footer');
+var Trending = require('./components/other/trending');
 var SignUpForm = require('./components/other/signUpForm');
 var SignInForm = require('./components/other/signInForm');
 var MovieForm = require('./components/other/movieForm');
@@ -18,6 +19,7 @@ var TrailerModal = require('./components/other/trailerModal');
 
 var AppStore = require('./stores/appStore');
 var ApiUtil = require('./util/apiUtil');
+
 
 var App = React.createClass({
 
@@ -45,6 +47,7 @@ var App = React.createClass({
         <TrailerModal />
         <div>
           <Navbar />
+          <Trending />
           {this.props.children}
           <Footer />
         </div>
