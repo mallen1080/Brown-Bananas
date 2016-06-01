@@ -8,10 +8,10 @@ var Trending = React.createClass({
       <div className="trending">
         <ul className="group">
           <li>TRENDING ON BB</li>
-          <li>Jerry Mac</li>
-          <li>The Godfather</li>
-          <li>Yes Man</li>
-          <li>Scarface</li>
+          <li><a href="#/movies/57">Gravity</a></li>
+          <li><a href="#/movies/91">The Dark Knight</a></li>
+          <li><a href="#/movies/155">Apocalypse Now</a></li>
+          <li><a href="#/movies/152">The Matrix</a></li>
         </ul>
       </div>
     );
