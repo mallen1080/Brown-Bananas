@@ -249,6 +249,8 @@ img:not([src]) {
 
 .trending ul {
   padding: 0 15px;
+  // width: 700px;
+  float: left;
 }
 
 .trending li {
@@ -257,4 +259,10 @@ img:not([src]) {
 }
 .trending li:first-child {
   color: #ff9933;
+}
+
+.trending > a {
+  float: right;
+  color: #ff9933;
+  margin-right: 15px;
 }

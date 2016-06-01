@@ -15,6 +15,7 @@ var MovieForm = require('./components/other/movieForm');
 var HomePage = require('./components/home/homePage');
 var ShowPage = require('./components/show/showPage');
 var BrowsePage = require('./components/browse/browsePage');
+var AboutPage = require('./components/other/about');
 var TrailerModal = require('./components/other/trailerModal');
 
 var AppStore = require('./stores/appStore');
@@ -81,6 +82,7 @@ var AppRoutes = (
       <Route path="movies/browse" component={BrowsePage} onEnter={_getHomePageMovies}/>
       <Route path="movies/:movieId" component={ShowPage} onEnter={_getHomePageMovies}/>
       <Route path="movies/:movieId/edit" component={MovieForm} onEnter={_checkAdmin}/>
+      <Route path="about" component={AboutPage} onEnter={_getHomePageMovies}/>
     </Route>
   </Router>
 );
