@@ -140,12 +140,30 @@
 
 .browse-type-buttons button {
   font-size: 36px;
-  color: #fff;
   width: 50px;
-  background-color: #09689a;
   border: 1px solid #075178;
   vertical-align: bottom;
   text-align: center;
+}
+
+.browse-type-buttons button:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.browse-type-buttons button:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.browse-not-selected {
+  color: #09689a;
+}
+
+.browse-selected,
+.browse-type-buttons button:hover {
+  background-color: #09689a;
+  color: #fff;
 }
 
 .browse-results .rec-list-item {

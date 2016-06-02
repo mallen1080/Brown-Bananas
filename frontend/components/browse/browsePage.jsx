@@ -162,6 +162,8 @@ var BrowsePage = React.createClass({
       <div></div>;
     var moreClick = rCount == tCount ? function(){} : this.submitForm.bind(this, true);
     var moreClass = rCount == tCount ? "hide" : "browse-more";
+    var styleButton1Klass = this.state.browseResultsType ? "browse-not-selected" : "browse-selected";
+    var styleButton2Klass = !this.state.browseResultsType ? "browse-not-selected" : "browse-selected";
 
     return (
       <div className="browse-page">
@@ -241,8 +243,8 @@ var BrowsePage = React.createClass({
           <div className="browse-counts-type group">
             {counts}
             <div className="browse-type-buttons">
-              <button onClick={this.setBrowseResultsType.bind(this, 0)}>⊞</button>
-              <button onClick={this.setBrowseResultsType.bind(this, 1)}>☰</button>
+              <button className={styleButton1Klass} onClick={this.setBrowseResultsType.bind(this, 0)}>⊞</button>
+              <button className={styleButton2Klass} onClick={this.setBrowseResultsType.bind(this, 1)}>☰</button>
             </div>
           </div>
 
