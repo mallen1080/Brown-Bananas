@@ -19,6 +19,7 @@ var BrowsePage = React.createClass({
 
     return {
       browseResults: [],
+      browseResultsType: 0,
       browseResultTotalCount: null,
       browseResultReturnCount: 25,
       theaters: theaters,
@@ -82,8 +83,8 @@ var BrowsePage = React.createClass({
     this.submitForm();
   },
 
-  browseResults: function () {
-    return this.state.browseResults.map(function (movie, i) {
+  browseResultsBlocks: function () {
+    return this.state.browseResults.map(function (movie) {
       var link = "#/movies/" + movie.id;
       var banana = movie.rating.percentage > 59 ?
         "fresh_banana.png" : "brown_banana.png";
@@ -104,6 +105,40 @@ var BrowsePage = React.createClass({
         </div>
       );
     });
+  },
+
+  browseResultsList: function () {
+    return this.state.browseResults.map(function (movie) {
+      var link = "#/movies/" + movie.id;
+      var banana = movie.rating.percentage > 59 ?
+      "fresh_banana.png" : "brown_banana.png";
+      var actors = movie.actors.join(", ");
+
+      return (
+        <div className="browse-list-item group" key={movie.id}>
+          <div className="rec-img-container">
+            <img src={movie.image_url} />
+          </div>
+          <div className="browse-list-info">
+            <a href={link}>
+              <h3>{movie.title}</h3>
+              <span>
+                <span className="rating-img"><img src={banana} /></span>
+                <span className="percentage">{movie.rating.percentage}</span>
+              </span>
+              <p>{actors}</p>
+              <p>Critics Consensus: {movie.consensus}</p>
+              <p>Description: {movie.description}</p>
+            </a>
+          </div>
+
+        </div>
+      );
+    });
+  },
+
+  setBrowseResultsType: function (typeNum) {
+    this.setState({ browseResultsType: typeNum });
   },
 
   submitForm: function (more, e) {
@@ -130,11 +165,9 @@ var BrowsePage = React.createClass({
 
     return (
       <div className="browse-page">
-        <div className="browse-header">
-          <h2>BROWSE MOVIES</h2>
-        </div>
 
         <form className="browse-form">
+          <h2>BROWSE MOVIES</h2>
 
             <div className="browse-release">
               <label>In Theaters:
@@ -205,10 +238,16 @@ var BrowsePage = React.createClass({
 
           </form>
 
-          {counts}
+          <div className="browse-counts-type group">
+            {counts}
+            <div className="browse-type-buttons">
+              <button onClick={this.setBrowseResultsType.bind(this, 0)}>Blocks</button>
+              <button onClick={this.setBrowseResultsType.bind(this, 1)}>List</button>
+            </div>
+          </div>
 
           <div className="browse-results group">
-            {this.browseResults()}
+            {[this.browseResultsBlocks(),this.browseResultsList()][this.state.browseResultsType]}
           </div>
 
           <div className="more-container">

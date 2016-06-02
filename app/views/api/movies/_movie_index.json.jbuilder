@@ -8,6 +8,7 @@ json.on_dvd_parse movie.date_parse("dvd") if movie.on_dvd
 json.director movie.director.name
 json.consensus movie.consensus
 json.rating movie.review_counts
+json.description movie.description
 json.actors do
   json.array! movie.actors.map(&:name)
 end

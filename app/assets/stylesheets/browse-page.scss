@@ -5,23 +5,20 @@
 }
 
 .browse-form {
+  // padding: 15px;
+  width: 75%;
+  margin: auto;
   padding: 15px;
   border-bottom: 1px solid #eee;
 }
 
-.browse-header {
-  background-color: white;
-  height: 68px;
-}
-
-.browse-header > h2 {
-    padding: 10px 20px;
-    font-size: 22px;
-    position: relative;
-    top: 20px;
-    width: 195px;
-    background-color: #ff9933;
-    font-weight: 900;
+.browse-form h2 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff9933;
+  font-weight: bold;
+  font-size: 22px;
+  margin-bottom: 10px;
 }
 
 .browse-release {
@@ -122,13 +119,22 @@
 }
 
 .browse-results,
-.browse-counts {
+.browse-counts-type {
   width: 75%;
   margin: auto;
 }
 
+.browse-counts-type {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+}
+
 .browse-counts {
-  margin-top: 10px;
+  float: left;
+}
+
+.browse-type-buttons {
+  float: right;
 }
 
 .browse-results .rec-list-item {
@@ -160,4 +166,39 @@
 .browse-more:hover {
   background-color: #ccc;
   cursor: pointer;
+}
+
+.browse-list-item {
+  border-bottom: 1px solid #eee;
+}
+
+.browse-list-item:last-child {
+  border-bottom: 0;
+}
+
+.browse-list-item .rec-img-container {
+  width: 136px;
+  float: left;
+  margin: 10px;
+}
+
+.browse-list-info {
+  width: 600px;
+  float: left;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.browse-list-info h3 {
+  color: #343434;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.browse-list-info p {
+  // margin-top: 5px;
+}
+
+.browse-list-info p span:first-child {
+  color: #aaa;
 }
