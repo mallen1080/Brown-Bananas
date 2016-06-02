@@ -1,6 +1,7 @@
 var React = require('react');
 var SearchStore = require('../../stores/searchStore');
 var LinkedStateMixin = require('react-addons-linked-state-mixin');
+var AppActions = require('../../actions/appActions');
 var ApiUtil = require('../../util/apiUtil');
 var ReactSlider = require('react-slider');
 var PropTypes = React.PropTypes;
@@ -116,7 +117,8 @@ var BrowsePage = React.createClass({
 
       return (
         <div className="browse-list-item group" key={movie.id}>
-          <div className="rec-img-container">
+          <div className="rec-img-container"
+            onClick={AppActions.displayTrailerModal.bind(this, movie.trailer_url)}>
             <img src={movie.image_url} />
           </div>
           <div className="browse-list-info">

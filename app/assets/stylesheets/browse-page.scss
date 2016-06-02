@@ -206,9 +206,34 @@
 }
 
 .browse-list-item .rec-img-container {
+  position: relative;
   width: 136px;
   float: left;
   margin: 10px;
+  filter: brightness(80%);
+  -webkit-filter: brightness(80%);
+}
+
+
+.browse-list-item .rec-img-container:before {
+  content: "\25BA";
+  position: absolute;
+  font-size: 42px;
+  color: white;
+  opacity: 0.8;
+  top: 75px;
+  left: 50px;
+}
+
+.browse-list-item .rec-img-container:hover {
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+  cursor: pointer;
+}
+
+.browse-list-item .rec-img-container:hover:before {
+  opacity: 1;
+  color: red;
 }
 
 .browse-list-info {
