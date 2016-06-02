@@ -126,15 +126,26 @@
 
 .browse-counts-type {
   border-bottom: 1px solid #eee;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .browse-counts {
   float: left;
+  margin-top: 20px;
 }
 
 .browse-type-buttons {
   float: right;
+}
+
+.browse-type-buttons button {
+  font-size: 36px;
+  color: #fff;
+  width: 50px;
+  background-color: #09689a;
+  border: 1px solid #075178;
+  vertical-align: bottom;
+  text-align: center;
 }
 
 .browse-results .rec-list-item {

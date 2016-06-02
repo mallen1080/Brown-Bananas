@@ -241,8 +241,8 @@ var BrowsePage = React.createClass({
           <div className="browse-counts-type group">
             {counts}
             <div className="browse-type-buttons">
-              <button onClick={this.setBrowseResultsType.bind(this, 0)}>Blocks</button>
-              <button onClick={this.setBrowseResultsType.bind(this, 1)}>List</button>
+              <button onClick={this.setBrowseResultsType.bind(this, 0)}>⊞</button>
+              <button onClick={this.setBrowseResultsType.bind(this, 1)}>☰</button>
             </div>
           </div>
 
