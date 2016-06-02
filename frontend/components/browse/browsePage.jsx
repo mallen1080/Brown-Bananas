@@ -171,33 +171,33 @@ var BrowsePage = React.createClass({
         <form className="browse-form">
           <h2>BROWSE MOVIES</h2>
 
-            <div className="browse-release">
-              <label>In Theaters:
-              <input type="radio"
-                name="browse"
-                defaultChecked={theaters}
-                onClick={this.setRelease.bind(this, "theaters")} />
-              </label>
+          <div className="browse-release">
+            <label>In Theaters:
+            <input type="radio"
+              name="browse"
+              defaultChecked={theaters}
+              onClick={this.setRelease.bind(this, "theaters")} />
+            </label>
 
-              <label>On DVD:
-              <input type="radio"
-                name="browse"
-                defaultChecked={dvd}
-                onClick={this.setRelease.bind(this, "dvd")} />
-              </label>
+            <label>On DVD:
+            <input type="radio"
+              name="browse"
+              defaultChecked={dvd}
+              onClick={this.setRelease.bind(this, "dvd")} />
+            </label>
+          </div>
+
+          <div className="browse-ratings">
+            <div className="browse-ratings-disp group">
+              <label>Bananameter: </label>
+              <label>{this.state.maxRating}%</label>
+              <label>{this.state.minRating}% - </label>
             </div>
 
-            <div className="browse-ratings">
-              <div className="browse-ratings-disp group">
-                <label>Bananameter: </label>
-                <label>{this.state.maxRating}%</label>
-                <label>{this.state.minRating}% - </label>
-              </div>
-
-              <ReactSlider defaultValue={[this.state.minRating,100]}
-                withBars
-                onChange={this._ratingChange}/>
-            </div>
+            <ReactSlider defaultValue={[this.state.minRating,100]}
+              withBars
+              onChange={this._ratingChange}/>
+          </div>
 
           <div className="browse-genres">
             <label>Action:
