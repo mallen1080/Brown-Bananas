@@ -5,7 +5,6 @@
 }
 
 .browse-form {
-  // padding: 15px;
   width: 75%;
   margin: auto;
   padding: 15px;
@@ -18,11 +17,13 @@
   background-color: #ff9933;
   font-weight: bold;
   font-size: 22px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .browse-release {
   width: 250px;
+  float: left;
+  padding: 3px;
 }
 
 .browse-release input {
@@ -31,18 +32,31 @@
 }
 
 .browse-ratings {
-  width: 250px;
-  margin: 10px 0;
+  width: 150px;
+  margin-right: 50px;
+  float: left;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.browse-ratings:hover {
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+}
+
+.browse-ratings-disp {
+  padding: 5px;
 }
 
 .browse-ratings-disp label:first-child {
   float: left;
-  width: 70px;
+  width: 50px;
 }
 
 .browse-ratings-disp label {
-  float: right;
   width: 49px;
+  margin-left: 10px;
   text-align: right;
 }
 
@@ -50,9 +64,28 @@
   margin-right: 40px;
 }
 
+.slider-container {
+  visibility: hidden;
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid #aaa;
+  height: 60px;
+  width: 280px;
+  text-align: center;
+}
+
+.browse-ratings-disp:hover + .slider-container,
+.slider-container:hover {
+  visibility: visible;
+}
+
+
 .slider {
   width: 250px;
   height: 20px;
+  margin: auto;
+  margin-top: 5px;
 }
 
 .bar-1 {
@@ -93,6 +126,40 @@
 
 .handle:after {
   left: 15px;
+}
+
+.browse-genres {
+  float: left;
+  width: 100px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.browse-genres:hover {
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+}
+
+.genres-label {
+  padding: 5px;
+}
+
+.genres-label:hover + .browse-genres-list,
+.browse-genres-list:hover {
+  visibility: visible;
+}
+
+.browse-genres-list {
+  visibility: hidden;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #aaa;
+}
+
+.browse-genres-list div {
+  margin: 10px 0;
+  padding: 0 10px;
 }
 
 .browse-genres input {

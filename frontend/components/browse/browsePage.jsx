@@ -175,68 +175,99 @@ var BrowsePage = React.createClass({
 
         <form className="browse-form">
           <h2>BROWSE MOVIES</h2>
+          <div className="group">
+            <div className="browse-release">
+              <label>In Theaters:
+                <input type="radio"
+                  name="browse"
+                  defaultChecked={theaters}
+                  onClick={this.setRelease.bind(this, "theaters")} />
+              </label>
 
-          <div className="browse-release">
-            <label>In Theaters:
-            <input type="radio"
-              name="browse"
-              defaultChecked={theaters}
-              onClick={this.setRelease.bind(this, "theaters")} />
-            </label>
-
-            <label>On DVD:
-            <input type="radio"
-              name="browse"
-              defaultChecked={dvd}
-              onClick={this.setRelease.bind(this, "dvd")} />
-            </label>
-          </div>
-
-          <div className="browse-ratings">
-            <div className="browse-ratings-disp group">
-              <label>Bananameter: </label>
-              <label>{this.state.maxRating}%</label>
-              <label>{this.state.minRating}% - </label>
+              <label>On DVD:
+                <input type="radio"
+                  name="browse"
+                  defaultChecked={dvd}
+                  onClick={this.setRelease.bind(this, "dvd")} />
+              </label>
             </div>
 
-            <ReactSlider defaultValue={[this.state.minRating,100]}
-              withBars
-              onChange={this._ratingChange}/>
-          </div>
+            <div className="browse-ratings">
+              <div className="browse-ratings-disp group">
+              <label>{this.state.minRating}% - </label>
+                <label>{this.state.maxRating}% ▾</label>
+              </div>
+              <div className="slider-container">
+                <label>Bananameter</label>
+                <ReactSlider defaultValue={[this.state.minRating,100]}
+                  withBars
+                  onChange={this._ratingChange}/>
+              </div>
+            </div>
 
-          <div className="browse-genres">
-            <label>Action:
-            <input type="checkbox" checkedLink={this.linkState('1')} />
-            </label>
+            <div className="browse-genres">
+              <div className="genres-label">
+                Genres: ▾
+              </div>
+              <div className="browse-genres-list">
+                <div>
+                  <label>
+                  <input type="checkbox" checkedLink={this.linkState('1')} />
+                  Action
+                  </label>
+                </div>
 
-            <label>Animation:
-            <input type="checkbox" checkedLink={this.linkState('2')} />
-            </label>
+                <div>
+                  <label>
+                  <input type="checkbox" checkedLink={this.linkState('2')} />
+                  Animation
+                  </label>
+                </div>
 
-            <label>Comedy:
-            <input type="checkbox" checkedLink={this.linkState('3')} />
-            </label>
+                <div>
+                  <label>
+                  <input type="checkbox" checkedLink={this.linkState('3')} />
+                  Comedy
+                  </label>
+                </div>
 
-            <label>Documentary:
-            <input type="checkbox" checkedLink={this.linkState('4')} />
-            </label>
+                <div>
+                  <label>
+                  <input type="checkbox" checkedLink={this.linkState('4')} />
+                  Documentary
+                  </label>
+                </div>
 
-            <label>Drama:
-            <input type="checkbox" checkedLink={this.linkState('5')} />
-            </label>
+                <div>
+                  <label>
+                  <input type="checkbox" checkedLink={this.linkState('5')} />
+                  Drama
+                  </label>
+                </div>
 
-            <label>Horror:
-            <input type="checkbox" checkedLink={this.linkState('6')} />
-            </label>
+                <div>
+                  <label>
+                  <input type="checkbox" checkedLink={this.linkState('6')} />
+                  Horror
+                  </label>
+                </div>
 
-            <label>Sci-Fi:
-            <input type="checkbox" checkedLink={this.linkState('7')} />
-            </label>
+                <div>
+                  <label>
+                  <input type="checkbox" checkedLink={this.linkState('7')} />
+                  Sci-Fi
+                  </label>
+                </div>
 
-            <label className="set-genre"
-              onClick={this._setGenres.bind(this, true)}>Select All</label>
-            <label className="set-genre"
-              onClick={this._setGenres.bind(this, false)}>Clear All</label>
+                <div>
+                  <label className="set-genre"
+                    onClick={this._setGenres.bind(this, true)}>Select All</label>
+                  <label className="set-genre"
+                    onClick={this._setGenres.bind(this, false)}>Clear All</label>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div className="form-submit">
