@@ -32,7 +32,7 @@
 }
 
 .browse-ratings {
-  width: 150px;
+  width: 170px;
   margin-right: 50px;
   float: left;
   cursor: pointer;
@@ -49,19 +49,19 @@
   padding: 5px;
 }
 
-.browse-ratings-disp label:first-child {
-  float: left;
-  width: 50px;
-}
+// .browse-ratings-disp label:first-child {
+//   width: 50px;
+// }
 
 .browse-ratings-disp label {
-  width: 49px;
-  margin-left: 10px;
+  float: left;
+  width: 60px;
+  margin-left: 5px;
   text-align: right;
 }
 
 .browse-ratings-disp label:nth-child(2) {
-  margin-right: 40px;
+  margin-right: 10px;
 }
 
 .slider-container {

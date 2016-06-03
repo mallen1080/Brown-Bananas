@@ -205,7 +205,7 @@ var BrowsePage = React.createClass({
 
             <div className="browse-ratings">
               <div className="browse-ratings-disp group">
-              <label>{this.state.minRating}% - </label>
+                <label>{this.state.minRating}% - </label>
                 <label>{this.state.maxRating}% ▾</label>
               </div>
               <div className="slider-container">
