@@ -130,7 +130,7 @@
 
 .browse-genres {
   float: left;
-  width: 100px;
+  width: 180px;
   cursor: pointer;
   border: 1px solid transparent;
 }
@@ -143,6 +143,11 @@
 
 .genres-label {
   padding: 5px;
+}
+
+.genres-label span:nth-child(2) {
+  font-weight: bold;
+  color: #787878;
 }
 
 .genres-label:hover + .browse-genres-list,

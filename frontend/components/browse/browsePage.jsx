@@ -84,6 +84,17 @@ var BrowsePage = React.createClass({
     this.submitForm();
   },
 
+  _genreCount: function () {
+    var genres = [this.state["1"], this.state["2"], this.state["3"],
+      this.state["4"], this.state["5"], this.state["6"], this.state["7"]];
+    var numGenres = genres.filter(function (genre) {
+      return genre;
+    }).length;
+    if (numGenres === 7) { return "All"; }
+    if (numGenres === 0) { return "None"; }
+    return numGenres + " Selected";
+  },
+
   browseResultsBlocks: function () {
     return this.state.browseResults.map(function (movie) {
       var link = "#/movies/" + movie.id;
@@ -207,7 +218,7 @@ var BrowsePage = React.createClass({
 
             <div className="browse-genres">
               <div className="genres-label">
-                Genres: ▾
+                Genres: {this._genreCount()} ▾
               </div>
               <div className="browse-genres-list">
                 <div>
