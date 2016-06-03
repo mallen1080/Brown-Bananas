@@ -114,8 +114,8 @@ var BrowsePage = React.createClass({
       var banana = movie.rating.percentage > 59 ?
       "fresh_banana.png" : "brown_banana.png";
       var actors = movie.actors.join(", ");
-      var description = movie.description.split("").slice(0,400).join("");
-      if (movie.description.length > 400) { description += "..."; }
+      var description = movie.description.split("").slice(0,300).join("");
+      if (movie.description.length > 300) { description += "..."; }
 
       return (
         <div className="browse-list-item group" key={movie.id}>
@@ -131,6 +131,7 @@ var BrowsePage = React.createClass({
                 <span className="percentage">{movie.rating.percentage}</span>
               </span>
               <p>{actors}</p>
+              <p>{movie.genre}</p>
               <p>Critics Consensus: {movie.consensus}</p>
               <p>Description: {description}</p>
             </a>
