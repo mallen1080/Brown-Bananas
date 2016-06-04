@@ -158,7 +158,7 @@ var BrowsePage = React.createClass({
   },
 
   submitForm: function (more, e) {
-    e.preventDefault();
+    if (e) { e.preventDefault(); }
     var query = $.extend(true, {}, this.state);
     query.browseResultReturnCount = 25;
     if (more) {
@@ -180,6 +180,8 @@ var BrowsePage = React.createClass({
     var moreClass = rCount == tCount ? "hide" : "browse-more";
     var styleButton1Klass = this.state.browseResultsType ? "browse-not-selected" : "browse-selected";
     var styleButton2Klass = !this.state.browseResultsType ? "browse-not-selected" : "browse-selected";
+    var minBanana = this.state.minRating > 59 ? "fresh_banana.png" : "brown_banana.png";
+    var maxBanana = this.state.maxRating > 59 ? "fresh_banana.png" : "brown_banana.png";
 
     return (
       <div className="browse-page">
@@ -205,8 +207,10 @@ var BrowsePage = React.createClass({
 
             <div className="browse-ratings">
               <div className="browse-ratings-disp group">
-                <label>{this.state.minRating}% - </label>
-                <label>{this.state.maxRating}% ▾</label>
+                <label><span className="rating-img"><img src={minBanana} /></span>
+                  {this.state.minRating}% - </label>
+                <label><span className="rating-img"><img src={maxBanana} /></span>
+                  {this.state.maxRating}% ▾</label>
               </div>
               <div className="slider-container">
                 <label>Bananameter</label>

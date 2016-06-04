@@ -33,6 +33,8 @@
 
 .browse-ratings {
   width: 170px;
+  position: relative;
+  top: -3px;
   margin-right: 50px;
   float: left;
   cursor: pointer;
@@ -49,19 +51,16 @@
   padding: 5px;
 }
 
-// .browse-ratings-disp label:first-child {
-//   width: 50px;
-// }
-
 .browse-ratings-disp label {
   float: left;
-  width: 60px;
+  width: 65px;
   margin-left: 5px;
-  text-align: right;
+  text-align: left;
 }
 
 .browse-ratings-disp label:nth-child(2) {
   margin-right: 10px;
+  width: 70px;
 }
 
 .slider-container {
