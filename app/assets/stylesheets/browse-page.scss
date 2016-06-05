@@ -23,7 +23,7 @@
 .browse-release {
   width: 250px;
   float: left;
-  padding: 3px;
+  padding: 5px;
 }
 
 .browse-release input {
@@ -33,8 +33,6 @@
 
 .browse-ratings {
   width: 170px;
-  position: relative;
-  top: -3px;
   margin-right: 50px;
   float: left;
   cursor: pointer;
@@ -132,6 +130,7 @@
   width: 180px;
   cursor: pointer;
   border: 1px solid transparent;
+  padding: 2px 0 0 0;
 }
 
 .browse-genres:hover {
