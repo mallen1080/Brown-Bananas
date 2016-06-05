@@ -43,6 +43,7 @@
   border-top: 1px solid #aaa;
   border-left: 1px solid #aaa;
   border-right: 1px solid #aaa;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .browse-ratings-disp {
@@ -67,6 +68,7 @@
   background-color: white;
   padding: 5px;
   border: 1px solid #aaa;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
   height: 60px;
   width: 280px;
   text-align: center;
@@ -100,7 +102,6 @@
 }
 
 .handle {
-
   background-color: white;
   border: 1px solid #ccc;
   cursor: pointer;
@@ -137,6 +138,7 @@
   border-top: 1px solid #aaa;
   border-left: 1px solid #aaa;
   border-right: 1px solid #aaa;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .genres-label {
@@ -158,6 +160,7 @@
   position: absolute;
   background-color: white;
   border: 1px solid #aaa;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .browse-genres-list div {
