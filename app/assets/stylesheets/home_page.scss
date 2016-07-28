@@ -85,9 +85,11 @@
 }
 
 .carousel-movie-cons h3 {
+  display: inline-block;
+  padding: 0 10px;
   background-color: #ff9933;
-  width: 30%;
-  text-align: center;
+  // width: 30%;
+  // text-align: center;
   font-weight: bold;
 }
 
@@ -557,4 +559,56 @@
 
 .trailer-desc p {
   font-size: 13px;
+}
+
+@media only screen and (max-width: 768px) {
+  .home-page-content {
+    width: 100%;
+  }
+
+  .carousel-container {
+    width: 100%;
+  }
+
+  .carousel-movie {
+    width: 100vw;
+  }
+
+  .slick-track {
+    width: 900%;
+  }
+
+  .carousel-img-container {
+    width: 130px;
+  }
+
+  .home-page-recents {
+    display: none;
+  }
+
+  .home-page-tables-leftcol {
+    width: 100%;
+  }
+
+  .home-page-tables-rightcol {
+    width: 100%;
+  }
+
+  .middle-col {
+    width: 60%;
+  }
+
+  .table-hover {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .carousel-img-container {
+    display: none;
+  }
+
+  .carousel-movie-info {
+    width: 100%;
+  }
 }
