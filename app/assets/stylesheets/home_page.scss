@@ -139,11 +139,16 @@
 
 .carousel-movie-info-table table {
   width: 100%;
+  white-space: nowrap;
 }
 
 .carousel-movie-info-table tr td:first-child {
   text-align: right;
   padding-right: 20px;
+}
+
+.carousel-movie-info-table tr {
+  height: 19px;
 }
 
 // RECENTS
