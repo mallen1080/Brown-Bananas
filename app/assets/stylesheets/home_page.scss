@@ -93,7 +93,10 @@
 
 .carousel-movie-cons p {
   padding: 10px;
+  height: 48px;
   color: white;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .carousel-img-container {
@@ -580,6 +583,10 @@
 
   .slick-track {
     width: 900%;
+  }
+
+  .slick-dots {
+    display: none !important;
   }
 
   .carousel-img-container {
