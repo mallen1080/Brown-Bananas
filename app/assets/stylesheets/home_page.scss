@@ -88,8 +88,6 @@
   display: inline-block;
   padding: 0 10px;
   background-color: #ff9933;
-  // width: 30%;
-  // text-align: center;
   font-weight: bold;
 }
 
@@ -470,7 +468,7 @@
   margin-top: 20px;
   font-size: 22px;
   background-color: #ff9933;
-  float: left;
+  display: inline-block;
   font-weight: 900;
   color: black;
 }
@@ -562,6 +560,7 @@
 }
 
 @media only screen and (max-width: 768px) {
+
   .home-page-content {
     width: 100%;
   }
@@ -588,17 +587,78 @@
 
   .home-page-tables-leftcol {
     width: 100%;
+    padding: 0;
   }
 
   .home-page-tables-rightcol {
     width: 100%;
+    padding: 0;
   }
 
-  .middle-col {
-    width: 60%;
+  .home-page-table table {
+    line-height: 34px;
+    border-collapse: collapse;
+  }
+
+  .table-header {
+    border-top: 1px solid #ccc;
+  }
+
+  .home-page-table h2 {
+    padding-left: 20px;
+  }
+
+  .home-page-table tr {
+    border-top: 1px solid #ccc;
+  }
+
+  .home-page-table .left-col {
+    width: 60px;
+    padding-left: 20px;
+  }
+
+  .home-page-table .middle-col {
+    width: calc(100% - 155px);
+  }
+
+  .home-page-table .right-col {
+    width: 75px;
   }
 
   .table-hover {
+    display: none;
+  }
+
+  .home-trailers-group-left,
+  .home-trailers-group-right {
+    width: calc(100% - 20px);
+    padding: 10px;
+  }
+
+  .home-trailers-group-right .home-trailer,
+  .home-trailer {
+    width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .recommended-logo {
+    display: none;
+  }
+
+  .recommended-panel .recommended-list {
+    width: 100%;
+  }
+
+  .rec-list-item {
+    width: calc(33.33% - 20px);
+  }
+
+  .rec-img-container {
+    height: 40vw;
+  }
+
+  .rec-list-item:nth-child(4),
+  .rec-list-item:nth-child(5) {
     display: none;
   }
 }
