@@ -661,6 +661,10 @@
   .rec-list-item:nth-child(5) {
     display: none;
   }
+
+  .footer {
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 530px) {
@@ -670,5 +674,18 @@
 
   .carousel-movie-info {
     width: 100%;
+  }
+
+  .footer-text {
+    display: none;
+  }
+
+  .footer-links {
+    width: 100%;
+    margin: 0;
+  }
+
+  .footer-links li {
+    width: calc(30% - 30px);
   }
 }
