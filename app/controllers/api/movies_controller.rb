@@ -1,7 +1,7 @@
 class Api::MoviesController < ApplicationController
+  before_action :ensure_admin, only: [:create, :destroy, :update]
 
   def create
-    return unless current_user.username == "admin"
     @movie = Movie.new(movie_params)
     @movie.parse_for_create_or_edit(params)
     if @movie.valid?
@@ -25,14 +25,12 @@ class Api::MoviesController < ApplicationController
   end
 
   def destroy
-    return unless current_user.username == "admin"
     @movie = Movie.find(params[:id])
     @movie.destroy
     render :show
   end
 
   def update
-    return unless current_user.username == "admin"
     @movie = Movie.find(params[:id])
     @movie.parse_for_create_or_edit(params)
     @movie.update!(movie_params)
@@ -68,6 +66,10 @@ class Api::MoviesController < ApplicationController
       :on_dvd,
       :consensus,
       :description)
+  end
+
+  def ensure_admin
+    return unless current_user.username == 'admin'
   end
 
 end
